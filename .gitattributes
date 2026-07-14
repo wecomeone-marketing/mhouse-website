@@ -1,0 +1,6 @@
+# Normalize line endings; keep them stable across machines
+* text=auto
+*.html text
+*.css text
+*.js text
+*.md text

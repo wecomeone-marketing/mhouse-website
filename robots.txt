@@ -1,0 +1,4 @@
+# REVIEW BUILD — block all crawlers so the staging site is not indexed.
+# Remove this block (or replace with an Allow + sitemap) before production launch on mhouse.cy.
+User-agent: *
+Disallow: /
