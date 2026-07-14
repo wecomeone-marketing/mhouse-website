@@ -425,6 +425,15 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   transition:opacity 1.2s ease;
 }
 .hero__slide.active{opacity:1}
+
+/* ── MOBILE NAV WIRING (added) ── */
+.hamburger{display:none}
+body.nav-open{overflow:hidden}
+@media(max-width:768px){
+  .nav__links{display:none}
+  .hamburger{display:flex}
+  .nav-links{grid-template-columns:1fr;max-width:none}
+}
 </style>
 </head>
 <body>
@@ -457,8 +466,32 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
       <a href="contact.html" class="nav__link">Contact</a>
       <a href="stay.html" class="nav__book">Book Now</a>
     </div>
+    <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-controls="navOverlay" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+
+<!-- Fullscreen mobile nav overlay (added) -->
+<div class="nav-overlay" id="navOverlay">
+  <div class="nav-left">
+    <nav class="nav-links" aria-label="Mobile menu">
+      <a href="gather.html" class="nav-item">Events <em>Private hire</em></a>
+      <a href="gatherings.html" class="nav-item">Gatherings <em>Yoga · Aperitivo</em></a>
+      <a href="swim.html" class="nav-item">Swim <em>Day passes</em></a>
+      <a href="stay.html" class="nav-item">Stay <em>Five rooms</em></a>
+      <a href="work.html" class="nav-item">Work <em>Lounge</em></a>
+      <a href="contact.html" class="nav-item">Contact <em>Find us</em></a>
+    </nav>
+    <div class="nav-bottom">
+      <p class="nav-address">Stadiou 18, 6020 Larnaka, Cyprus</p>
+      <div class="nav-contacts">
+        <a href="mailto:hello@mhouse.cy">hello@mhouse.cy</a>
+        <a href="tel:+35797444085">+357 97444085</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- HERO --><!-- HERO --><!-- HERO --><!-- HERO --><!-- HERO --><!-- HERO --><!-- HERO -->
 <section class="hero">
@@ -888,6 +921,34 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   window.addEventListener('scroll', function(){
     if(nav) nav.classList.toggle('scrolled', window.scrollY > 60);
   }, {passive:true});
+
+  // ── MOBILE NAV (added) ──
+  var burger  = document.getElementById('hamburger');
+  var overlay = document.getElementById('navOverlay');
+  function closeMenu(){
+    if(!overlay || !burger) return;
+    overlay.classList.remove('open');
+    burger.classList.remove('open');
+    burger.setAttribute('aria-expanded','false');
+    document.body.classList.remove('nav-open');
+    burger.classList.toggle('dark', window.scrollY > 60);
+  }
+  if(burger && overlay){
+    burger.addEventListener('click', function(){
+      var open = !overlay.classList.contains('open');
+      overlay.classList.toggle('open', open);
+      burger.classList.toggle('open', open);
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.body.classList.toggle('nav-open', open);
+      if(open){ burger.classList.remove('dark'); }
+      else { burger.classList.toggle('dark', window.scrollY > 60); }
+    });
+    overlay.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeMenu(); });
+    window.addEventListener('scroll', function(){
+      if(!overlay.classList.contains('open')) burger.classList.toggle('dark', window.scrollY > 60);
+    }, {passive:true});
+  }
 
   // ── TESTIMONIALS// ── TESTIMONIALS// ── TESTIMONIALS SLIDER ──// ── TESTIMONIALS SLIDER ──
   var track  = document.getElementById('tsTrack');
