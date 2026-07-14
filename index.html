@@ -434,6 +434,36 @@ body.nav-open{overflow:hidden}
   .hamburger{display:flex}
   .nav-links{grid-template-columns:1fr;max-width:none}
 }
+
+/* ── CLIENT REVISIONS (added) ── */
+
+/* 1) "What we offer": one facility per line on phones */
+@media(max-width:768px){
+  .facilities__inner{padding:0 1.5rem}
+  .facilities__grid{grid-template-columns:1fr;gap:1.5rem}
+}
+
+/* 2) Reservation date fields overflowing on mobile: let inputs shrink to fit */
+.check__row{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.check__input,.check__select{min-width:0;max-width:100%}
+@media(max-width:768px){
+  .check__row{grid-template-columns:1fr}
+}
+
+/* 3) Footer logo + info centered on mobile */
+@media(max-width:768px){
+  .footer__grid{text-align:center}
+  .footer__logo{margin-left:auto;margin-right:auto}
+  .footer__tag{max-width:none;margin-left:auto;margin-right:auto}
+  .footer__nl{justify-content:center}
+  .footer__social{justify-content:center}
+  .footer__links{align-items:center}
+}
+
+/* 4) Larger, more readable description text */
+.about__txt,.sec-txt,.aperitivo__txt,.check__txt{font-size:1.0625rem}
+.gc__desc,.fac__txt,.sc__desc{font-size:1rem}
+.footer__tag,.footer__link,.rc__from{font-size:0.9375rem}
 </style>
 </head>
 <body>
