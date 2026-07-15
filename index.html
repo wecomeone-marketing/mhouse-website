@@ -487,7 +487,10 @@ input.check__input[type=date]::-webkit-calendar-picker-indicator{filter:invert(1
 /* 5) Guest reviews: review month in dark brown */
 .ts-slide__date{color:var(--dk)}
 /* 6) Footer copyright + legal links: double size */
-.footer__copy,.footer__leg a{font-size:1.125rem}
+.footer__copy,.footer__leg a,.footer__powered{font-size:0.75rem}
+.footer__powered{color:rgba(245,243,238,0.5)}
+.footer__powered a{color:rgba(245,243,238,0.72);transition:color 0.2s}
+.footer__powered a:hover{color:rgba(245,243,238,1)}
 </style>
 </head>
 <body>
@@ -940,6 +943,7 @@ input.check__input[type=date]::-webkit-calendar-picker-indicator{filter:invert(1
     </div>
     <div class="footer__bot">
       <span class="footer__copy">© 2026 M House, Onkel Properties Ltd. All rights reserved.</span>
+      <span class="footer__powered">Powered by <a href="https://wecomeone.me/" target="_blank" rel="noopener noreferrer">Wecomeone Marketing And Comms</a></span>
       <nav class="footer__leg">
         <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms of Use</a>
