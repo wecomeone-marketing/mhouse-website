@@ -445,10 +445,13 @@ body.nav-open{overflow:hidden}
 
 /* 2) Reservation date fields overflowing on mobile: let inputs shrink to fit */
 .check__row{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
-.check__input,.check__select{min-width:0;max-width:100%}
+.check__input,.check__select{min-width:0;max-width:100%;height:50px;line-height:normal}
 @media(max-width:768px){
   .check__row{grid-template-columns:1fr}
 }
+/* Date fields render as labelled text inputs (see JS); style the picked-date state */
+input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}
+input.check__input[type=date]::-webkit-calendar-picker-indicator{filter:invert(1);opacity:0.45;cursor:pointer}
 
 /* 3) Footer logo + info centered on mobile */
 @media(max-width:768px){
@@ -830,6 +833,8 @@ body.nav-open{overflow:hidden}
     </div>
     <div class="rv">
       <form class="check__form" onsubmit="return false">
+        <input type="text" class="check__input" placeholder="Your name">
+        <input type="email" class="check__input" placeholder="Your email">
         <select class="check__select">
           <option value="" disabled selected>Select space</option>
           <option>Room, Shorty's (from €120)</option>
@@ -844,11 +849,9 @@ body.nav-open{overflow:hidden}
           <option>Events / Private Hire</option>
         </select>
         <div class="check__row">
-          <input type="date" class="check__input" placeholder="Check-in">
-          <input type="date" class="check__input" placeholder="Check-out">
+          <input type="text" class="check__input check__date" placeholder="Check-in date">
+          <input type="text" class="check__input check__date" placeholder="Check-out date">
         </div>
-        <input type="text" class="check__input" placeholder="Your name">
-        <input type="email" class="check__input" placeholder="Your email">
         <button class="check__btn" type="submit">Check availability &nbsp;→</button>
       </form>
     </div>
@@ -979,6 +982,17 @@ body.nav-open{overflow:hidden}
       if(!overlay.classList.contains('open')) burger.classList.toggle('dark', window.scrollY > 60);
     }, {passive:true});
   }
+
+  // ── RESERVATION DATE FIELDS (added) ──
+  // Native date inputs ignore placeholder and render at a different size,
+  // so show them as labelled text fields and switch to the date picker on focus.
+  document.querySelectorAll('.check__date').forEach(function(inp){
+    inp.addEventListener('focus', function(){
+      this.type = 'date';
+      if(this.showPicker){ try{ this.showPicker(); }catch(e){} }
+    });
+    inp.addEventListener('blur', function(){ if(!this.value) this.type = 'text'; });
+  });
 
   // ── TESTIMONIALS// ── TESTIMONIALS// ── TESTIMONIALS SLIDER ──// ── TESTIMONIALS SLIDER ──
   var track  = document.getElementById('tsTrack');
