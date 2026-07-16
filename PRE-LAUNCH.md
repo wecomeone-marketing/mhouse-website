@@ -55,7 +55,7 @@ When replacing an image:
 
 - ☐ **Smoobu** booking widget (embed code from client) — for `stay.html`
 - ☐ **Stripe** (account + keys from client)
-- ☐ **Contact form backend** — the site is currently **static** (GitHub Pages). Resend can't be called safely from static client code (it needs a server to hold the API key). **Decision needed:** serverless function, a form service, or move to a host with a small backend. See §7.
+- ☐ **Contact form + reservation form backend** — **decided:** production runs a small Node/Express server on Scala (see §7) exposing a `/api/contact` (and reservation-enquiry) endpoint that calls **Resend server-side**. The Resend key stays a **server env var**, never in this public repo. Both the homepage "Check availability" form and the contact-page form (currently `onsubmit="return false"`) route through it. Add per-IP rate limiting + a captcha (e.g. Cloudflare Turnstile) for spam protection. **Dependency:** to send *from* `@mhouse.cy`, Resend needs its domain verified via DNS records on `mhouse.cy` (Cloudflare) — needs DNS access, otherwise send from an agency-controlled domain.
 - ☐ Coworking booking platform (TBD by client)
 - ☐ Google Analytics 4
 - ☐ Meta Pixel
@@ -92,10 +92,15 @@ When replacing an image:
 
 ## 7. Production launch / hosting
 
-- ☐ **Hosting decision.** Review currently runs on GitHub Pages (static). Options for production:
-  - Keep static on GitHub Pages / Cloudflare with `mhouse.cy` custom domain (simplest) — but needs an external solution for the contact form (see §4).
-  - Move to **Scala Hosting** (the brief's original plan) if a backend is wanted.
-- ☐ Point `mhouse.cy` DNS (Cloudflare) at the chosen host. Keep the record **DNS-only (grey cloud)** if using GitHub Pages, for cert issuance.
+- **Hosting: Scala Hosting (decided).** Managed VPS with SPanel + NodeJS Manager / PM2.
+  The production site runs as a **small Node/Express app** (serves the static pages +
+  the `/api/contact` endpoint from §4), not pure-static files. Same pattern as the
+  agency's Travio app.
+- ☐ Restructure repo for the Node app: add `package.json` + `server.js` (Express serving
+  the built site and the API), keep the Resend key in a server `.env` (gitignored).
+- ☐ Deploy on Scala: NodeJS Manager → point at `server.js`, set env vars, start (PM2).
+- ☐ Point `mhouse.cy` DNS (Cloudflare) at the Scala VPS IP. SPanel handles nginx +
+  Let's Encrypt SSL.
 - ☐ Lift the `robots.txt` crawl block (see §5).
 - ☐ Cross-browser + mobile QA pass.
 - ☐ Final proof — confirm no placeholder copy or images remain anywhere.
@@ -105,7 +110,7 @@ When replacing an image:
 ## 8. Minor / nice-to-have
 
 - ☐ Logo consistency — the **splash and footer still use the old mark**; apply the palm there too if a consistent identity is wanted (nav already uses the palm).
-- ☐ Remove the leftover `getElementById('heroBg')` JS reference (harmless, element no longer exists).
+- ☑ ~~Remove the leftover `getElementById('heroBg')` JS reference~~ — done.
 - ☐ Facebook page description — drafted and ready to post.
 
 ---
