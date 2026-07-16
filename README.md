@@ -64,11 +64,13 @@ To publish a change: edit files here, `git commit`, `git push`. GitHub Pages reb
 
 ## Outstanding
 
-- Build out the 8 placeholder pages
-- Legal content for `privacy.html` / `terms.html` (from client's legal advisor)
-- Integrations: Smoobu booking widget, Stripe, Resend (contact form), coworking platform, GA4, Meta Pixel, Google Maps embed
-- SEO pass: meta titles/descriptions, schema markup (LocalBusiness / Hotel / Event), sitemap, Search Console, and lift the `robots.txt` block
-- Replace placeholder images and testimonials with real assets
+Homepage is **approved by the client** (2026-07-16). The full remaining work before
+launch — pages to build, image replacement, legal, integrations, SEO, and the
+production hosting decision — is tracked in **[PRE-LAUNCH.md](PRE-LAUNCH.md)**.
+
+> **Images:** some or all current images are placeholders and will be replaced before
+> launch. When replacing one, remove **every** old copy (they are base64-inlined in
+> `index.html`, sometimes more than once). See PRE-LAUNCH.md §1.
 
 ## Contacts
 
