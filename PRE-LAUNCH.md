@@ -44,9 +44,8 @@ CSS/logo live in one place. See README → Build.
 - ☐ `contact.html` — Contact form + map
 - ☐ `privacy.html` — awaiting legal content
 - ☐ `terms.html` — awaiting legal content
-- ☐ **Migrate `index.html` onto the build** so shared chrome has a single source (it is
-  currently still hand-authored). Do it with before/after verification — it's the
-  approved homepage.
+- ☑ **Migrate `index.html` onto the build** — done and verified (20 images preserved,
+  all sections + splash/hero/reservation intact). Shared chrome now has a single source.
 
 ---
 

@@ -20,7 +20,7 @@ static HTML at the repo root. See **[Build](#build)** below.
 
 | File | Purpose | Status |
 |------|---------|--------|
-| `index.html` | Homepage | ✅ Complete, approved (hand-authored — not yet on the build, see Build) |
+| `index.html` | Homepage | ✅ Complete, approved (built from `_src/`) |
 | `gather.html` | Events and private hire | ✅ Built |
 | `gatherings.html` | Yaya's Corner, Yoga, Aperitivo etc. | ⬜ Placeholder |
 | `swim.html` | Pool day passes | ⬜ Placeholder |
@@ -50,11 +50,13 @@ _src/
 - **Run** `npm run build` (or `node build.cjs`) → regenerates `gather.html` etc. at the root.
 - **Commit both** the `_src/` source and the built root `.html` (GitHub Pages serves the built files; there is no build on Pages).
 
-> **`index.html` is still hand-authored** and not yet driven by the build. It was the
-> approved 3 MB homepage, so it was left untouched when the build was introduced.
-> **Migrating it onto the build is the next task** — until then, a change to shared chrome
-> must be made in both the relevant partial *and* `index.html`. The partials were
-> originally extracted from `index.html`, so they currently match it.
+**All pages, including `index.html`, build from `_src/`** — the shared chrome has a single
+source of truth. The homepage's 3 page-specific background images (`.splash__bg`,
+`.mq2__bg`, `.testimonials__bg`) live in `_src/pages/index.html` (a homepage-only style
+block), which is why they don't weigh down the other pages.
+
+> **After editing any partial, run the build and commit the regenerated root `.html`.**
+> Don't hand-edit the root files directly — they are build output and will be overwritten.
 
 ## Brand system
 
