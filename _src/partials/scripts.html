@@ -1,0 +1,115 @@
+<script>
+(function(){
+
+  // ── SPLASH ──
+  var splash = document.getElementById('splash');
+  var site   = document.getElementById('site');
+  var enterBtn = document.getElementById('enterBtn');
+  if (enterBtn) {
+    enterBtn.addEventListener('click', function(){
+      splash.style.transition = 'opacity 0.55s ease';
+      splash.style.opacity = '0';
+      setTimeout(function(){
+        splash.style.display = 'none';
+        if (site) site.classList.add('on');
+        window.scrollTo(0,0);
+      }, 550);
+    });
+  } else if (site) {
+    site.classList.add('on');
+  }
+
+  // ── NAV SCROLL ──
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function(){
+    if(nav) nav.classList.toggle('scrolled', window.scrollY > 60);
+  }, {passive:true});
+
+  // ── MOBILE NAV (added) ──
+  var burger  = document.getElementById('hamburger');
+  var overlay = document.getElementById('navOverlay');
+  function closeMenu(){
+    if(!overlay || !burger) return;
+    overlay.classList.remove('open');
+    burger.classList.remove('open');
+    burger.setAttribute('aria-expanded','false');
+    document.body.classList.remove('nav-open');
+    burger.classList.toggle('dark', window.scrollY > 60);
+  }
+  if(burger && overlay){
+    burger.addEventListener('click', function(){
+      var open = !overlay.classList.contains('open');
+      overlay.classList.toggle('open', open);
+      burger.classList.toggle('open', open);
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.body.classList.toggle('nav-open', open);
+      if(open){ burger.classList.remove('dark'); }
+      else { burger.classList.toggle('dark', window.scrollY > 60); }
+    });
+    overlay.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeMenu(); });
+    window.addEventListener('scroll', function(){
+      if(!overlay.classList.contains('open')) burger.classList.toggle('dark', window.scrollY > 60);
+    }, {passive:true});
+  }
+
+  // ── RESERVATION DATE FIELDS (added) ──
+  // Native date inputs ignore placeholder and render at a different size,
+  // so show them as labelled text fields and switch to the date picker on focus.
+  document.querySelectorAll('.check__date').forEach(function(inp){
+    inp.addEventListener('focus', function(){
+      this.type = 'date';
+      if(this.showPicker){ try{ this.showPicker(); }catch(e){} }
+    });
+    inp.addEventListener('blur', function(){ if(!this.value) this.type = 'text'; });
+  });
+
+  // ── TESTIMONIALS SLIDER ──
+  var track  = document.getElementById('tsTrack');
+  var dots   = document.querySelectorAll('.ts-dot');
+  var cur    = 0;
+  var total  = 3;
+  var auto;
+
+  function goTo(n){
+    cur = (n + total) % total;
+    if(track) track.style.transform = 'translateX(-' + (cur * 100) + '%)';
+    dots.forEach(function(d,i){ d.classList.toggle('active', i === cur); });
+  }
+
+  document.getElementById('tsNext').addEventListener('click', function(){ clearInterval(auto); goTo(cur+1); });
+  document.getElementById('tsPrev').addEventListener('click', function(){ clearInterval(auto); goTo(cur-1); });
+  dots.forEach(function(d){ d.addEventListener('click', function(){ clearInterval(auto); goTo(+this.dataset.i); }); });
+  auto = setInterval(function(){ goTo(cur+1); }, 5000);
+
+  // ── SCROLL REVEAL ──
+  var rvEls = document.querySelectorAll('.rv,.rv-l,.rv-r');
+  if('IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e, i){
+        if(e.isIntersecting){
+          setTimeout(function(){ e.target.classList.add('on'); }, i * 60);
+          obs.unobserve(e.target);
+        }
+      });
+    }, {threshold:0.1, rootMargin:'0px 0px -40px 0px'});
+    rvEls.forEach(function(el){ obs.observe(el); });
+  } else {
+    rvEls.forEach(function(el){ el.classList.add('on'); });
+  }
+
+})();
+
+  // ── HERO SLIDESHOW ──
+  (function(){
+    var slides = document.querySelectorAll('.hero__slide');
+    var current = 0;
+    if(slides.length < 2) return;
+    setInterval(function(){
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 3000);
+  })();
+
+</script>

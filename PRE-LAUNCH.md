@@ -31,9 +31,12 @@ When replacing an image:
 
 ---
 
-## 2. Pages to build (currently branded placeholders)
+## 2. Pages to build
 
-- ☐ `gather.html` — Events & private hire
+Sub-pages are built from shared partials (`_src/` + `node build.cjs`) so the nav/footer/
+CSS/logo live in one place. See README → Build.
+
+- ☑ `gather.html` — Events & private hire (built; copy is a first draft, refine)
 - ☐ `gatherings.html` — Yaya's Corner, Yoga, Aperitivo, etc.
 - ☐ `swim.html` — Pool day passes
 - ☐ `stay.html` — Five rooms + Smoobu widget
@@ -41,6 +44,9 @@ When replacing an image:
 - ☐ `contact.html` — Contact form + map
 - ☐ `privacy.html` — awaiting legal content
 - ☐ `terms.html` — awaiting legal content
+- ☐ **Migrate `index.html` onto the build** so shared chrome has a single source (it is
+  currently still hand-authored). Do it with before/after verification — it's the
+  approved homepage.
 
 ---
 

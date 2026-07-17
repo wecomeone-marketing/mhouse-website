@@ -10,21 +10,51 @@ Bespoke multipage website for **M House**, a boutique social destination in Larn
 
 ## Stack
 
-Vanilla **HTML, CSS and JavaScript**. No framework, no CMS, no WordPress, **no build step**. Every page is a self-contained file that can be edited and deployed directly.
+Vanilla **HTML, CSS and JavaScript**. No framework, no CMS, no WordPress.
+
+Sub-pages share one set of chrome (nav, footer, CSS, JS, logo) via a **tiny build**:
+source lives in `_src/`, and `node build.cjs` (or `npm run build`) assembles the final
+static HTML at the repo root. See **[Build](#build)** below.
 
 ## Pages
 
 | File | Purpose | Status |
 |------|---------|--------|
-| `index.html` | Homepage | Complete, approved |
-| `gather.html` | Events and private hire | Placeholder |
-| `gatherings.html` | Yaya's Corner, Yoga, Aperitivo etc. | Placeholder |
-| `swim.html` | Pool day passes | Placeholder |
-| `stay.html` | Five rooms + Smoobu widget | Placeholder |
-| `work.html` | Work lounge | Placeholder |
-| `contact.html` | Contact form, map | Placeholder |
-| `privacy.html` | Privacy Policy | Placeholder (awaiting legal content) |
-| `terms.html` | Terms of Use | Placeholder (awaiting legal content) |
+| `index.html` | Homepage | ✅ Complete, approved (hand-authored — not yet on the build, see Build) |
+| `gather.html` | Events and private hire | ✅ Built |
+| `gatherings.html` | Yaya's Corner, Yoga, Aperitivo etc. | ⬜ Placeholder |
+| `swim.html` | Pool day passes | ⬜ Placeholder |
+| `stay.html` | Five rooms + Smoobu widget | ⬜ Placeholder |
+| `work.html` | Work lounge | ⬜ Placeholder |
+| `contact.html` | Contact form, map | ⬜ Placeholder |
+| `privacy.html` | Privacy Policy | ⬜ Placeholder (awaiting legal content) |
+| `terms.html` | Terms of Use | ⬜ Placeholder (awaiting legal content) |
+
+## Build
+
+Sub-pages are assembled from shared partials so the nav/footer/CSS/logo live in **one place**:
+
+```
+_src/
+  layout.html         # page skeleton (head + {{BODY}})
+  partials/
+    styles.html       # shared CSS (~29KB; page-specific bg images kept out)
+    nav.html          # nav + hamburger + mobile overlay (incl. palm logo)
+    footer.html       # footer
+    scripts.html      # shared JS (splash handler guarded so sub-pages work)
+  pages/
+    gather.html       # front-matter (title/desc) + body with {{NAV}}/{{FOOTER}}/{{SCRIPTS}}
+```
+
+- **Edit** a partial once → every built page picks it up.
+- **Run** `npm run build` (or `node build.cjs`) → regenerates `gather.html` etc. at the root.
+- **Commit both** the `_src/` source and the built root `.html` (GitHub Pages serves the built files; there is no build on Pages).
+
+> **`index.html` is still hand-authored** and not yet driven by the build. It was the
+> approved 3 MB homepage, so it was left untouched when the build was introduced.
+> **Migrating it onto the build is the next task** — until then, a change to shared chrome
+> must be made in both the relevant partial *and* `index.html`. The partials were
+> originally extracted from `index.html`, so they currently match it.
 
 ## Brand system
 

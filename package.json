@@ -1,0 +1,9 @@
+{
+  "name": "mhouse-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "M House website — static build from shared partials",
+  "scripts": {
+    "build": "node build.cjs"
+  }
+}
