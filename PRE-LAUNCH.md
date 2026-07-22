@@ -29,6 +29,12 @@ When replacing an image:
 
 **Photography awaited from client:** room photography (all 5 rooms), events / courtyard photography.
 
+**Sub-page image placeholders:** `gather`, `gatherings`, `swim` (and future pages) use
+labelled placeholder blocks — a photo-style hero (`.page-hero__media`) and image slots
+(`.ph`), each captioned via `data-ph` with the intended shot (e.g. "The saltwater pool").
+To go live: replace each `.ph` block with an `<img>`, and swap the hero's
+`.page-hero__media` gradient for the real photo. The captions double as the shot list.
+
 ---
 
 ## 2. Pages to build
