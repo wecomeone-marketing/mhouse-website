@@ -42,7 +42,7 @@ To go live: replace each `.ph` block with an `<img>`, and swap the hero's
 Sub-pages are built from shared partials (`_src/` + `node build.cjs`) so the nav/footer/
 CSS/logo live in one place. See README → Build.
 
-- ☑ `gather.html` — Events & private hire (built; copy is a first draft, refine)
+- ☑ `events.html` — Events & private hire (built; copy is a first draft, refine)
 - ☑ `gatherings.html` — Yaya's Corner, Breakfast & Swim, Sunrise/Water Yoga, Aperitivo (built; draft copy)
 - ☑ `swim.html` — Pool day passes (built; draft copy)
 - ☐ `stay.html` — Five rooms + Smoobu widget
