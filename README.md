@@ -22,8 +22,8 @@ static HTML at the repo root. See **[Build](#build)** below.
 |------|---------|--------|
 | `index.html` | Homepage | ✅ Complete, approved (built from `_src/`) |
 | `gather.html` | Events and private hire | ✅ Built |
-| `gatherings.html` | Yaya's Corner, Yoga, Aperitivo etc. | ⬜ Placeholder |
-| `swim.html` | Pool day passes | ⬜ Placeholder |
+| `gatherings.html` | Yaya's Corner, Yoga, Aperitivo etc. | ✅ Built |
+| `swim.html` | Pool day passes | ✅ Built |
 | `stay.html` | Five rooms + Smoobu widget | ⬜ Placeholder |
 | `work.html` | Work lounge | ⬜ Placeholder |
 | `contact.html` | Contact form, map | ⬜ Placeholder |
