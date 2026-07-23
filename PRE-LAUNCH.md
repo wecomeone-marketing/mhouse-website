@@ -42,9 +42,9 @@ To go live: replace each `.ph` block with an `<img>`, and swap the hero's
 Sub-pages are built from shared partials (`_src/` + `node build.cjs`) so the nav/footer/
 CSS/logo live in one place. See README → Build.
 
-- ☑ `events.html` — Events & private hire (built; copy is a first draft, refine)
-- ☑ `gather.html` (renamed from gatherings.html) — Yaya's Corner, Breakfast & Swim, Sunrise/Water Yoga, Aperitivo (built; draft copy)
-- ☑ `swim.html` — Pool day passes (built; draft copy)
+- ☑ `events.html` — Events, built from client content (capacity, venue hire, open bar, catering + terms)
+- ☑ `gather.html` (renamed from gatherings.html) — Yaya's Corner, Breakfast & Swim, Sunrise/Water Yoga, Aperitivo (built from client content: durations, capacities, prices, inclusions)
+- ☑ `swim.html` — Pool & day passes, built (rates pending, see §6); bookings route to WhatsApp
 - ☑ `stay.html` — Five rooms, built from client content (Smoobu widget still to embed)
 - ☑ `work.html` — Work lounge, built from client content
 - ☐ `contact.html` — Contact form + map
@@ -91,6 +91,7 @@ CSS/logo live in one place. See README → Build.
 ## 6. Content awaited from client (Christian)
 
 - ☐ Legal docs (Privacy, Terms)
+- ☐ **Pool day pass rates** — not included in the client content pack. The Swim page currently routes to WhatsApp for rates instead of quoting a price. Ask the client.
 - ☐ Smoobu embed code
 - ☐ Stripe credentials
 - ☐ Coworking platform decision
