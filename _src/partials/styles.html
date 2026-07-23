@@ -168,4 +168,19 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
   .ph{min-height:240px}
   .ph--tall{min-height:320px}
 }
+/* ── DETAIL COMPONENTS (rooms, pricing, info rows) ── */
+.offer-grid--3{grid-template-columns:repeat(3,1fr)}
+.offer__price{display:block;margin-top:0.75rem;font-family:var(--fd);font-size:1.5rem;color:var(--tx)}
+.amenities{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem 2rem;margin-top:2rem;list-style:none}
+.amenities li{font-family:var(--fb);font-weight:300;font-size:0.9375rem;color:var(--mu);padding-left:1.25rem;position:relative}
+.amenities li::before{content:"";position:absolute;left:0;top:0.62em;width:5px;height:5px;border-radius:50%;background:var(--ol)}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2.5rem;border-top:1px solid var(--br);padding-top:2rem}
+.info__k{font-family:var(--fb);font-size:0.5625rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--ol);margin-bottom:0.5rem}
+.info__v{font-family:var(--fb);font-weight:300;font-size:1rem;line-height:1.7;color:var(--mu)}
+@media(max-width:768px){
+  .offer-grid--3{grid-template-columns:1fr}
+  .amenities{grid-template-columns:1fr 1fr}
+  .info-grid{grid-template-columns:1fr;gap:1.5rem}
+  .plist__meta{white-space:normal}
+}
 </style>

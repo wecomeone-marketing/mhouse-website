@@ -43,10 +43,10 @@ Sub-pages are built from shared partials (`_src/` + `node build.cjs`) so the nav
 CSS/logo live in one place. See README → Build.
 
 - ☑ `events.html` — Events & private hire (built; copy is a first draft, refine)
-- ☑ `gatherings.html` — Yaya's Corner, Breakfast & Swim, Sunrise/Water Yoga, Aperitivo (built; draft copy)
+- ☑ `gather.html` (renamed from gatherings.html) — Yaya's Corner, Breakfast & Swim, Sunrise/Water Yoga, Aperitivo (built; draft copy)
 - ☑ `swim.html` — Pool day passes (built; draft copy)
-- ☐ `stay.html` — Five rooms + Smoobu widget
-- ☐ `work.html` — Work lounge
+- ☑ `stay.html` — Five rooms, built from client content (Smoobu widget still to embed)
+- ☑ `work.html` — Work lounge, built from client content
 - ☐ `contact.html` — Contact form + map
 - ☐ `privacy.html` — awaiting legal content
 - ☐ `terms.html` — awaiting legal content
