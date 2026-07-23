@@ -233,6 +233,11 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
   .room + .room{margin-top:3rem;padding-top:3rem}
   .room__name{font-size:1.625rem}
 }
+
+/* grid children must be allowed to shrink below their content width,
+   otherwise wide content (galleries) overflows the container on narrow screens */
+.split__media,.split__body{min-width:0}
+.gallery,.gallery__track{min-width:0;max-width:100%}
 </style>
 </head>
 <body>
