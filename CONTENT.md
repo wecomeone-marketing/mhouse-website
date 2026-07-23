@@ -56,7 +56,9 @@ Whether someone comes to stay, swim, work, celebrate, attend one of our gatherin
 enjoy aperitivo by the pool, our goal is the same: to create a welcoming house filled with
 real spirit, genuine hospitality and meaningful human connection.
 
-> Placement: homepage only (agreed).
+> Placement: homepage only (agreed). The homepage runs a **condensed** version of this
+> story, signed **The M House Family**. The fuller wording above is the client's original
+> supply, kept here for reference.
 
 ---
 
