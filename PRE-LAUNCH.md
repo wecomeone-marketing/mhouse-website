@@ -47,7 +47,7 @@ CSS/logo live in one place. See README → Build.
 - ☑ `events.html` — Events, built from client content (capacity, venue hire, open bar, catering + terms)
 - ☑ `gather.html` (renamed from gatherings.html) — Yaya's Corner, Breakfast & Swim, Sunrise/Water Yoga, Aperitivo (built from client content: durations, capacities, prices, inclusions)
 - ☑ `swim.html` — Pool & day passes, built (rates pending, see §6); bookings route to WhatsApp
-- ☑ `stay.html` — Five rooms, built from client content (Smoobu widget still to embed)
+- ☑ `stay.html` — Five rooms, each with its own 5 image sliding gallery (placeholder slides double as the shot list). Smoobu widget still to embed.
 - ☑ `work.html` — Work lounge, built from client content
 - ☑ `contact.html` — Contact and general info, built (all four contact routes, hours, parking, house rules, cancellation). Enquiry form pending the backend; directions are a Google Maps link rather than an embed for now.
 - ☑ `wellness.html` — Wellness & Recovery placeholder page + nav item (client supplied the section name only)

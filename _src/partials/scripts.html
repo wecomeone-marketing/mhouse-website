@@ -77,10 +77,14 @@
     dots.forEach(function(d,i){ d.classList.toggle('active', i === cur); });
   }
 
-  document.getElementById('tsNext').addEventListener('click', function(){ clearInterval(auto); goTo(cur+1); });
-  document.getElementById('tsPrev').addEventListener('click', function(){ clearInterval(auto); goTo(cur-1); });
+  // Guarded: these elements only exist on the homepage. Without this, sub-pages threw
+  // a TypeError here and every script after this point never ran.
+  var tsNext = document.getElementById('tsNext');
+  var tsPrev = document.getElementById('tsPrev');
+  if(tsNext) tsNext.addEventListener('click', function(){ clearInterval(auto); goTo(cur+1); });
+  if(tsPrev) tsPrev.addEventListener('click', function(){ clearInterval(auto); goTo(cur-1); });
   dots.forEach(function(d){ d.addEventListener('click', function(){ clearInterval(auto); goTo(+this.dataset.i); }); });
-  auto = setInterval(function(){ goTo(cur+1); }, 5000);
+  if(track && dots.length) auto = setInterval(function(){ goTo(cur+1); }, 5000);
 
   // ── SCROLL REVEAL ──
   var rvEls = document.querySelectorAll('.rv,.rv-l,.rv-r');
@@ -110,6 +114,43 @@
       current = (current + 1) % slides.length;
       slides[current].classList.add('active');
     }, 3000);
-  })();
+  
+})();
 
+
+(function(){
+  // ── SLIDING GALLERIES ──
+  document.querySelectorAll("[data-gallery]").forEach(function(g){
+    var track  = g.querySelector(".gallery__track");
+    var slides = g.querySelectorAll(".gallery__slide");
+    var dotsEl = g.querySelector(".gallery__dots");
+    if(!track || slides.length < 2) return;
+    var dots = [];
+    if(dotsEl){
+      Array.prototype.forEach.call(slides, function(_, i){
+        var d = document.createElement("button");
+        d.type = "button";
+        d.className = "gallery__dot" + (i === 0 ? " active" : "");
+        d.setAttribute("aria-label", "Image " + (i + 1) + " of " + slides.length);
+        d.addEventListener("click", function(){ track.scrollTo({left: i * track.clientWidth, behavior: "smooth"}); });
+        dotsEl.appendChild(d);
+        dots.push(d);
+      });
+    }
+    function index(){ return track.clientWidth ? Math.round(track.scrollLeft / track.clientWidth) : 0; }
+    function sync(){
+      var i = Math.max(0, Math.min(slides.length - 1, index()));
+      dots.forEach(function(d, n){ d.classList.toggle("active", n === i); });
+    }
+    track.addEventListener("scroll", sync, {passive:true});
+    function go(dir){
+      var i = Math.max(0, Math.min(slides.length - 1, index() + dir));
+      track.scrollTo({left: i * track.clientWidth, behavior: "smooth"});
+    }
+    var prev = g.querySelector(".gallery__btn--prev");
+    var next = g.querySelector(".gallery__btn--next");
+    if(prev) prev.addEventListener("click", function(){ go(-1); });
+    if(next) next.addEventListener("click", function(){ go(1); });
+  });
+})();
 </script>

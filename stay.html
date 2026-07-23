@@ -206,6 +206,33 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
 .offer__price a:hover{color:var(--tx)}
 .info__v a{color:var(--ol);transition:color 0.2s}
 .info__v a:hover{color:var(--tx)}
+/* ── SLIDING GALLERY (rooms etc.) ── */
+.gallery{position:relative;border-radius:14px;overflow:hidden;background:var(--g1)}
+.gallery__track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-ms-overflow-style:none;scrollbar-width:none}
+.gallery__track::-webkit-scrollbar{display:none}
+.gallery__slide{flex:0 0 100%;min-width:0;scroll-snap-align:start}
+.gallery__slide .ph{border-radius:0;min-height:440px;box-shadow:none}
+.gallery__btn{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;background:rgba(245,243,238,0.88);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transition:opacity .25s,background .25s;z-index:2;padding:0}
+.gallery:hover .gallery__btn,.gallery:focus-within .gallery__btn{opacity:1}
+.gallery__btn:hover{background:var(--w)}
+.gallery__btn--prev{left:.75rem}
+.gallery__btn--next{right:.75rem}
+.gallery__btn svg{width:14px;height:14px;stroke:var(--dk);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.gallery__dots{position:absolute;left:0;right:0;bottom:.9rem;display:flex;justify-content:center;gap:7px;z-index:2}
+.gallery__dot{width:6px;height:6px;border-radius:50%;background:rgba(245,243,238,.55);border:none;padding:0;cursor:pointer;transition:background .25s,transform .25s}
+.gallery__dot.active{background:var(--w);transform:scale(1.3)}
+/* room blocks */
+.room + .room{margin-top:5rem;padding-top:5rem;border-top:1px solid var(--br)}
+.room__num{font-family:var(--fd);font-size:1.25rem;color:var(--g2);margin-bottom:.35rem}
+.room__name{font-family:var(--fd);font-weight:400;font-size:2rem;color:var(--tx);margin-bottom:.5rem;line-height:1.15}
+.room__meta{font-family:var(--fb);font-size:.625rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--ol);margin-bottom:1.25rem}
+.room__desc{font-family:var(--fb);font-weight:300;font-size:1rem;line-height:1.85;color:var(--mu)}
+@media(max-width:768px){
+  .gallery__slide .ph{min-height:300px}
+  .gallery__btn{opacity:1;width:34px;height:34px}
+  .room + .room{margin-top:3rem;padding-top:3rem}
+  .room__name{font-size:1.625rem}
+}
 </style>
 </head>
 <body>
@@ -278,33 +305,121 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
 <section class="page-section page-section--alt">
   <div class="page-section__inner">
     <div class="sec-label">The rooms</div>
-    <div class="plist">
-      <div class="plist__item">
-        <div class="plist__num">01</div>
-        <div class="plist__body"><h3>Shorty's Room</h3><p>Our most intimate room, offering a comfortable and characterful stay with direct access to everything M House has to offer.</p></div>
-        <div class="plist__meta">22 sqm · 2 guests · from €120</div>
+
+    <article class="room split">
+      <div class="split__media">
+        <div class="gallery" data-gallery>
+          <div class="gallery__track">
+            <div class="gallery__slide"><div class="ph" data-ph="Shorty's Room, the room"></div></div>
+            <div class="gallery__slide"><div class="ph" data-ph="Shorty's Room, the bed"></div></div>
+            <div class="gallery__slide"><div class="ph" data-ph="Shorty's Room, bathroom"></div></div>
+            <div class="gallery__slide"><div class="ph" data-ph="Shorty's Room, detail"></div></div>
+            <div class="gallery__slide"><div class="ph" data-ph="Shorty's Room, looking out"></div></div>
+          </div>
+          <button class="gallery__btn gallery__btn--prev" type="button" aria-label="Previous image"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <button class="gallery__btn gallery__btn--next" type="button" aria-label="Next image"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+          <div class="gallery__dots"></div>
+        </div>
       </div>
-      <div class="plist__item">
-        <div class="plist__num">02</div>
-        <div class="plist__body"><h3>Duchess Room</h3><p>A bright and elegant room overlooking the courtyard and pool, designed for guests seeking both comfort and atmosphere.</p></div>
-        <div class="plist__meta">26 sqm · 2 guests · from €130</div>
+      <div class="split__body">
+        <div class="room__num">01</div>
+        <h3 class="room__name">Shorty's Room</h3>
+        <p class="room__meta">22 sqm · 2 guests · from €120 per night</p>
+        <p class="room__desc">Our most intimate room, offering a comfortable and characterful stay with direct access to everything M House has to offer.</p>
       </div>
-      <div class="plist__item">
-        <div class="plist__num">03</div>
-        <div class="plist__body"><h3>Governors Room</h3><p>Featuring a private balcony and additional space, the Governors Room connects guests to both the property and the surrounding historic neighbourhood.</p></div>
-        <div class="plist__meta">28 sqm · 2 guests · from €160</div>
+    </article>
+
+    <article class="room split split--rev">
+      <div class="split__media">
+        <div class="gallery" data-gallery>
+          <div class="gallery__track">
+            <div class="gallery__slide"><div class="ph" data-ph="Duchess Room, the room"></div></div>
+            <div class="gallery__slide"><div class="ph" data-ph="Duchess Room, the bed"></div></div>
+            <div class="gallery__slide"><div class="ph" data-ph="Duchess Room, courtyard view"></div></div>
+            <div class="gallery__slide"><div class="ph" data-ph="Duchess Room, bathroom"></div></div>
+            <div class="gallery__slide"><div class="ph" data-ph="Duchess Room, detail"></div></div>
+          </div>
+          <button class="gallery__btn gallery__btn--prev" type="button" aria-label="Previous image"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <button class="gallery__btn gallery__btn--next" type="button" aria-label="Next image"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+          <div class="gallery__dots"></div>
+        </div>
       </div>
-      <div class="plist__item">
-        <div class="plist__num">04</div>
-        <div class="plist__body"><h3>The O Room</h3><p>One of our signature rooms, featuring a large private terrace overlooking the courtyard and pool area.</p></div>
-        <div class="plist__meta">28 sqm · 2 guests · from €180</div>
+      <div class="split__body">
+        <div class="room__num">02</div>
+        <h3 class="room__name">Duchess Room</h3>
+        <p class="room__meta">26 sqm · 2 guests · from €130 per night</p>
+        <p class="room__desc">A bright and elegant room overlooking the courtyard and pool, designed for guests seeking both comfort and atmosphere.</p>
       </div>
-      <div class="plist__item">
-        <div class="plist__num">05</div>
-        <div class="plist__body"><h3>The Bungalow</h3><p>A standalone house nestled within the courtyard, offering a unique stay in the heart of the M House atmosphere. While providing additional privacy, guests remain right in the middle of everything that makes M House special.</p></div>
-        <div class="plist__meta">22 sqm · 2 guests · from €200</div>
+    </article>
+
+    <article class="room split">
+      <div class="split__media">
+        <div class="gallery" data-gallery>
+          <div class="gallery__track">
+            <div class="gallery__slide"><div class="ph" data-ph="Governors Room, the room"></div></div>
+            <div class="gallery__slide"><div class="ph" data-ph="Governors Room, the bed"></div></div>
+            <div class="gallery__slide"><div class="ph" data-ph="Governors Room, private balcony"></div></div>
+            <div class="gallery__slide"><div class="ph" data-ph="Governors Room, bathroom"></div></div>
+            <div class="gallery__slide"><div class="ph" data-ph="Governors Room, detail"></div></div>
+          </div>
+          <button class="gallery__btn gallery__btn--prev" type="button" aria-label="Previous image"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <button class="gallery__btn gallery__btn--next" type="button" aria-label="Next image"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+          <div class="gallery__dots"></div>
+        </div>
       </div>
-    </div>
+      <div class="split__body">
+        <div class="room__num">03</div>
+        <h3 class="room__name">Governors Room</h3>
+        <p class="room__meta">28 sqm · 2 guests · from €160 per night</p>
+        <p class="room__desc">Featuring a private balcony and additional space, the Governors Room connects guests to both the property and the surrounding historic neighbourhood.</p>
+      </div>
+    </article>
+
+    <article class="room split split--rev">
+      <div class="split__media">
+        <div class="gallery" data-gallery>
+          <div class="gallery__track">
+            <div class="gallery__slide"><div class="ph" data-ph="The O Room, the room"></div></div>
+            <div class="gallery__slide"><div class="ph" data-ph="The O Room, the bed"></div></div>
+            <div class="gallery__slide"><div class="ph" data-ph="The O Room, private terrace"></div></div>
+            <div class="gallery__slide"><div class="ph" data-ph="The O Room, bathroom"></div></div>
+            <div class="gallery__slide"><div class="ph" data-ph="The O Room, detail"></div></div>
+          </div>
+          <button class="gallery__btn gallery__btn--prev" type="button" aria-label="Previous image"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <button class="gallery__btn gallery__btn--next" type="button" aria-label="Next image"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+          <div class="gallery__dots"></div>
+        </div>
+      </div>
+      <div class="split__body">
+        <div class="room__num">04</div>
+        <h3 class="room__name">The O Room</h3>
+        <p class="room__meta">28 sqm · 2 guests · from €180 per night</p>
+        <p class="room__desc">One of our signature rooms, featuring a large private terrace overlooking the courtyard and pool area.</p>
+      </div>
+    </article>
+
+    <article class="room split">
+      <div class="split__media">
+        <div class="gallery" data-gallery>
+          <div class="gallery__track">
+            <div class="gallery__slide"><div class="ph" data-ph="The Bungalow, in the courtyard"></div></div>
+            <div class="gallery__slide"><div class="ph" data-ph="The Bungalow, the room"></div></div>
+            <div class="gallery__slide"><div class="ph" data-ph="The Bungalow, the bed"></div></div>
+            <div class="gallery__slide"><div class="ph" data-ph="The Bungalow, bathroom"></div></div>
+            <div class="gallery__slide"><div class="ph" data-ph="The Bungalow, detail"></div></div>
+          </div>
+          <button class="gallery__btn gallery__btn--prev" type="button" aria-label="Previous image"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <button class="gallery__btn gallery__btn--next" type="button" aria-label="Next image"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+          <div class="gallery__dots"></div>
+        </div>
+      </div>
+      <div class="split__body">
+        <div class="room__num">05</div>
+        <h3 class="room__name">The Bungalow</h3>
+        <p class="room__meta">22 sqm · 2 guests · from €200 per night</p>
+        <p class="room__desc">A standalone house nestled within the courtyard, offering a unique stay in the heart of the M House atmosphere. While providing additional privacy, guests remain right in the middle of everything that makes M House special.</p>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -327,12 +442,6 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
       <div><div class="info__k">Check out</div><div class="info__v">11:00</div></div>
       <div><div class="info__k">Minimum age</div><div class="info__v">15 years</div></div>
     </div>
-  </div>
-</section>
-
-<section class="page-section">
-  <div class="page-section__inner">
-    <div class="ph ph--wide" data-ph="Morning by the pool"></div>
   </div>
 </section>
 
@@ -478,10 +587,14 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
     dots.forEach(function(d,i){ d.classList.toggle('active', i === cur); });
   }
 
-  document.getElementById('tsNext').addEventListener('click', function(){ clearInterval(auto); goTo(cur+1); });
-  document.getElementById('tsPrev').addEventListener('click', function(){ clearInterval(auto); goTo(cur-1); });
+  // Guarded: these elements only exist on the homepage. Without this, sub-pages threw
+  // a TypeError here and every script after this point never ran.
+  var tsNext = document.getElementById('tsNext');
+  var tsPrev = document.getElementById('tsPrev');
+  if(tsNext) tsNext.addEventListener('click', function(){ clearInterval(auto); goTo(cur+1); });
+  if(tsPrev) tsPrev.addEventListener('click', function(){ clearInterval(auto); goTo(cur-1); });
   dots.forEach(function(d){ d.addEventListener('click', function(){ clearInterval(auto); goTo(+this.dataset.i); }); });
-  auto = setInterval(function(){ goTo(cur+1); }, 5000);
+  if(track && dots.length) auto = setInterval(function(){ goTo(cur+1); }, 5000);
 
   // ── SCROLL REVEAL ──
   var rvEls = document.querySelectorAll('.rv,.rv-l,.rv-r');
@@ -511,8 +624,45 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
       current = (current + 1) % slides.length;
       slides[current].classList.add('active');
     }, 3000);
-  })();
+  
+})();
 
+
+(function(){
+  // ── SLIDING GALLERIES ──
+  document.querySelectorAll("[data-gallery]").forEach(function(g){
+    var track  = g.querySelector(".gallery__track");
+    var slides = g.querySelectorAll(".gallery__slide");
+    var dotsEl = g.querySelector(".gallery__dots");
+    if(!track || slides.length < 2) return;
+    var dots = [];
+    if(dotsEl){
+      Array.prototype.forEach.call(slides, function(_, i){
+        var d = document.createElement("button");
+        d.type = "button";
+        d.className = "gallery__dot" + (i === 0 ? " active" : "");
+        d.setAttribute("aria-label", "Image " + (i + 1) + " of " + slides.length);
+        d.addEventListener("click", function(){ track.scrollTo({left: i * track.clientWidth, behavior: "smooth"}); });
+        dotsEl.appendChild(d);
+        dots.push(d);
+      });
+    }
+    function index(){ return track.clientWidth ? Math.round(track.scrollLeft / track.clientWidth) : 0; }
+    function sync(){
+      var i = Math.max(0, Math.min(slides.length - 1, index()));
+      dots.forEach(function(d, n){ d.classList.toggle("active", n === i); });
+    }
+    track.addEventListener("scroll", sync, {passive:true});
+    function go(dir){
+      var i = Math.max(0, Math.min(slides.length - 1, index() + dir));
+      track.scrollTo({left: i * track.clientWidth, behavior: "smooth"});
+    }
+    var prev = g.querySelector(".gallery__btn--prev");
+    var next = g.querySelector(".gallery__btn--next");
+    if(prev) prev.addEventListener("click", function(){ go(-1); });
+    if(next) next.addEventListener("click", function(){ go(1); });
+  });
+})();
 </script>
 
 

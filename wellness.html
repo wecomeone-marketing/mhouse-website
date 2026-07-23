@@ -206,6 +206,33 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
 .offer__price a:hover{color:var(--tx)}
 .info__v a{color:var(--ol);transition:color 0.2s}
 .info__v a:hover{color:var(--tx)}
+/* ── SLIDING GALLERY (rooms etc.) ── */
+.gallery{position:relative;border-radius:14px;overflow:hidden;background:var(--g1)}
+.gallery__track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-ms-overflow-style:none;scrollbar-width:none}
+.gallery__track::-webkit-scrollbar{display:none}
+.gallery__slide{flex:0 0 100%;min-width:0;scroll-snap-align:start}
+.gallery__slide .ph{border-radius:0;min-height:440px;box-shadow:none}
+.gallery__btn{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;background:rgba(245,243,238,0.88);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transition:opacity .25s,background .25s;z-index:2;padding:0}
+.gallery:hover .gallery__btn,.gallery:focus-within .gallery__btn{opacity:1}
+.gallery__btn:hover{background:var(--w)}
+.gallery__btn--prev{left:.75rem}
+.gallery__btn--next{right:.75rem}
+.gallery__btn svg{width:14px;height:14px;stroke:var(--dk);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.gallery__dots{position:absolute;left:0;right:0;bottom:.9rem;display:flex;justify-content:center;gap:7px;z-index:2}
+.gallery__dot{width:6px;height:6px;border-radius:50%;background:rgba(245,243,238,.55);border:none;padding:0;cursor:pointer;transition:background .25s,transform .25s}
+.gallery__dot.active{background:var(--w);transform:scale(1.3)}
+/* room blocks */
+.room + .room{margin-top:5rem;padding-top:5rem;border-top:1px solid var(--br)}
+.room__num{font-family:var(--fd);font-size:1.25rem;color:var(--g2);margin-bottom:.35rem}
+.room__name{font-family:var(--fd);font-weight:400;font-size:2rem;color:var(--tx);margin-bottom:.5rem;line-height:1.15}
+.room__meta{font-family:var(--fb);font-size:.625rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--ol);margin-bottom:1.25rem}
+.room__desc{font-family:var(--fb);font-weight:300;font-size:1rem;line-height:1.85;color:var(--mu)}
+@media(max-width:768px){
+  .gallery__slide .ph{min-height:300px}
+  .gallery__btn{opacity:1;width:34px;height:34px}
+  .room + .room{margin-top:3rem;padding-top:3rem}
+  .room__name{font-size:1.625rem}
+}
 </style>
 </head>
 <body>
@@ -429,10 +456,14 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
     dots.forEach(function(d,i){ d.classList.toggle('active', i === cur); });
   }
 
-  document.getElementById('tsNext').addEventListener('click', function(){ clearInterval(auto); goTo(cur+1); });
-  document.getElementById('tsPrev').addEventListener('click', function(){ clearInterval(auto); goTo(cur-1); });
+  // Guarded: these elements only exist on the homepage. Without this, sub-pages threw
+  // a TypeError here and every script after this point never ran.
+  var tsNext = document.getElementById('tsNext');
+  var tsPrev = document.getElementById('tsPrev');
+  if(tsNext) tsNext.addEventListener('click', function(){ clearInterval(auto); goTo(cur+1); });
+  if(tsPrev) tsPrev.addEventListener('click', function(){ clearInterval(auto); goTo(cur-1); });
   dots.forEach(function(d){ d.addEventListener('click', function(){ clearInterval(auto); goTo(+this.dataset.i); }); });
-  auto = setInterval(function(){ goTo(cur+1); }, 5000);
+  if(track && dots.length) auto = setInterval(function(){ goTo(cur+1); }, 5000);
 
   // ── SCROLL REVEAL ──
   var rvEls = document.querySelectorAll('.rv,.rv-l,.rv-r');
@@ -462,8 +493,45 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
       current = (current + 1) % slides.length;
       slides[current].classList.add('active');
     }, 3000);
-  })();
+  
+})();
 
+
+(function(){
+  // ── SLIDING GALLERIES ──
+  document.querySelectorAll("[data-gallery]").forEach(function(g){
+    var track  = g.querySelector(".gallery__track");
+    var slides = g.querySelectorAll(".gallery__slide");
+    var dotsEl = g.querySelector(".gallery__dots");
+    if(!track || slides.length < 2) return;
+    var dots = [];
+    if(dotsEl){
+      Array.prototype.forEach.call(slides, function(_, i){
+        var d = document.createElement("button");
+        d.type = "button";
+        d.className = "gallery__dot" + (i === 0 ? " active" : "");
+        d.setAttribute("aria-label", "Image " + (i + 1) + " of " + slides.length);
+        d.addEventListener("click", function(){ track.scrollTo({left: i * track.clientWidth, behavior: "smooth"}); });
+        dotsEl.appendChild(d);
+        dots.push(d);
+      });
+    }
+    function index(){ return track.clientWidth ? Math.round(track.scrollLeft / track.clientWidth) : 0; }
+    function sync(){
+      var i = Math.max(0, Math.min(slides.length - 1, index()));
+      dots.forEach(function(d, n){ d.classList.toggle("active", n === i); });
+    }
+    track.addEventListener("scroll", sync, {passive:true});
+    function go(dir){
+      var i = Math.max(0, Math.min(slides.length - 1, index() + dir));
+      track.scrollTo({left: i * track.clientWidth, behavior: "smooth"});
+    }
+    var prev = g.querySelector(".gallery__btn--prev");
+    var next = g.querySelector(".gallery__btn--next");
+    if(prev) prev.addEventListener("click", function(){ go(-1); });
+    if(next) next.addEventListener("click", function(){ go(1); });
+  });
+})();
 </script>
 
 
