@@ -26,7 +26,8 @@ static HTML at the repo root. See **[Build](#build)** below.
 | `swim.html` | Pool day passes | ✅ Built |
 | `stay.html` | Five rooms | ✅ Built (Smoobu widget still to embed) |
 | `work.html` | Work lounge | ✅ Built |
-| `contact.html` | Contact form, map | ⬜ Placeholder |
+| `contact.html` | Contact and general info | ✅ Built (enquiry form pending backend) |
+| `wellness.html` | Wellness & Recovery | ✅ Built (placeholder, awaiting client copy) |
 | `privacy.html` | Privacy Policy | ⬜ Placeholder (awaiting legal content) |
 | `terms.html` | Terms of Use | ⬜ Placeholder (awaiting legal content) |
 

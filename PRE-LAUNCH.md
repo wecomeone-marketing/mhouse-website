@@ -39,6 +39,8 @@ To go live: replace each `.ph` block with an `<img>`, and swap the hero's
 
 ## 2. Pages to build
 
+The homepage About section now carries the client's official Mette story and vision wording.
+
 Sub-pages are built from shared partials (`_src/` + `node build.cjs`) so the nav/footer/
 CSS/logo live in one place. See README → Build.
 
@@ -47,7 +49,8 @@ CSS/logo live in one place. See README → Build.
 - ☑ `swim.html` — Pool & day passes, built (rates pending, see §6); bookings route to WhatsApp
 - ☑ `stay.html` — Five rooms, built from client content (Smoobu widget still to embed)
 - ☑ `work.html` — Work lounge, built from client content
-- ☐ `contact.html` — Contact form + map
+- ☑ `contact.html` — Contact and general info, built (all four contact routes, hours, parking, house rules, cancellation). Enquiry form pending the backend; directions are a Google Maps link rather than an embed for now.
+- ☑ `wellness.html` — Wellness & Recovery placeholder page + nav item (client supplied the section name only)
 - ☐ `privacy.html` — awaiting legal content
 - ☐ `terms.html` — awaiting legal content
 - ☑ **Migrate `index.html` onto the build** — done and verified (20 images preserved,
@@ -91,6 +94,7 @@ CSS/logo live in one place. See README → Build.
 ## 6. Content awaited from client (Christian)
 
 - ☐ Legal docs (Privacy, Terms)
+- ☐ **Wellness & Recovery content** — only the section name was supplied; the page is an honest placeholder until copy, treatments and pricing arrive.
 - ☐ **Pool day pass rates** — not included in the client content pack. The Swim page currently routes to WhatsApp for rates instead of quoting a price. Ask the client.
 - ☐ Smoobu embed code
 - ☐ Stripe credentials
