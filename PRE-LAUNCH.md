@@ -95,6 +95,10 @@ CSS/logo live in one place. See README → Build.
 
 - ☐ Legal docs (Privacy, Terms)
 - ☐ **Wellness & Recovery content** — only the section name was supplied; the page is an honest placeholder until copy, treatments and pricing arrive.
+- ☐ **Event package + add-on prices** — the Events page has a dynamic package builder
+  (half/full day + photography, videography, graphic design, entertainment) per the
+  services agreement. It is built and live with **placeholder** prices; needs the agreed
+  rates (edit PACKAGES/ADDONS in `_src/pages/events.html`).
 - ☐ **Pool day pass rates** — not included in the client content pack. The Swim page currently routes to WhatsApp for rates instead of quoting a price. Ask the client.
 - ☐ Smoobu embed code
 - ☐ Stripe credentials

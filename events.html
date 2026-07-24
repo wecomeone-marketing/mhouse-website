@@ -241,6 +241,40 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
 </style>
 </head>
 <body>
+<style>
+/* Event package builder (Events page only) */
+.builder{margin-top:2.5rem;display:grid;grid-template-columns:1.15fr .85fr;gap:0;border:1px solid var(--br);border-radius:16px;overflow:hidden}
+.builder__panel{padding:2.25rem;min-width:0}
+.builder__step{margin-bottom:2rem}
+.builder__step:last-child{margin-bottom:0}
+.builder__legend{font-family:var(--fb);font-size:.6875rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--ol);margin-bottom:1rem}
+.tier{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.tier__opt{text-align:left;border:1px solid var(--br);border-radius:12px;padding:1rem 1.15rem;cursor:pointer;background:none;transition:border-color .2s,background .2s}
+.tier__opt:hover{border-color:var(--ta)}
+.tier__opt.active{border-color:var(--dk);background:var(--dk)}
+.tier__opt.active .tier__name,.tier__opt.active .tier__price{color:var(--w)}
+.tier__opt.active .tier__detail{color:rgba(245,243,238,.6)}
+.tier__name{display:block;font-family:var(--fd);font-size:1.25rem;color:var(--tx);margin-bottom:.15rem}
+.tier__detail{display:block;font-family:var(--fb);font-size:.8125rem;color:var(--mu);margin-bottom:.5rem;line-height:1.5}
+.tier__price{font-family:var(--fb);font-size:.6875rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--ol)}
+.addon{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.9rem 0;border-bottom:1px solid var(--br);cursor:pointer}
+.addon:first-of-type{border-top:1px solid var(--br)}
+.addon__box{flex:0 0 20px;width:20px;height:20px;border:1px solid var(--g2);border-radius:6px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.addon.active .addon__box{background:var(--ol);border-color:var(--ol)}
+.addon__box svg{width:12px;height:12px;stroke:var(--w);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;opacity:0;transition:opacity .2s}
+.addon.active .addon__box svg{opacity:1}
+.addon__name{flex:1;font-family:var(--fb);font-weight:300;font-size:1rem;color:var(--tx)}
+.addon__price{font-family:var(--fb);font-size:.8125rem;color:var(--mu);white-space:nowrap}
+.builder__summary{background:var(--dk);color:var(--w);padding:2.25rem;display:flex;flex-direction:column;min-width:0}
+.builder__badge{align-self:flex-start;font-family:var(--fb);font-size:.5625rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--dk);background:var(--be);padding:.35rem .7rem;border-radius:50px;margin-bottom:1.5rem}
+.builder__k{font-family:var(--fb);font-size:.625rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--be);margin-bottom:.4rem}
+.builder__total{font-family:var(--fd);font-weight:300;font-size:clamp(2.5rem,5vw,3.5rem);line-height:1;margin-bottom:1.25rem}
+.builder__lines{list-style:none;margin:0 0 1.5rem;padding:0;font-family:var(--fb);font-weight:300;font-size:.875rem;color:rgba(245,243,238,.72)}
+.builder__lines li{display:flex;justify-content:space-between;gap:1rem;padding:.35rem 0;border-bottom:1px solid rgba(245,243,238,.08)}
+.builder__fine{font-family:var(--fb);font-weight:300;font-size:.75rem;line-height:1.7;color:rgba(245,243,238,.5);margin-bottom:1.5rem}
+.builder__summary .btn-ol--light{margin-top:auto;text-align:center}
+@media(max-width:768px){ .builder{grid-template-columns:1fr} .builder__panel,.builder__summary{padding:1.6rem} .tier{grid-template-columns:1fr} }
+</style>
 <div class="site on" id="site">
 <nav class="nav" id="nav">
   <div class="nav__inner">
@@ -307,7 +341,35 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
   </div>
 </section>
 
-<section class="page-section page-section--alt">
+<section class="page-section page-section--alt" id="builder">
+  <div class="page-section__inner">
+    <div class="sec-label">Plan your event</div>
+    <h2 class="sec-h">Build your<br><em>package.</em></h2>
+    <p class="sec-txt page-section__lead">Choose a package and the extras you would like, and see an indicative figure take shape. When it looks right, send it to us as an enquiry and we will come back with a tailored quote.</p>
+    <div class="builder" data-builder>
+      <div class="builder__panel">
+        <div class="builder__step">
+          <div class="builder__legend">1 &middot; Choose your package</div>
+          <div class="tier" id="bTiers"></div>
+        </div>
+        <div class="builder__step">
+          <div class="builder__legend">2 &middot; Add services</div>
+          <div id="bAddons"></div>
+        </div>
+      </div>
+      <div class="builder__summary">
+        <span class="builder__badge">Indicative pricing</span>
+        <div class="builder__k">Estimated from</div>
+        <div class="builder__total" id="bTotal">€0</div>
+        <ul class="builder__lines" id="bLines"></ul>
+        <p class="builder__fine">A guide based on your selections, not a final quote. Catering, bar and any services agreed separately are confirmed with your enquiry.</p>
+        <a class="btn-ol btn-ol--light" id="bEnquire" href="mailto:events@mhouse.cy">Send this as an enquiry &nbsp;&rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-section">
   <div class="page-section__inner">
     <div class="sec-label">Perfect for</div>
     <ul class="amenities">
@@ -336,7 +398,7 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
   </div>
 </section>
 
-<section class="page-section">
+<section class="page-section page-section--alt">
   <div class="page-section__inner">
     <div class="sec-label">Open bar packages</div>
     <h2 class="sec-h">Beer, wine<br><em>and soft drinks.</em></h2>
@@ -349,7 +411,7 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
   </div>
 </section>
 
-<section class="page-section page-section--alt">
+<section class="page-section">
   <div class="page-section__inner">
     <div class="sec-label">Catering</div>
     <p class="sec-txt page-section__lead">Our catering can be added to any event, and may also be ordered independently.</p>
@@ -454,6 +516,102 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
 </footer>
 
 </div>
+
+<script>
+(function(){
+  var root = document.querySelector('[data-builder]');
+  if(!root) return;
+
+  /* PLACEHOLDER PRICING — replace with the agreed rates.
+     Half day is anchored to the content pack (up to 5 hours, €800 minimum-spend exclusive hire).
+     Full day and all add-on service prices below are INDICATIVE and must be confirmed. */
+  var PACKAGES = [
+    { id:'half', name:'Half day', detail:'Up to 5 hours, exclusive use', price:800 },
+    { id:'full', name:'Full day', detail:'A full day, exclusive use',    price:1500 }
+  ];
+  var ADDONS = [
+    { id:'photo',  name:'Photography',   price:650 },
+    { id:'video',  name:'Videography',   price:950 },
+    { id:'design', name:'Graphic design', price:400 },
+    { id:'ent',    name:'Entertainment', price:750 }
+  ];
+
+  var tiersEl   = document.getElementById('bTiers');
+  var addonsEl  = document.getElementById('bAddons');
+  var totalEl   = document.getElementById('bTotal');
+  var linesEl   = document.getElementById('bLines');
+  var enquireEl = document.getElementById('bEnquire');
+  var state = { pkg: PACKAGES[0].id, addons: {} };
+  var CHECK = '<svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>';
+  function euro(n){ return '€' + Math.round(n).toLocaleString('en-GB'); }
+  function priceLabel(p){ return p ? euro(p) : 'On request'; }
+
+  PACKAGES.forEach(function(p){
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'tier__opt' + (p.id === state.pkg ? ' active' : '');
+    b.dataset.id = p.id;
+    b.innerHTML = '<span class="tier__name">' + p.name + '</span>' +
+                  '<span class="tier__detail">' + p.detail + '</span>' +
+                  '<span class="tier__price">' + (p.price ? 'from ' + euro(p.price) : 'On request') + '</span>';
+    b.addEventListener('click', function(){
+      state.pkg = p.id;
+      Array.prototype.forEach.call(tiersEl.children, function(c){ c.classList.toggle('active', c.dataset.id === p.id); });
+      render();
+    });
+    tiersEl.appendChild(b);
+  });
+
+  ADDONS.forEach(function(a){
+    var row = document.createElement('div');
+    row.className = 'addon';
+    row.dataset.id = a.id;
+    row.setAttribute('role', 'button');
+    row.setAttribute('aria-pressed', 'false');
+    row.tabIndex = 0;
+    row.innerHTML = '<span class="addon__box">' + CHECK + '</span>' +
+                    '<span class="addon__name">' + a.name + '</span>' +
+                    '<span class="addon__price">' + priceLabel(a.price) + '</span>';
+    function toggle(){
+      state.addons[a.id] = !state.addons[a.id];
+      row.classList.toggle('active', state.addons[a.id]);
+      row.setAttribute('aria-pressed', state.addons[a.id] ? 'true' : 'false');
+      render();
+    }
+    row.addEventListener('click', toggle);
+    row.addEventListener('keydown', function(e){ if(e.key === ' ' || e.key === 'Enter'){ e.preventDefault(); toggle(); } });
+    addonsEl.appendChild(row);
+  });
+
+  function render(){
+    var pkg = PACKAGES.filter(function(p){ return p.id === state.pkg; })[0];
+    var total = pkg.price || 0;
+    var lines = ['<li><span>' + pkg.name + '</span><span>' + priceLabel(pkg.price) + '</span></li>'];
+    var chosen = [];
+    ADDONS.forEach(function(a){
+      if(state.addons[a.id]){
+        total += (a.price || 0);
+        lines.push('<li><span>' + a.name + '</span><span>' + priceLabel(a.price) + '</span></li>');
+        chosen.push(a.name);
+      }
+    });
+    totalEl.textContent = euro(total);
+    linesEl.innerHTML = lines.join('');
+    var mail = [
+      'Hello M House,', '',
+      'I would like to enquire about an event.', '',
+      'Package: ' + pkg.name,
+      'Add-ons: ' + (chosen.length ? chosen.join(', ') : 'None'),
+      'Indicative total: ' + euro(total), '',
+      'My preferred date is:',
+      'Approximate guests:', '',
+      'Thank you.'
+    ].join('\n');
+    enquireEl.href = 'mailto:events@mhouse.cy?subject=' + encodeURIComponent('Event enquiry') + '&body=' + encodeURIComponent(mail);
+  }
+  render();
+})();
+</script>
 <script>
 (function(){
 

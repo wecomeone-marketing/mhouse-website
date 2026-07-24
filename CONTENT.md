@@ -134,6 +134,22 @@ on booking · balance due 48 hours prior.
 
 **Enquiries:** website enquiry form or events@mhouse.cy.
 
+### Event package builder (per the services agreement)
+
+The Events landing page carries a **dynamic add-on builder**: tiered packages
+(**half-day** and **full-day**) plus a selectable menu of add-on services
+(**photography, videography, graphic design, entertainment**, and others as agreed).
+It shows pricing dynamically from the selections and submits an enquiry to M House.
+
+> **PRICING NEEDED.** The builder is built and live, but the package and add-on prices
+> are **placeholders** (half-day is anchored to the €800 / 5-hour minimum-spend hire;
+> everything else is indicative). Replace the `PACKAGES` / `ADDONS` config at the
+> bottom of `_src/pages/events.html` with the agreed rates. A price of `null` shows
+> "On request".
+>
+> Enquiries currently open a pre-filled email (no backend yet). When the enquiry
+> endpoint is live, the "Send this as an enquiry" button switches from mailto to a POST.
+
 ---
 
 ## 5. Gatherings
