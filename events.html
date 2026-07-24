@@ -257,14 +257,16 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
 .tier__name{display:block;font-family:var(--fd);font-size:1.25rem;color:var(--tx);margin-bottom:.15rem}
 .tier__detail{display:block;font-family:var(--fb);font-size:.8125rem;color:var(--mu);margin-bottom:.5rem;line-height:1.5}
 .tier__price{font-family:var(--fb);font-size:.6875rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--ol)}
-.addon{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.9rem 0;border-bottom:1px solid var(--br);cursor:pointer}
+.addon{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--br);cursor:pointer}
 .addon:first-of-type{border-top:1px solid var(--br)}
 .addon__box{flex:0 0 20px;width:20px;height:20px;border:1px solid var(--g2);border-radius:6px;display:flex;align-items:center;justify-content:center;transition:all .2s}
 .addon.active .addon__box{background:var(--ol);border-color:var(--ol)}
 .addon__box svg{width:12px;height:12px;stroke:var(--w);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;opacity:0;transition:opacity .2s}
 .addon.active .addon__box svg{opacity:1}
-.addon__name{flex:1;font-family:var(--fb);font-weight:300;font-size:1rem;color:var(--tx)}
-.addon__price{font-family:var(--fb);font-size:.8125rem;color:var(--mu);white-space:nowrap}
+.addon__body{flex:1;min-width:0;display:flex;flex-direction:column;gap:.2rem}
+.addon__name{font-family:var(--fb);font-weight:400;font-size:1rem;color:var(--tx)}
+.addon__desc{font-family:var(--fb);font-weight:300;font-size:.8125rem;line-height:1.55;color:var(--ta)}
+.addon__price{font-family:var(--fb);font-size:.8125rem;color:var(--mu);white-space:nowrap;padding-top:.1rem}
 .builder__summary{background:var(--dk);color:var(--w);padding:2.25rem;display:flex;flex-direction:column;min-width:0}
 .builder__badge{align-self:flex-start;font-family:var(--fb);font-size:.5625rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--dk);background:var(--be);padding:.35rem .7rem;border-radius:50px;margin-bottom:1.5rem}
 .builder__k{font-family:var(--fb);font-size:.625rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--be);margin-bottom:.4rem}
@@ -530,10 +532,10 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
     { id:'full', name:'Full day', detail:'A full day, exclusive use',    price:1500 }
   ];
   var ADDONS = [
-    { id:'photo',  name:'Photography',   price:650 },
-    { id:'video',  name:'Videography',   price:950 },
-    { id:'design', name:'Graphic design', price:400 },
-    { id:'ent',    name:'Entertainment', price:750 }
+    { id:'photo',  name:'Photography',    price:650, desc:'Coverage of the day, from the first arrivals to the last toast.' },
+    { id:'video',  name:'Videography',    price:950, desc:'A short film of your event, edited and ready to share.' },
+    { id:'design', name:'Graphic design', price:400, desc:'Invitations, menus and signage, designed for the occasion.' },
+    { id:'ent',    name:'Entertainment',  price:750, desc:'A DJ, a band or a performer, arranged around the evening.' }
   ];
 
   var tiersEl   = document.getElementById('bTiers');
@@ -570,7 +572,8 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
     row.setAttribute('aria-pressed', 'false');
     row.tabIndex = 0;
     row.innerHTML = '<span class="addon__box">' + CHECK + '</span>' +
-                    '<span class="addon__name">' + a.name + '</span>' +
+                    '<span class="addon__body"><span class="addon__name">' + a.name + '</span>' +
+                    (a.desc ? '<span class="addon__desc">' + a.desc + '</span>' : '') + '</span>' +
                     '<span class="addon__price">' + priceLabel(a.price) + '</span>';
     function toggle(){
       state.addons[a.id] = !state.addons[a.id];
