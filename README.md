@@ -28,8 +28,8 @@ static HTML at the repo root. See **[Build](#build)** below.
 | `work.html` | Work lounge | ✅ Built |
 | `contact.html` | Contact and general info | ✅ Built (enquiry form pending backend) |
 | `wellness.html` | Wellness & Recovery | ✅ Built (placeholder, awaiting client copy) |
-| `privacy.html` | Privacy Policy | ⬜ Placeholder (awaiting legal content) |
-| `terms.html` | Terms of Use | ⬜ Placeholder (awaiting legal content) |
+| `privacy.html` | Privacy Policy | ✅ Built (from `_src/legal/privacy.txt`) |
+| `terms.html` | Terms of Use | ✅ Built (from `_src/legal/terms.txt`) |
 
 ## Build
 
@@ -50,6 +50,7 @@ _src/
 - **Edit** a partial once → every built page picks it up.
 - **Run** `npm run build` (or `node build.cjs`) → regenerates `gather.html` etc. at the root.
 - **Commit both** the `_src/` source and the built root `.html` (GitHub Pages serves the built files; there is no build on Pages).
+- **Legal pages:** the Privacy Policy and Terms of Use live as plain text in `_src/legal/*.txt`. After editing, run `node tools-legal.cjs` to regenerate `_src/pages/privacy.html` / `terms.html`, then `node build.cjs`.
 
 **All pages, including `index.html`, build from `_src/`** — the shared chrome has a single
 source of truth. The homepage's 3 page-specific background images (`.splash__bg`,

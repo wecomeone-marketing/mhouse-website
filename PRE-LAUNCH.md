@@ -51,8 +51,8 @@ CSS/logo live in one place. See README → Build.
 - ☑ `work.html` — Work lounge, built from client content
 - ☑ `contact.html` — Contact and general info, built (all four contact routes, hours, parking, house rules, cancellation). Enquiry form pending the backend; directions are a Google Maps link rather than an embed for now.
 - ☑ `wellness.html` — Wellness & Recovery placeholder page + nav item (client supplied the section name only)
-- ☐ `privacy.html` — awaiting legal content
-- ☐ `terms.html` — awaiting legal content
+- ☑ `privacy.html` — built from client legal text (effective 24 July 2026)
+- ☑ `terms.html` — built from client legal text (effective 24 July 2026)
 - ☑ **Migrate `index.html` onto the build** — done and verified (20 images preserved,
   all sections + splash/hero/reservation intact). Shared chrome now has a single source.
 
@@ -61,7 +61,7 @@ CSS/logo live in one place. See README → Build.
 ## 3. Legal
 
 - ☐ Privacy Policy content (from client's legal advisor — due ~5 days before launch)
-- ☐ Terms of Use content (same)
+- ☑ Terms of Use — received and built (effective 24 July 2026)
 
 ---
 
@@ -93,7 +93,7 @@ CSS/logo live in one place. See README → Build.
 
 ## 6. Content awaited from client (Christian)
 
-- ☐ Legal docs (Privacy, Terms)
+- ☑ Legal docs (Privacy, Terms) — received and built
 - ☐ **Wellness & Recovery content** — only the section name was supplied; the page is an honest placeholder until copy, treatments and pricing arrive.
 - ☐ **Event package + add-on prices** — the Events page has a dynamic package builder
   (half/full day + photography, videography, graphic design, entertainment) per the
