@@ -95,10 +95,13 @@ CSS/logo live in one place. See README → Build.
 
 - ☑ Legal docs (Privacy, Terms) — received and built
 - ☐ **Wellness & Recovery content** — only the section name was supplied; the page is an honest placeholder until copy, treatments and pricing arrive.
-- ☐ **Event package + add-on prices** — the Events page has a dynamic package builder
-  (half/full day + photography, videography, graphic design, entertainment) per the
-  services agreement. It is built and live with **placeholder** prices; needs the agreed
-  rates (edit PACKAGES/ADDONS in `_src/pages/events.html`).
+- ◐ **Events builder pricing** — per the owner's review, the Events page now shows **no
+  prices** and the builder is a price-free selector (pick a package + services -> tailored
+  enquiry). This **conflicts with the services agreement** ("display pricing dynamically");
+  Andreas to reconcile with Christian. If prices should return, re-add them to the
+  PACKAGES/ADDONS config in `_src/pages/events.html`.
+- ☐ **Private office pricing** — private offices are highlighted on the Work page but no
+  price was supplied (shown as "on request"). Ask the client.
 - ☐ **Pool day pass rates** — not included in the client content pack. The Swim page currently routes to WhatsApp for rates instead of quoting a price. Ask the client.
 - ☐ Smoobu embed code
 - ☐ Stripe credentials

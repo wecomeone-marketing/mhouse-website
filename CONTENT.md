@@ -232,3 +232,31 @@ hotel.
 - The story sits on the **homepage only**.
 - Pricing may be shown publicly.
 - No dashes in visible copy — use commas, colons or full stops (time ranges written "17:00 to 19:00").
+
+
+---
+
+## Owner revisions (Christian feedback)
+
+Feedback from the owner after first review. Applied to the live site.
+
+**Gather** — reframed so the lead message is that M House is a place to relax, unwind, work casually and socialise. Micro-events (Yaya's Corner, yoga, aperitivo) are presented as an added benefit, not the primary reason to visit.
+
+**Work** — corrections to §6 facts:
+- The daily **aperitivo is NOT included** with a dedicated desk (removed that claim).
+- **Lounge membership: €288 per month** — added alongside the other options.
+- **Private offices** — now highlighted on the page. **Price on request** (not supplied).
+
+**Events** — simplified and de-detailed per the owner:
+- Primary focus is now **private and corporate events**; weddings no longer headlined.
+- **No event pricing shown** (venue hire, minimum spend, open-bar and catering prices removed from the page).
+- Catering reduced to a single line ("a wide range of food and catering solutions, tailored to each event") rather than the detailed sushi/canapé/BBQ menus and prices.
+- **Add-ons mentioned as available, but no individual prices shown.**
+- The page now encourages visitors to **contact us for a tailored proposal**.
+
+> **CONFLICT TO RESOLVE (Andreas ↔ Christian).** The services agreement specified the
+> Events builder should "display pricing dynamically." The owner's feedback says the
+> opposite — no prices. Reconciled by keeping the builder as a **price-free selector**
+> (pick a package + services, send a tailored enquiry, no numbers). The pricing data
+> still exists in this file and the Events content pack; if it should be shown again,
+> the builder can be reverted. Flag this discrepancy with the agreement.

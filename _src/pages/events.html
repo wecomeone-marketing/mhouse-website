@@ -1,9 +1,9 @@
 ---
-title: M House, Events. Weddings, corporate events and private hire in Larnaka.
-desc: A unique venue in the heart of Larnaka old town. Mediterranean courtyard, saltwater pool and lounges for weddings, corporate events and private hire, up to 150 guests.
+title: M House, Events. Private and corporate events in Larnaka old town.
+desc: A distinctive venue in the heart of Larnaka old town for private and corporate events. A Mediterranean courtyard, saltwater pool and lounges. Contact us to tailor a proposal.
 ---
 <style>
-/* Event package builder (Events page only) */
+/* Event planner (Events page only) */
 .builder{margin-top:2.5rem;display:grid;grid-template-columns:1.15fr .85fr;gap:0;border:1px solid var(--br);border-radius:16px;overflow:hidden}
 .builder__panel{padding:2.25rem;min-width:0}
 .builder__step{margin-bottom:2rem}
@@ -13,11 +13,10 @@ desc: A unique venue in the heart of Larnaka old town. Mediterranean courtyard, 
 .tier__opt{text-align:left;border:1px solid var(--br);border-radius:12px;padding:1rem 1.15rem;cursor:pointer;background:none;transition:border-color .2s,background .2s}
 .tier__opt:hover{border-color:var(--ta)}
 .tier__opt.active{border-color:var(--dk);background:var(--dk)}
-.tier__opt.active .tier__name,.tier__opt.active .tier__price{color:var(--w)}
+.tier__opt.active .tier__name{color:var(--w)}
 .tier__opt.active .tier__detail{color:rgba(245,243,238,.6)}
 .tier__name{display:block;font-family:var(--fd);font-size:1.25rem;color:var(--tx);margin-bottom:.15rem}
-.tier__detail{display:block;font-family:var(--fb);font-size:.8125rem;color:var(--mu);margin-bottom:.5rem;line-height:1.5}
-.tier__price{font-family:var(--fb);font-size:.6875rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--ol)}
+.tier__detail{display:block;font-family:var(--fb);font-size:.8125rem;color:var(--mu);line-height:1.5}
 .addon{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--br);cursor:pointer}
 .addon:first-of-type{border-top:1px solid var(--br)}
 .addon__box{flex:0 0 20px;width:20px;height:20px;border:1px solid var(--g2);border-radius:6px;display:flex;align-items:center;justify-content:center;transition:all .2s}
@@ -27,14 +26,12 @@ desc: A unique venue in the heart of Larnaka old town. Mediterranean courtyard, 
 .addon__body{flex:1;min-width:0;display:flex;flex-direction:column;gap:.2rem}
 .addon__name{font-family:var(--fb);font-weight:400;font-size:1rem;color:var(--tx)}
 .addon__desc{font-family:var(--fb);font-weight:300;font-size:.8125rem;line-height:1.55;color:var(--ta)}
-.addon__price{font-family:var(--fb);font-size:.8125rem;color:var(--mu);white-space:nowrap;padding-top:.1rem}
 .builder__summary{background:var(--dk);color:var(--w);padding:2.25rem;display:flex;flex-direction:column;min-width:0}
-.builder__badge{align-self:flex-start;font-family:var(--fb);font-size:.5625rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--dk);background:var(--be);padding:.35rem .7rem;border-radius:50px;margin-bottom:1.5rem}
-.builder__k{font-family:var(--fb);font-size:.625rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--be);margin-bottom:.4rem}
-.builder__total{font-family:var(--fd);font-weight:300;font-size:clamp(2.5rem,5vw,3.5rem);line-height:1;margin-bottom:1.25rem}
-.builder__lines{list-style:none;margin:0 0 1.5rem;padding:0;font-family:var(--fb);font-weight:300;font-size:.875rem;color:rgba(245,243,238,.72)}
-.builder__lines li{display:flex;justify-content:space-between;gap:1rem;padding:.35rem 0;border-bottom:1px solid rgba(245,243,238,.08)}
-.builder__fine{font-family:var(--fb);font-weight:300;font-size:.75rem;line-height:1.7;color:rgba(245,243,238,.5);margin-bottom:1.5rem}
+.builder__k{font-family:var(--fb);font-size:.625rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--be);margin-bottom:1rem}
+.builder__lines{list-style:none;margin:0 0 1.5rem;padding:0;font-family:var(--fb);font-weight:300;font-size:.9375rem;color:rgba(245,243,238,.8)}
+.builder__lines li{padding:.4rem 0;border-bottom:1px solid rgba(245,243,238,.08)}
+.builder__lines li.muted{color:rgba(245,243,238,.45)}
+.builder__fine{font-family:var(--fb);font-weight:300;font-size:.8125rem;line-height:1.75;color:rgba(245,243,238,.55);margin-bottom:1.5rem}
 .builder__summary .btn-ol--light{margin-top:auto;text-align:center}
 @media(max-width:768px){ .builder{grid-template-columns:1fr} .builder__panel,.builder__summary{padding:1.6rem} .tier{grid-template-columns:1fr} }
 </style>
@@ -42,12 +39,12 @@ desc: A unique venue in the heart of Larnaka old town. Mediterranean courtyard, 
 {{NAV}}
 
 <header class="page-hero">
-  <div class="page-hero__media" data-ph="Hero: the courtyard set for a wedding"></div>
+  <div class="page-hero__media" data-ph="Hero: the courtyard set for an event"></div>
   <div class="page-hero__scrim"></div>
   <div class="page-hero__inner">
     <p class="page-hero__eyebrow">Events</p>
-    <h1 class="page-hero__title">Weddings and private events</h1>
-    <p class="page-hero__sub">A unique venue in the heart of Larnaka old town, for up to 150 guests. Courtyard, saltwater pool, lounges and boutique hospitality.</p>
+    <h1 class="page-hero__title">Private and<br>corporate events</h1>
+    <p class="page-hero__sub">A distinctive setting in the heart of Larnaka old town, for the moments that matter. Tell us what you have in mind and we will shape it around you.</p>
   </div>
 </header>
 
@@ -57,22 +54,33 @@ desc: A unique venue in the heart of Larnaka old town. Mediterranean courtyard, 
       <div class="split__body">
         <div class="sec-label">The venue</div>
         <h2 class="sec-h">The house,<br><em>entirely yours.</em></h2>
-        <p class="sec-txt page-section__lead">Combining a Mediterranean courtyard, saltwater pool, lounge areas and boutique hospitality, M House provides a relaxed and intimate setting for both private and corporate events. Whether it is a celebration, networking event, product launch or wellness gathering, we work closely with each client to create a memorable experience.</p>
+        <p class="sec-txt page-section__lead">A Mediterranean courtyard, a saltwater pool and warm lounges, hosted with genuine care. Take over the whole house for an evening or a day, for up to around 150 guests. Relaxed, intimate and unmistakably M House, whatever the occasion.</p>
       </div>
       <div class="split__media"><div class="ph ph--tall" data-ph="The courtyard set for dinner"></div></div>
     </div>
   </div>
 </section>
 
-<section class="page-section page-section--alt" id="builder">
+<section class="page-section page-section--alt">
+  <div class="page-section__inner">
+    <div class="sec-label">What we host</div>
+    <div class="offer-grid offer-grid--3">
+      <div class="offer"><h3>Private events</h3><p>Celebrations, dinners and gatherings, from the intimate to the grand.</p></div>
+      <div class="offer"><h3>Corporate events</h3><p>Launches, away days, dinners and networking, with the work lounge on hand.</p></div>
+      <div class="offer"><h3>Something in between</h3><p>Whatever you have in mind, we will help you shape it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="page-section" id="planner">
   <div class="page-section__inner">
     <div class="sec-label">Plan your event</div>
-    <h2 class="sec-h">Build your<br><em>package.</em></h2>
-    <p class="sec-txt page-section__lead">Choose a package and the extras you would like, and see an indicative figure take shape. When it looks right, send it to us as an enquiry and we will come back with a tailored quote.</p>
+    <h2 class="sec-h">Tell us<br><em>the shape of it.</em></h2>
+    <p class="sec-txt page-section__lead">Choose a starting point and the extras you might like, then send it over. Every event is different, so we will come back with a proposal tailored to your date, your numbers and your ideas.</p>
     <div class="builder" data-builder>
       <div class="builder__panel">
         <div class="builder__step">
-          <div class="builder__legend">1 &middot; Choose your package</div>
+          <div class="builder__legend">1 &middot; Your event</div>
           <div class="tier" id="bTiers"></div>
         </div>
         <div class="builder__step">
@@ -81,105 +89,32 @@ desc: A unique venue in the heart of Larnaka old town. Mediterranean courtyard, 
         </div>
       </div>
       <div class="builder__summary">
-        <span class="builder__badge">Indicative pricing</span>
-        <div class="builder__k">Estimated from</div>
-        <div class="builder__total" id="bTotal">€0</div>
+        <div class="builder__k">Your selection</div>
         <ul class="builder__lines" id="bLines"></ul>
-        <p class="builder__fine">A guide based on your selections, not a final quote. Catering, bar and any services agreed separately are confirmed with your enquiry.</p>
-        <a class="btn-ol btn-ol--light" id="bEnquire" href="mailto:events@mhouse.cy">Send this as an enquiry &nbsp;&rarr;</a>
+        <p class="builder__fine">A starting point, not a quote. Catering, styling and any services are arranged with you directly, and every event is priced around what you actually need.</p>
+        <a class="btn-ol btn-ol--light" id="bEnquire" href="mailto:events@mhouse.cy">Request a proposal &nbsp;&rarr;</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="page-section">
-  <div class="page-section__inner">
-    <div class="sec-label">Perfect for</div>
-    <ul class="amenities">
-      <li>Product launches</li>
-      <li>Fashion events</li>
-      <li>Brand activations</li>
-      <li>Networking events</li>
-      <li>Corporate retreats</li>
-      <li>Team building events</li>
-      <li>Workshops</li>
-      <li>Private dinners</li>
-      <li>Cocktail parties</li>
-      <li>Birthday celebrations</li>
-      <li>Engagement parties</li>
-      <li>Civil ceremonies</li>
-      <li>Wedding celebrations</li>
-      <li>Wellness events</li>
-      <li>Yoga events</li>
-    </ul>
-    <div class="info-grid">
-      <div><div class="info__k">Maximum capacity</div><div class="info__v">Approximately 150 guests, depending on setup</div></div>
-      <div><div class="info__k">Exclusive hire</div><div class="info__v">Minimum of 5 hours</div></div>
-      <div><div class="info__k">Minimum spend</div><div class="info__v">€800, depending on date and requirements</div></div>
-    </div>
-    <p class="note">If the minimum spend is not reached, the difference is charged as the venue hire fee.</p>
-  </div>
-</section>
-
 <section class="page-section page-section--alt">
   <div class="page-section__inner">
-    <div class="sec-label">Open bar packages</div>
-    <h2 class="sec-h">Beer, wine<br><em>and soft drinks.</em></h2>
-    <div class="offer-grid offer-grid--3">
-      <div class="offer"><h3>2 hours</h3><p>Open bar for the first stretch of the evening.</p><span class="offer__price">€27 per person</span></div>
-      <div class="offer"><h3>3 hours</h3><p>Room to settle in, for a longer celebration.</p><span class="offer__price">€34 per person</span></div>
-      <div class="offer"><h3>4 hours</h3><p>The full evening, from arrival to the last toast.</p><span class="offer__price">€39 per person</span></div>
+    <div class="split split--rev">
+      <div class="split__body">
+        <div class="sec-label">Food and drink</div>
+        <h2 class="sec-h">Eat and drink<br><em>beautifully.</em></h2>
+        <p class="sec-txt page-section__lead">From canapés and grazing to a full seated dinner, we offer a wide range of food and catering solutions, tailored to each event. Tell us the mood and the menu, and we will take care of the rest.</p>
+      </div>
+      <div class="split__media"><div class="ph ph--tall" data-ph="Dinner under the stars"></div></div>
     </div>
-    <p class="note">Minimum booking of 40 guests. For smaller groups, drinks are charged per use.</p>
-  </div>
-</section>
-
-<section class="page-section">
-  <div class="page-section__inner">
-    <div class="sec-label">Catering</div>
-    <p class="sec-txt page-section__lead">Our catering can be added to any event, and may also be ordered independently.</p>
-
-    <h3 class="subhead">Sushi selection</h3>
-    <p class="sec-txt">Freshly prepared sushi served as individual pieces. We suggest 10 to 15 pieces per person. Minimum 40 guests.</p>
-    <div class="info-grid">
-      <div><div class="info__k">Rolls and maki</div><div class="info__v">€0.95 each, incl. VAT</div></div>
-      <div><div class="info__k">Nigiri</div><div class="info__v">€1.40 each, incl. VAT</div></div>
-    </div>
-    <ul class="amenities">
-      <li>California salmon</li>
-      <li>California tuna</li>
-      <li>California wakame (vegan)</li>
-      <li>Spicy smoked trout roll</li>
-      <li>Creamy crab roll</li>
-      <li>Creamy duck roll</li>
-      <li>Shrimp roll</li>
-      <li>Salmon maki</li>
-      <li>Smoked trout maki</li>
-      <li>Wakame maki (vegan)</li>
-      <li>Salmon nigiri</li>
-      <li>Ebi shrimp nigiri</li>
-    </ul>
-
-    <h3 class="subhead">Canapés</h3>
-    <p class="sec-txt">A bespoke canapé menu tailored specifically for each event. We suggest 8 to 12 pieces per person. Minimum 40 guests. Pricing is quoted individually based on the selected menu and guest numbers.</p>
-
-    <h3 class="subhead">BBQ buffet</h3>
-    <p class="sec-txt">A relaxed Mediterranean BBQ featuring traditional souvla, fresh salads, homemade dips and fresh bread. Minimum 20 guests. <strong>€17 per person.</strong></p>
-
-    <p class="note"><strong>Catering terms.</strong> Selections must be confirmed no later than 7 days before the event. A 50% deposit is required upon booking. The remaining balance is due 48 hours prior to the event.</p>
-  </div>
-</section>
-
-<section class="page-section">
-  <div class="page-section__inner">
-    <div class="ph ph--wide" data-ph="Dinner under the stars"></div>
   </div>
 </section>
 
 <section class="page-cta">
   <div class="page-cta__inner">
-    <h2 class="page-cta__h">Let us plan your event.</h2>
-    <p class="page-cta__sub">Tell us the date, the numbers and the mood, and we will build the day around the house.</p>
+    <h2 class="page-cta__h">Let us tailor something for you.</h2>
+    <p class="page-cta__sub">Start a conversation and we will build a proposal around your event.</p>
     <a href="mailto:events@mhouse.cy" class="btn-ol btn-ol--light">Enquire about your event &nbsp;&rarr;</a>
   </div>
 </section>
@@ -192,29 +127,23 @@ desc: A unique venue in the heart of Larnaka old town. Mediterranean courtyard, 
   var root = document.querySelector('[data-builder]');
   if(!root) return;
 
-  /* PLACEHOLDER PRICING — replace with the agreed rates.
-     Half day is anchored to the content pack (up to 5 hours, €800 minimum-spend exclusive hire).
-     Full day and all add-on service prices below are INDICATIVE and must be confirmed. */
   var PACKAGES = [
-    { id:'half', name:'Half day', detail:'Up to 5 hours, exclusive use', price:800 },
-    { id:'full', name:'Full day', detail:'A full day, exclusive use',    price:1500 }
+    { id:'half', name:'Half day', detail:'Up to 5 hours, exclusive use' },
+    { id:'full', name:'Full day', detail:'A full day, exclusive use' }
   ];
   var ADDONS = [
-    { id:'photo',  name:'Photography',    price:650, desc:'Coverage of the day, from the first arrivals to the last toast.' },
-    { id:'video',  name:'Videography',    price:950, desc:'A short film of your event, edited and ready to share.' },
-    { id:'design', name:'Graphic design', price:400, desc:'Invitations, menus and signage, designed for the occasion.' },
-    { id:'ent',    name:'Entertainment',  price:750, desc:'A DJ, a band or a performer, arranged around the evening.' }
+    { id:'photo',  name:'Photography',    desc:'Coverage of the day, from the first arrivals to the last toast.' },
+    { id:'video',  name:'Videography',    desc:'A short film of your event, edited and ready to share.' },
+    { id:'design', name:'Graphic design', desc:'Invitations, menus and signage, designed for the occasion.' },
+    { id:'ent',    name:'Entertainment',  desc:'A DJ, a band or a performer, arranged around the evening.' }
   ];
 
   var tiersEl   = document.getElementById('bTiers');
   var addonsEl  = document.getElementById('bAddons');
-  var totalEl   = document.getElementById('bTotal');
   var linesEl   = document.getElementById('bLines');
   var enquireEl = document.getElementById('bEnquire');
   var state = { pkg: PACKAGES[0].id, addons: {} };
   var CHECK = '<svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>';
-  function euro(n){ return '€' + Math.round(n).toLocaleString('en-GB'); }
-  function priceLabel(p){ return p ? euro(p) : 'On request'; }
 
   PACKAGES.forEach(function(p){
     var b = document.createElement('button');
@@ -222,8 +151,7 @@ desc: A unique venue in the heart of Larnaka old town. Mediterranean courtyard, 
     b.className = 'tier__opt' + (p.id === state.pkg ? ' active' : '');
     b.dataset.id = p.id;
     b.innerHTML = '<span class="tier__name">' + p.name + '</span>' +
-                  '<span class="tier__detail">' + p.detail + '</span>' +
-                  '<span class="tier__price">' + (p.price ? 'from ' + euro(p.price) : 'On request') + '</span>';
+                  '<span class="tier__detail">' + p.detail + '</span>';
     b.addEventListener('click', function(){
       state.pkg = p.id;
       Array.prototype.forEach.call(tiersEl.children, function(c){ c.classList.toggle('active', c.dataset.id === p.id); });
@@ -241,8 +169,7 @@ desc: A unique venue in the heart of Larnaka old town. Mediterranean courtyard, 
     row.tabIndex = 0;
     row.innerHTML = '<span class="addon__box">' + CHECK + '</span>' +
                     '<span class="addon__body"><span class="addon__name">' + a.name + '</span>' +
-                    (a.desc ? '<span class="addon__desc">' + a.desc + '</span>' : '') + '</span>' +
-                    '<span class="addon__price">' + priceLabel(a.price) + '</span>';
+                    '<span class="addon__desc">' + a.desc + '</span></span>';
     function toggle(){
       state.addons[a.id] = !state.addons[a.id];
       row.classList.toggle('active', state.addons[a.id]);
@@ -256,27 +183,20 @@ desc: A unique venue in the heart of Larnaka old town. Mediterranean courtyard, 
 
   function render(){
     var pkg = PACKAGES.filter(function(p){ return p.id === state.pkg; })[0];
-    var total = pkg.price || 0;
-    var lines = ['<li><span>' + pkg.name + '</span><span>' + priceLabel(pkg.price) + '</span></li>'];
-    var chosen = [];
-    ADDONS.forEach(function(a){
-      if(state.addons[a.id]){
-        total += (a.price || 0);
-        lines.push('<li><span>' + a.name + '</span><span>' + priceLabel(a.price) + '</span></li>');
-        chosen.push(a.name);
-      }
-    });
-    totalEl.textContent = euro(total);
+    var chosen = ADDONS.filter(function(a){ return state.addons[a.id]; }).map(function(a){ return a.name; });
+    var lines = ['<li>' + pkg.name + '</li>'];
+    if(chosen.length){ chosen.forEach(function(n){ lines.push('<li>' + n + '</li>'); }); }
+    else { lines.push('<li class="muted">No added services yet</li>'); }
     linesEl.innerHTML = lines.join('');
     var mail = [
       'Hello M House,', '',
       'I would like to enquire about an event.', '',
-      'Package: ' + pkg.name,
-      'Add-ons: ' + (chosen.length ? chosen.join(', ') : 'None'),
-      'Indicative total: ' + euro(total), '',
+      'Event: ' + pkg.name,
+      'Interested in: ' + (chosen.length ? chosen.join(', ') : 'To discuss'), '',
       'My preferred date is:',
-      'Approximate guests:', '',
-      'Thank you.'
+      'Approximate guests:',
+      'A little about the event:', '',
+      'Please send a proposal. Thank you.'
     ].join('\n');
     enquireEl.href = 'mailto:events@mhouse.cy?subject=' + encodeURIComponent('Event enquiry') + '&body=' + encodeURIComponent(mail);
   }
