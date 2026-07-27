@@ -5,16 +5,23 @@
   var splash = document.getElementById('splash');
   var site   = document.getElementById('site');
   var enterBtn = document.getElementById('enterBtn');
+  var splashGo = document.getElementById('splashGo');
+  function enterSite(){
+    if (!splash) return;
+    splash.style.transition = 'opacity 0.55s ease';
+    splash.style.opacity = '0';
+    setTimeout(function(){
+      splash.style.display = 'none';
+      if (site) site.classList.add('on');
+      window.scrollTo(0,0);
+    }, 550);
+  }
   if (enterBtn) {
-    enterBtn.addEventListener('click', function(){
-      splash.style.transition = 'opacity 0.55s ease';
-      splash.style.opacity = '0';
-      setTimeout(function(){
-        splash.style.display = 'none';
-        if (site) site.classList.add('on');
-        window.scrollTo(0,0);
-      }, 550);
-    });
+    enterBtn.addEventListener('click', enterSite);
+    if (splashGo) {
+      splashGo.addEventListener('click', enterSite);
+      splashGo.addEventListener('keydown', function(e){ if (e.key === ' ' || e.key === 'Enter'){ e.preventDefault(); enterSite(); } });
+    }
   } else if (site) {
     site.classList.add('on');
   }

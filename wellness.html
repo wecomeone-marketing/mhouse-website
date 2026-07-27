@@ -118,7 +118,7 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
 .footer__logo{height:120px}/* 4) Larger,more readable description text */
 .about__txt,.sec-txt,.aperitivo__txt,.check__txt{font-size:1.0625rem}.fac__txt,.sc__desc{font-size:1rem}.footer__tag,.footer__link,.rc__from{font-size:0.9375rem}/* ── CLIENT REVISIONS 2 (added) ── */
 /* 1) Splash "Gather · Swim · Stay · Work": slightly bigger + white; Enter button lower */
-.splash__tag{font-size:0.75rem;color:var(--w);font-weight:400}.splash__enter{position:absolute;left:50%;bottom:8.5rem;transform:translateX(-50%);margin-top:0;z-index:3}.splash__logo{height:clamp(160px,26vw,260px)}.splash__c{transform:translateY(-2.5rem)}/* Nav palm logo: smaller so it does not touch the top/bottom of the bar */
+.splash__tag{font-size:0.75rem;color:var(--w);font-weight:400}.splash__enter{position:absolute;left:50%;bottom:8.5rem;transform:translateX(-50%);margin-top:0;z-index:3}.splash__logo{height:clamp(160px,26vw,260px)}.splash__c{transform:translateY(-2.5rem)}.splash__go{display:flex;flex-direction:column;align-items:center;cursor:pointer;transition:opacity .3s}.splash__go:hover{opacity:.85}/* Nav palm logo: smaller so it does not touch the top/bottom of the bar */
 .nav__logo-white,.nav__logo-dark{height:52px}/* 2) Footer tagline + address: white for readability */
 .footer__tag{color:var(--w)}/* 3) Spaces cards ("More than a hotel"): info shown by default,white & bolder */
 .sc__word{color:var(--w);font-weight:700}.sc__desc{color:var(--w);font-weight:500;max-height:none}.sc:hover .sc__desc{max-height:none}.sc__link{opacity:1}/* 4) Room cards ("Five Rooms"): size/guests meta in dark brown */
@@ -404,16 +404,23 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
   var splash = document.getElementById('splash');
   var site   = document.getElementById('site');
   var enterBtn = document.getElementById('enterBtn');
+  var splashGo = document.getElementById('splashGo');
+  function enterSite(){
+    if (!splash) return;
+    splash.style.transition = 'opacity 0.55s ease';
+    splash.style.opacity = '0';
+    setTimeout(function(){
+      splash.style.display = 'none';
+      if (site) site.classList.add('on');
+      window.scrollTo(0,0);
+    }, 550);
+  }
   if (enterBtn) {
-    enterBtn.addEventListener('click', function(){
-      splash.style.transition = 'opacity 0.55s ease';
-      splash.style.opacity = '0';
-      setTimeout(function(){
-        splash.style.display = 'none';
-        if (site) site.classList.add('on');
-        window.scrollTo(0,0);
-      }, 550);
-    });
+    enterBtn.addEventListener('click', enterSite);
+    if (splashGo) {
+      splashGo.addEventListener('click', enterSite);
+      splashGo.addEventListener('keydown', function(e){ if (e.key === ' ' || e.key === 'Enter'){ e.preventDefault(); enterSite(); } });
+    }
   } else if (site) {
     site.classList.add('on');
   }
