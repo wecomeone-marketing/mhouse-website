@@ -60,7 +60,7 @@ CSS/logo live in one place. See README → Build.
 
 ## 3. Legal
 
-- ☐ Privacy Policy content (from client's legal advisor — due ~5 days before launch)
+- ☑ Privacy Policy — received and built (effective 24 July 2026)
 - ☑ Terms of Use — received and built (effective 24 July 2026)
 
 ---
