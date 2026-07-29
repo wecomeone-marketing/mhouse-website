@@ -29,11 +29,13 @@ When replacing an image:
 
 **Photography awaited from client:** room photography (all 5 rooms), events / courtyard photography.
 
-**Sub-page image placeholders:** `gather`, `gatherings`, `swim` (and future pages) use
-labelled placeholder blocks — a photo-style hero (`.page-hero__media`) and image slots
-(`.ph`), each captioned via `data-ph` with the intended shot (e.g. "The saltwater pool").
-To go live: replace each `.ph` block with an `<img>`, and swap the hero's
-`.page-hero__media` gradient for the real photo. The captions double as the shot list.
+**Sub-page image placeholders — now filled with TEMPORARY stock (2026-07-29):** every
+sub-page hero (`.page-hero__media`) and image slot (`.ph`) now carries a fitting
+free-licence Unsplash photo, added for the client review via the `.is-photo` class + an
+inline `background-image` (files in `assets/ph/`). The original shot intent is still in
+each `data-ph` caption (the shot list). **To go live:** drop the real photo in at the
+matching `assets/ph/<page>-<n>.jpg` filename, or remove `is-photo` to fall back to the
+captioned gradient.
 
 ---
 
