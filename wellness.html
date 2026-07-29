@@ -170,6 +170,9 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
 .ph::after{content:attr(data-ph);margin:0 0 1rem 1.25rem;font-family:var(--fb);font-size:0.5625rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--ta)}
 .ph--tall{min-height:480px}
 .ph--wide{min-height:0;aspect-ratio:16/6}
+/* Temporary review photos: show the image, hide the placeholder caption */
+.page-hero__media.is-photo,.ph.is-photo{background-size:cover;background-position:center;background-repeat:no-repeat}
+.page-hero__media.is-photo::after,.ph.is-photo::after{content:none}
 /* Editorial split: image + text, alternating */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center}
 .split--rev .split__media{order:2}
@@ -300,7 +303,7 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
 
 
 <header class="page-hero">
-  <div class="page-hero__media" data-ph="Hero: the pool at first light"></div>
+  <div class="page-hero__media is-photo" data-ph="Hero: the pool at first light" style="background-image:url('assets/ph/wellness-1.jpg')"></div>
   <div class="page-hero__scrim"></div>
   <div class="page-hero__inner">
     <p class="page-hero__eyebrow">Wellness and recovery</p>
@@ -317,7 +320,7 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
         <h2 class="sec-h">Rest is part of<br><em>the same idea.</em></h2>
         <p class="sec-txt page-section__lead">M House has always been about slowing down as much as coming together. A dedicated wellness and recovery offering is being shaped now, built around the courtyard, the saltwater pool and the quiet corners of the house. We will share the details here as soon as they are ready.</p>
       </div>
-      <div class="split__media"><div class="ph ph--tall" data-ph="The pool, early morning"></div></div>
+      <div class="split__media"><div class="ph ph--tall is-photo" data-ph="The pool, early morning" style="background-image:url('assets/ph/wellness-2.jpg')"></div></div>
     </div>
   </div>
 </section>

@@ -170,6 +170,9 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
 .ph::after{content:attr(data-ph);margin:0 0 1rem 1.25rem;font-family:var(--fb);font-size:0.5625rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--ta)}
 .ph--tall{min-height:480px}
 .ph--wide{min-height:0;aspect-ratio:16/6}
+/* Temporary review photos: show the image, hide the placeholder caption */
+.page-hero__media.is-photo,.ph.is-photo{background-size:cover;background-position:center;background-repeat:no-repeat}
+.page-hero__media.is-photo::after,.ph.is-photo::after{content:none}
 /* Editorial split: image + text, alternating */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center}
 .split--rev .split__media{order:2}
@@ -300,7 +303,7 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
 
 
 <header class="page-hero">
-  <div class="page-hero__media" data-ph="Hero: the entrance on Stadiou"></div>
+  <div class="page-hero__media is-photo" data-ph="Hero: the entrance on Stadiou" style="background-image:url('assets/ph/contact-1.jpg')"></div>
   <div class="page-hero__scrim"></div>
   <div class="page-hero__inner">
     <p class="page-hero__eyebrow">Contact</p>
@@ -369,7 +372,7 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
 
 <section class="page-section">
   <div class="page-section__inner">
-    <div class="ph ph--wide" data-ph="The house from Stadiou"></div>
+    <div class="ph ph--wide is-photo" data-ph="The house from Stadiou" style="background-image:url('assets/ph/contact-2.jpg')"></div>
   </div>
 </section>
 

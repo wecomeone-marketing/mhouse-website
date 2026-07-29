@@ -27,6 +27,9 @@
 
 ## Changelog
 
+### 2026-07-29 — Temporary review photos on all sub-pages
+At the client’s request, filled every image placeholder on the sub-pages (Gather, Swim, Stay, Work, Events, Wellness, Contact — 42 in total, including the five room galleries on Stay) with fitting free-licence stock photos, so Christian can review the site with real imagery instead of gradients. Each placeholder’s built-in caption (`data-ph`) was used as the search intent against Unsplash; images are optimised with sharp, self-hosted under `assets/ph/` (~2.9 MB), and shown via a new `.is-photo` class that also hides the caption label. **These are temporary** and get replaced by the real photography before launch. The homepage was left untouched.
+
 ### 2026-07-27 — Owner feedback applied to Gather, Work and Events
 Christian reviewed the sub-pages and sent feedback. Applied and deployed (commit `e0a2602`):
 

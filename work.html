@@ -170,6 +170,9 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
 .ph::after{content:attr(data-ph);margin:0 0 1rem 1.25rem;font-family:var(--fb);font-size:0.5625rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--ta)}
 .ph--tall{min-height:480px}
 .ph--wide{min-height:0;aspect-ratio:16/6}
+/* Temporary review photos: show the image, hide the placeholder caption */
+.page-hero__media.is-photo,.ph.is-photo{background-size:cover;background-position:center;background-repeat:no-repeat}
+.page-hero__media.is-photo::after,.ph.is-photo::after{content:none}
 /* Editorial split: image + text, alternating */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center}
 .split--rev .split__media{order:2}
@@ -300,7 +303,7 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
 
 
 <header class="page-hero">
-  <div class="page-hero__media" data-ph="Hero: the work lounge"></div>
+  <div class="page-hero__media is-photo" data-ph="Hero: the work lounge" style="background-image:url('assets/ph/work-1.jpg')"></div>
   <div class="page-hero__scrim"></div>
   <div class="page-hero__inner">
     <p class="page-hero__eyebrow">Work</p>
@@ -317,7 +320,7 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
         <h2 class="sec-h">Not a desk farm,<br><em>a house that works.</em></h2>
         <p class="sec-txt page-section__lead">Unlike traditional coworking spaces, members enjoy a hospitality-driven environment that combines productivity with lifestyle, community and connection. Work through the morning, take a break in the courtyard, and settle back in when you are ready.</p>
       </div>
-      <div class="split__media"><div class="ph ph--tall" data-ph="Desks in the lounge"></div></div>
+      <div class="split__media"><div class="ph ph--tall is-photo" data-ph="Desks in the lounge" style="background-image:url('assets/ph/work-2.jpg')"></div></div>
     </div>
   </div>
 </section>
@@ -348,7 +351,7 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
         <p class="sec-txt page-section__lead">For teams and individuals who need their own space, M House offers private offices within the property, with the same hospitality and setting as the lounge. Available on a longer-term basis, tailored to how you work.</p>
         <a href="mailto:hello@mhouse.cy" class="btn-ol" style="margin-top:2rem">Enquire about a private office &nbsp;&rarr;</a>
       </div>
-      <div class="split__media"><div class="ph ph--tall" data-ph="A private office"></div></div>
+      <div class="split__media"><div class="ph ph--tall is-photo" data-ph="A private office" style="background-image:url('assets/ph/work-3.jpg')"></div></div>
     </div>
   </div>
 </section>

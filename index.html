@@ -170,6 +170,9 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
 .ph::after{content:attr(data-ph);margin:0 0 1rem 1.25rem;font-family:var(--fb);font-size:0.5625rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--ta)}
 .ph--tall{min-height:480px}
 .ph--wide{min-height:0;aspect-ratio:16/6}
+/* Temporary review photos: show the image, hide the placeholder caption */
+.page-hero__media.is-photo,.ph.is-photo{background-size:cover;background-position:center;background-repeat:no-repeat}
+.page-hero__media.is-photo::after,.ph.is-photo::after{content:none}
 /* Editorial split: image + text, alternating */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center}
 .split--rev .split__media{order:2}

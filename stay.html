@@ -170,6 +170,9 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
 .ph::after{content:attr(data-ph);margin:0 0 1rem 1.25rem;font-family:var(--fb);font-size:0.5625rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--ta)}
 .ph--tall{min-height:480px}
 .ph--wide{min-height:0;aspect-ratio:16/6}
+/* Temporary review photos: show the image, hide the placeholder caption */
+.page-hero__media.is-photo,.ph.is-photo{background-size:cover;background-position:center;background-repeat:no-repeat}
+.page-hero__media.is-photo::after,.ph.is-photo::after{content:none}
 /* Editorial split: image + text, alternating */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center}
 .split--rev .split__media{order:2}
@@ -300,7 +303,7 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
 
 
 <header class="page-hero">
-  <div class="page-hero__media" data-ph="Hero: The O Room terrace"></div>
+  <div class="page-hero__media is-photo" data-ph="Hero: The O Room terrace" style="background-image:url('assets/ph/stay-1.jpg')"></div>
   <div class="page-hero__scrim"></div>
   <div class="page-hero__inner">
     <p class="page-hero__eyebrow">Stay</p>
@@ -317,7 +320,7 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
         <h2 class="sec-h">A room here is<br><em>a way in.</em></h2>
         <p class="sec-txt page-section__lead">Each of the five rooms is individually designed, and each one opens onto the same house: a Mediterranean courtyard, a saltwater pool and a daily aperitivo by the water. Come for a night or a season. You are never far from the middle of things.</p>
       </div>
-      <div class="split__media"><div class="ph ph--tall" data-ph="The Bungalow in the courtyard"></div></div>
+      <div class="split__media"><div class="ph ph--tall is-photo" data-ph="The Bungalow in the courtyard" style="background-image:url('assets/ph/stay-2.jpg')"></div></div>
     </div>
   </div>
 </section>
@@ -330,11 +333,11 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
       <div class="split__media">
         <div class="gallery" data-gallery>
           <div class="gallery__track">
-            <div class="gallery__slide"><div class="ph" data-ph="Shorty's Room, the room"></div></div>
-            <div class="gallery__slide"><div class="ph" data-ph="Shorty's Room, the bed"></div></div>
-            <div class="gallery__slide"><div class="ph" data-ph="Shorty's Room, bathroom"></div></div>
-            <div class="gallery__slide"><div class="ph" data-ph="Shorty's Room, detail"></div></div>
-            <div class="gallery__slide"><div class="ph" data-ph="Shorty's Room, looking out"></div></div>
+            <div class="gallery__slide"><div class="ph is-photo" data-ph="Shorty's Room, the room" style="background-image:url('assets/ph/stay-3.jpg')"></div></div>
+            <div class="gallery__slide"><div class="ph is-photo" data-ph="Shorty's Room, the bed" style="background-image:url('assets/ph/stay-4.jpg')"></div></div>
+            <div class="gallery__slide"><div class="ph is-photo" data-ph="Shorty's Room, bathroom" style="background-image:url('assets/ph/stay-5.jpg')"></div></div>
+            <div class="gallery__slide"><div class="ph is-photo" data-ph="Shorty's Room, detail" style="background-image:url('assets/ph/stay-6.jpg')"></div></div>
+            <div class="gallery__slide"><div class="ph is-photo" data-ph="Shorty's Room, looking out" style="background-image:url('assets/ph/stay-7.jpg')"></div></div>
           </div>
           <button class="gallery__btn gallery__btn--prev" type="button" aria-label="Previous image"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
           <button class="gallery__btn gallery__btn--next" type="button" aria-label="Next image"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
@@ -353,11 +356,11 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
       <div class="split__media">
         <div class="gallery" data-gallery>
           <div class="gallery__track">
-            <div class="gallery__slide"><div class="ph" data-ph="Duchess Room, the room"></div></div>
-            <div class="gallery__slide"><div class="ph" data-ph="Duchess Room, the bed"></div></div>
-            <div class="gallery__slide"><div class="ph" data-ph="Duchess Room, courtyard view"></div></div>
-            <div class="gallery__slide"><div class="ph" data-ph="Duchess Room, bathroom"></div></div>
-            <div class="gallery__slide"><div class="ph" data-ph="Duchess Room, detail"></div></div>
+            <div class="gallery__slide"><div class="ph is-photo" data-ph="Duchess Room, the room" style="background-image:url('assets/ph/stay-8.jpg')"></div></div>
+            <div class="gallery__slide"><div class="ph is-photo" data-ph="Duchess Room, the bed" style="background-image:url('assets/ph/stay-9.jpg')"></div></div>
+            <div class="gallery__slide"><div class="ph is-photo" data-ph="Duchess Room, courtyard view" style="background-image:url('assets/ph/stay-10.jpg')"></div></div>
+            <div class="gallery__slide"><div class="ph is-photo" data-ph="Duchess Room, bathroom" style="background-image:url('assets/ph/stay-11.jpg')"></div></div>
+            <div class="gallery__slide"><div class="ph is-photo" data-ph="Duchess Room, detail" style="background-image:url('assets/ph/stay-12.jpg')"></div></div>
           </div>
           <button class="gallery__btn gallery__btn--prev" type="button" aria-label="Previous image"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
           <button class="gallery__btn gallery__btn--next" type="button" aria-label="Next image"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
@@ -376,11 +379,11 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
       <div class="split__media">
         <div class="gallery" data-gallery>
           <div class="gallery__track">
-            <div class="gallery__slide"><div class="ph" data-ph="Governors Room, the room"></div></div>
-            <div class="gallery__slide"><div class="ph" data-ph="Governors Room, the bed"></div></div>
-            <div class="gallery__slide"><div class="ph" data-ph="Governors Room, private balcony"></div></div>
-            <div class="gallery__slide"><div class="ph" data-ph="Governors Room, bathroom"></div></div>
-            <div class="gallery__slide"><div class="ph" data-ph="Governors Room, detail"></div></div>
+            <div class="gallery__slide"><div class="ph is-photo" data-ph="Governors Room, the room" style="background-image:url('assets/ph/stay-13.jpg')"></div></div>
+            <div class="gallery__slide"><div class="ph is-photo" data-ph="Governors Room, the bed" style="background-image:url('assets/ph/stay-14.jpg')"></div></div>
+            <div class="gallery__slide"><div class="ph is-photo" data-ph="Governors Room, private balcony" style="background-image:url('assets/ph/stay-15.jpg')"></div></div>
+            <div class="gallery__slide"><div class="ph is-photo" data-ph="Governors Room, bathroom" style="background-image:url('assets/ph/stay-16.jpg')"></div></div>
+            <div class="gallery__slide"><div class="ph is-photo" data-ph="Governors Room, detail" style="background-image:url('assets/ph/stay-17.jpg')"></div></div>
           </div>
           <button class="gallery__btn gallery__btn--prev" type="button" aria-label="Previous image"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
           <button class="gallery__btn gallery__btn--next" type="button" aria-label="Next image"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
@@ -399,11 +402,11 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
       <div class="split__media">
         <div class="gallery" data-gallery>
           <div class="gallery__track">
-            <div class="gallery__slide"><div class="ph" data-ph="The O Room, the room"></div></div>
-            <div class="gallery__slide"><div class="ph" data-ph="The O Room, the bed"></div></div>
-            <div class="gallery__slide"><div class="ph" data-ph="The O Room, private terrace"></div></div>
-            <div class="gallery__slide"><div class="ph" data-ph="The O Room, bathroom"></div></div>
-            <div class="gallery__slide"><div class="ph" data-ph="The O Room, detail"></div></div>
+            <div class="gallery__slide"><div class="ph is-photo" data-ph="The O Room, the room" style="background-image:url('assets/ph/stay-18.jpg')"></div></div>
+            <div class="gallery__slide"><div class="ph is-photo" data-ph="The O Room, the bed" style="background-image:url('assets/ph/stay-19.jpg')"></div></div>
+            <div class="gallery__slide"><div class="ph is-photo" data-ph="The O Room, private terrace" style="background-image:url('assets/ph/stay-20.jpg')"></div></div>
+            <div class="gallery__slide"><div class="ph is-photo" data-ph="The O Room, bathroom" style="background-image:url('assets/ph/stay-21.jpg')"></div></div>
+            <div class="gallery__slide"><div class="ph is-photo" data-ph="The O Room, detail" style="background-image:url('assets/ph/stay-22.jpg')"></div></div>
           </div>
           <button class="gallery__btn gallery__btn--prev" type="button" aria-label="Previous image"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
           <button class="gallery__btn gallery__btn--next" type="button" aria-label="Next image"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
@@ -422,11 +425,11 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
       <div class="split__media">
         <div class="gallery" data-gallery>
           <div class="gallery__track">
-            <div class="gallery__slide"><div class="ph" data-ph="The Bungalow, in the courtyard"></div></div>
-            <div class="gallery__slide"><div class="ph" data-ph="The Bungalow, the room"></div></div>
-            <div class="gallery__slide"><div class="ph" data-ph="The Bungalow, the bed"></div></div>
-            <div class="gallery__slide"><div class="ph" data-ph="The Bungalow, bathroom"></div></div>
-            <div class="gallery__slide"><div class="ph" data-ph="The Bungalow, detail"></div></div>
+            <div class="gallery__slide"><div class="ph is-photo" data-ph="The Bungalow, in the courtyard" style="background-image:url('assets/ph/stay-23.jpg')"></div></div>
+            <div class="gallery__slide"><div class="ph is-photo" data-ph="The Bungalow, the room" style="background-image:url('assets/ph/stay-24.jpg')"></div></div>
+            <div class="gallery__slide"><div class="ph is-photo" data-ph="The Bungalow, the bed" style="background-image:url('assets/ph/stay-25.jpg')"></div></div>
+            <div class="gallery__slide"><div class="ph is-photo" data-ph="The Bungalow, bathroom" style="background-image:url('assets/ph/stay-26.jpg')"></div></div>
+            <div class="gallery__slide"><div class="ph is-photo" data-ph="The Bungalow, detail" style="background-image:url('assets/ph/stay-27.jpg')"></div></div>
           </div>
           <button class="gallery__btn gallery__btn--prev" type="button" aria-label="Previous image"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
           <button class="gallery__btn gallery__btn--next" type="button" aria-label="Next image"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
