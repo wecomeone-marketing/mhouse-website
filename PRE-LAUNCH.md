@@ -69,10 +69,11 @@ CSS/logo live in one place. See README → Build.
 
 ## 4. Integrations
 
-- ☐ **Smoobu** booking widget (embed code from client) — for `stay.html`
+- ◐ **Smoobu** booking widget for `stay.html` (room bookings). Requirements email sent to Christian: account and plan, five rooms configured, dashboard access or embed code, and the payment choice (Stripe vs pay on arrival). Waiting on access/embed plus the payment decision.
 - ☐ **Stripe** (account + keys from client)
 - ☐ **Contact form + reservation form backend** — **decided:** production runs a small Node/Express server on Scala (see §7) exposing a `/api/contact` (and reservation-enquiry) endpoint that calls **Resend server-side**. The Resend key stays a **server env var**, never in this public repo. Both the homepage "Check availability" form and the contact-page form (currently `onsubmit="return false"`) route through it. Add per-IP rate limiting + a captcha (e.g. Cloudflare Turnstile) for spam protection. **Dependency:** to send *from* `@mhouse.cy`, Resend needs its domain verified via DNS records on `mhouse.cy` (Cloudflare) — needs DNS access, otherwise send from an agency-controlled domain.
-- ☐ Coworking booking platform (TBD by client)
+- ◐ **Workspace booking platform** for the Work lounge and private offices. Christian is evaluating **OfficeRnD** (taking a demo), not yet confirmed. Once a platform is chosen, the Work page CTAs point at its booking or member registration link, or an embed if provided.
+- ◐ **Call to action buttons across the site.** Wiring each page's primary button to its destination: rooms to Smoobu, workspace to the chosen platform, Events and general enquiries to email or the contact form, Swim day passes to WhatsApp. Waiting on confirmed contact points (booking and enquiry emails, WhatsApp or phone, day pass rate, how gatherings get booked) and a decision on a permanent "Book now" nav button.
 - ☐ Google Analytics 4
 - ☐ Meta Pixel
 - ☐ Google Maps embed (contact page)
@@ -102,12 +103,12 @@ CSS/logo live in one place. See README → Build.
   enquiry). This **conflicts with the services agreement** ("display pricing dynamically");
   Andreas to reconcile with Christian. If prices should return, re-add them to the
   PACKAGES/ADDONS config in `_src/pages/events.html`.
-- ☐ **Private office pricing** — private offices are highlighted on the Work page but no
-  price was supplied (shown as "on request"). Ask the client.
+- ◐ **Private office / workspace pricing.** Tied to the workspace platform decision (OfficeRnD demo pending). Pricing will come from the chosen platform rather than a hard coded figure; the Work page shows "on request" until then.
 - ☐ **Pool day pass rates** — not included in the client content pack. The Swim page currently routes to WhatsApp for rates instead of quoting a price. Ask the client.
-- ☐ Smoobu embed code
-- ☐ Stripe credentials
-- ☐ Coworking platform decision
+- ◐ Smoobu account access or embed code (requirements email sent)
+- ☐ Stripe credentials (only if online card payment is chosen for room bookings)
+- ◐ Workspace platform decision (evaluating OfficeRnD via a demo)
+- ◐ Confirmed contact points for the CTA buttons: booking and enquiry email or emails, WhatsApp or phone number, and how gatherings get booked
 - ☐ Room photography (5 rooms)
 - ☐ Events / courtyard photography
 - ☐ Social media handles for footer links

@@ -19,6 +19,7 @@
 
 ## Open work
 
+- **🔨 In progress: bookings and CTAs.** Client approved moving to live bookings. Rooms go through **Smoobu**; the Work lounge and private offices will use a separate **workspace platform that is still TBD** (Christian is taking an **OfficeRnD** demo to evaluate, not yet confirmed). Call to action buttons are being wired page by page. Requirements email sent to Christian covering Smoobu setup, the payment choice, and the CTA destinations. Waiting on: Smoobu access or embed code, the payment decision (Stripe vs pay on arrival), and confirmed contact points (booking and enquiry emails, WhatsApp or phone, day pass rate, how gatherings get booked). See `PRE-LAUNCH.md` §4 and §6.
 - **⚠️ Events builder vs. services agreement (needs Christian's decision).** The signed services agreement said the event builder should "display pricing dynamically." Christian's review feedback said the opposite — show no prices. Reconciled for now by making the builder a price-free enquiry selector; the pricing data is preserved in `CONTENT.md` for a quick revert. Andreas to square this with Christian.
 - **Client-blocked content:** Wellness & Recovery copy (only the section name supplied), pool day-pass rates, private office pricing, Smoobu embed, Stripe keys, coworking-platform decision, room + courtyard photography, social handles, real guest reviews. Full list in `PRE-LAUNCH.md` §6.
 - **Not yet started:** enquiry-form backend (Node/Express on Scala + Resend), SEO/sharing pass (meta titles, Open Graph, schema, sitemap, favicon, lift the robots block). See `PRE-LAUNCH.md` §4–5, §7.
@@ -26,6 +27,9 @@
 ---
 
 ## Changelog
+
+### 2026-08-03 — Bookings and CTAs kicked off
+Client is happy with the review build and approved moving to live bookings. Rooms will run through **Smoobu**; the Work lounge and private offices will use a separate workspace platform that Christian is still evaluating (taking an **OfficeRnD** demo, not yet confirmed). Sent Christian a requirements email covering Smoobu setup (account and plan, five rooms configured, dashboard access or embed code, payment choice of Stripe vs pay on arrival) and the call to action routing across every page. Now waiting on his answers and the Smoobu access. Logged Smoobu, OfficeRnD (workspace) and CTAs as in progress in `PRE-LAUNCH.md` §4 and §6.
 
 ### 2026-07-29 — Temporary review photos on all sub-pages
 At the client’s request, filled every image placeholder on the sub-pages (Gather, Swim, Stay, Work, Events, Wellness, Contact — 42 in total, including the five room galleries on Stay) with fitting free-licence stock photos, so Christian can review the site with real imagery instead of gradients. Each placeholder’s built-in caption (`data-ph`) was used as the search intent against Unsplash; images are optimised with sharp, self-hosted under `assets/ph/` (~2.9 MB), and shown via a new `.is-photo` class that also hides the caption label. **These are temporary** and get replaced by the real photography before launch. The homepage was left untouched.
