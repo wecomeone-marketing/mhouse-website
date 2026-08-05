@@ -28,6 +28,9 @@
 
 ## Changelog
 
+### 2026-08-03 — WhatsApp booking buttons live on Swim and Gather
+Wired the two CTAs that only needed the WhatsApp number. Swim: the "Reserve on WhatsApp" button now carries a prefilled day pass message, and the displayed number was tidied to +357 97 444085. Gather: added a "Book a gathering on WhatsApp" button under the gatherings list, and switched the footer CTA from a mailto to "Message us on WhatsApp" (both prefilled). All point at `wa.me/35797444085`. Deployed and verified live. Rooms and the Book Now button still wait on the Smoobu embed or booking links.
+
 ### 2026-08-03 — Christian's Smoobu details and CTA answers received
 Christian replied to the requirements email. Smoobu account is active; he sent the accommodation ID and the five room IDs plus the channel IDs (held for the integration, not committed to this public repo). Confirmed: **Option A** instant online booking with **Stripe**, and the existing cancellation policy on all room bookings. CTA routing confirmed: rooms to Smoobu, Swim day passes and gatherings via WhatsApp, Events keeps "Request a Proposal", general enquiries to hello@mhouse.cy, and yes to a permanent **Book Now** button (placement left to us: top nav on every page plus below the homepage hero). Still needed before we can wire it up: Smoobu **dashboard access or the Booking Tool embed code**, Stripe **connected inside Smoobu** on their side, and the **WhatsApp number**. Reply prepared confirming the per room vs whole villa booking interpretation and asking for the Smoobu access or embed. WhatsApp number since received (**+357 97 444085**), so the Swim day passes and gatherings buttons are unblocked.
 
