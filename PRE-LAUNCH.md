@@ -69,11 +69,11 @@ CSS/logo live in one place. See README → Build.
 
 ## 4. Integrations
 
-- ◐ **Smoobu** booking widget for `stay.html` (room bookings). Requirements email sent to Christian: account and plan, five rooms configured, dashboard access or embed code, and the payment choice (Stripe vs pay on arrival). Waiting on access/embed plus the payment decision.
+- ◐ **Smoobu** booking widget for `stay.html` (room bookings). Confirmed by Christian: **Option A**, instant online booking with **Stripe**, and the existing cancellation policy on all room bookings. Account plus five room IDs received (held for the integration, kept out of this public file). Waiting on Smoobu **dashboard access or the Booking Tool embed code**, and Stripe **connected inside Smoobu** on the client side (no Stripe keys needed by us). Plan: per room booking on each room, whole villa search on the homepage and Stay overview (interpretation to confirm with Christian).
 - ☐ **Stripe** (account + keys from client)
 - ☐ **Contact form + reservation form backend** — **decided:** production runs a small Node/Express server on Scala (see §7) exposing a `/api/contact` (and reservation-enquiry) endpoint that calls **Resend server-side**. The Resend key stays a **server env var**, never in this public repo. Both the homepage "Check availability" form and the contact-page form (currently `onsubmit="return false"`) route through it. Add per-IP rate limiting + a captcha (e.g. Cloudflare Turnstile) for spam protection. **Dependency:** to send *from* `@mhouse.cy`, Resend needs its domain verified via DNS records on `mhouse.cy` (Cloudflare) — needs DNS access, otherwise send from an agency-controlled domain.
 - ◐ **Workspace booking platform** for the Work lounge and private offices. Christian is evaluating **OfficeRnD** (taking a demo), not yet confirmed. Once a platform is chosen, the Work page CTAs point at its booking or member registration link, or an embed if provided.
-- ◐ **Call to action buttons across the site.** Wiring each page's primary button to its destination: rooms to Smoobu, workspace to the chosen platform, Events and general enquiries to email or the contact form, Swim day passes to WhatsApp. Waiting on confirmed contact points (booking and enquiry emails, WhatsApp or phone, day pass rate, how gatherings get booked) and a decision on a permanent "Book now" nav button.
+- ◐ **Call to action buttons across the site.** Routing confirmed by Christian: rooms to the Smoobu booking tool, Work lounge and private offices stay on the enquiry button for now, Swim day passes and gatherings via **WhatsApp**, Events keeps "Request a Proposal", general enquiries to **hello@mhouse.cy**, and a permanent **Book Now** button in the top nav on every page plus below the homepage hero. Waiting on the **WhatsApp number** (day passes and gatherings) and the Smoobu booking link or embed to wire the room and Book Now buttons.
 - ☐ Google Analytics 4
 - ☐ Meta Pixel
 - ☐ Google Maps embed (contact page)
@@ -105,10 +105,10 @@ CSS/logo live in one place. See README → Build.
   PACKAGES/ADDONS config in `_src/pages/events.html`.
 - ◐ **Private office / workspace pricing.** Tied to the workspace platform decision (OfficeRnD demo pending). Pricing will come from the chosen platform rather than a hard coded figure; the Work page shows "on request" until then.
 - ☐ **Pool day pass rates** — not included in the client content pack. The Swim page currently routes to WhatsApp for rates instead of quoting a price. Ask the client.
-- ◐ Smoobu account access or embed code (requirements email sent)
-- ☐ Stripe credentials (only if online card payment is chosen for room bookings)
-- ◐ Workspace platform decision (evaluating OfficeRnD via a demo)
-- ◐ Confirmed contact points for the CTA buttons: booking and enquiry email or emails, WhatsApp or phone number, and how gatherings get booked
+- ◐ Smoobu dashboard access or Booking Tool embed code (account and room IDs received; Christian to grant access or send the embed)
+- ◐ Stripe connected inside Smoobu on the client side (Option A chosen; no Stripe keys needed by us)
+- ◐ Workspace platform decision (evaluating OfficeRnD, final demo pending)
+- ◐ WhatsApp number for the Swim day passes and gatherings buttons (general enquiries confirmed as hello@mhouse.cy)
 - ☐ Room photography (5 rooms)
 - ☐ Events / courtyard photography
 - ☐ Social media handles for footer links
