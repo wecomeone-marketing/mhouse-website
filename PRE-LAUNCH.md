@@ -69,7 +69,7 @@ CSS/logo live in one place. See README → Build.
 
 ## 4. Integrations
 
-- ◐ **Smoobu** booking widget for `stay.html` (room bookings). Confirmed by Christian: **Option A**, instant online booking with **Stripe**, and the existing cancellation policy on all room bookings. Account plus five room IDs received (held for the integration, kept out of this public file). Waiting on Smoobu **dashboard access or the Booking Tool embed code**, and Stripe **connected inside Smoobu** on the client side (no Stripe keys needed by us). Plan: per room booking on each room, whole villa search on the homepage and Stay overview (interpretation to confirm with Christian).
+- ◐ **Smoobu** booking widget for `stay.html` (room bookings). Confirmed by Christian: **Option A**, instant online booking with **Stripe**, and the existing cancellation policy on all room bookings. Account plus five room IDs received (held for the integration, kept out of this public file). Stripe is **already connected inside Smoobu** (the current Lovable site already books through it), so payment is sorted. Now waiting only on Smoobu **dashboard access or the Booking Tool embed code**. Plan: per room booking on each room, whole villa search on the homepage and Stay overview (interpretation to confirm with Christian).
 - ☐ **Stripe** (account + keys from client)
 - ☐ **Contact form + reservation form backend** — **decided:** production runs a small Node/Express server on Scala (see §7) exposing a `/api/contact` (and reservation-enquiry) endpoint that calls **Resend server-side**. The Resend key stays a **server env var**, never in this public repo. Both the homepage "Check availability" form and the contact-page form (currently `onsubmit="return false"`) route through it. Add per-IP rate limiting + a captcha (e.g. Cloudflare Turnstile) for spam protection. **Dependency:** to send *from* `@mhouse.cy`, Resend needs its domain verified via DNS records on `mhouse.cy` (Cloudflare) — needs DNS access, otherwise send from an agency-controlled domain.
 - ◐ **Workspace booking platform** for the Work lounge and private offices. Christian is evaluating **OfficeRnD** (taking a demo), not yet confirmed. Once a platform is chosen, the Work page CTAs point at its booking or member registration link, or an embed if provided.
@@ -106,7 +106,7 @@ CSS/logo live in one place. See README → Build.
 - ◐ **Private office / workspace pricing.** Tied to the workspace platform decision (OfficeRnD demo pending). Pricing will come from the chosen platform rather than a hard coded figure; the Work page shows "on request" until then.
 - ☐ **Pool day pass rates** — not included in the client content pack. The Swim page currently routes to WhatsApp for rates instead of quoting a price. Ask the client.
 - ◐ Smoobu dashboard access or Booking Tool embed code (account and room IDs received; Christian to grant access or send the embed)
-- ◐ Stripe connected inside Smoobu on the client side (Option A chosen; no Stripe keys needed by us)
+- ☑ Stripe already connected inside Smoobu (the Lovable site already books through it); reconfirm during the launch test booking
 - ◐ Workspace platform decision (evaluating OfficeRnD, final demo pending)
 - ☑ WhatsApp number received (+357 97 444085) for the Swim day passes and gatherings buttons; general enquiries confirmed as hello@mhouse.cy
 - ☐ Room photography (5 rooms)
