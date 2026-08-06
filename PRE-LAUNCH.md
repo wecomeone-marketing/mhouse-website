@@ -129,6 +129,7 @@ CSS/logo live in one place. See README → Build.
   Let's Encrypt SSL.
 - ☐ Lift the `robots.txt` crawl block (see §5).
 - ☐ Cross-browser + mobile QA pass.
+- ☐ **Booking cutover.** Christian's interim Lovable operations and booking site is switched off when this new site goes live. Confirm the Smoobu booking flow on the new site is fully working and tested (one real test booking through Stripe) **before** Lovable is turned off, so there is never a window where guests cannot book. Day to day operations move to Smoobu's own dashboard (Smoobu is a full PMS); reproducing any Lovable operational feature would be new scope.
 - ☐ Final proof — confirm no placeholder copy or images remain anywhere.
 
 ---
