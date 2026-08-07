@@ -106,6 +106,7 @@ CSS/logo live in one place. See README → Build.
 - ◐ **Private office / workspace pricing.** Tied to the workspace platform decision (OfficeRnD demo pending). Pricing will come from the chosen platform rather than a hard coded figure; the Work page shows "on request" until then.
 - ☐ **Pool day pass rates** — not included in the client content pack. The Swim page currently routes to WhatsApp for rates instead of quoting a price. Ask the client.
 - ☑ Smoobu dashboard access granted (Christian created a full-access profile); whole-villa Booking Engine embed obtained and live on Stay
+- ☐ **Confirm max guests per room with Christian.** The booking widget offers up to 2 guests because every room is a Deluxe Double (Smoobu "Max. number of guests: 2"). Confirm 2 is the real maximum, or whether any room should allow a third guest (extra bed). If so, Christian raises "Max. number of guests" and "Extra guests / night" in Smoobu, Booking Engine, Accommodation settings, and it flows through to the site automatically. Not a website change.
 - ☑ Stripe already connected inside Smoobu (the Lovable site already books through it); reconfirm during the launch test booking
 - ◐ Workspace platform decision (evaluating OfficeRnD, final demo pending)
 - ☑ WhatsApp number received (+357 97 444085) for the Swim day passes and gatherings buttons; general enquiries confirmed as hello@mhouse.cy
