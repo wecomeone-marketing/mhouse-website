@@ -29,6 +29,9 @@
 
 ## Changelog
 
+### 2026-08-03 — Per-room booking reverted to new-tab (inline did not work in the browser)
+The inline-reveal version did not render reliably in Andreas's browser, so reverted to the simple, reliable approach: each "Book this room" opens that room's Smoobu booking (`?apartmentId=<id>&lang=en`) in a new tab, in English. Removed the inline widget JS and CSS. Trade-off accepted: per-room booking leaves the site to Smoobu's page (styled to brand), while the homepage and Stay general widgets stay embedded on-site.
+
 ### 2026-08-03 — Per-room booking redesigned to inline reveal
 The shared-widget swap (previous entry) tested badly: it scrolled away to the top widget and looked like it opened a random room. Redesigned so "Book this room" reveals **that room's own availability widget inline**, right in the room's section, lazy-loaded on first click via the Smoobu per-room embed (`/booking-tool/iframe/1201359/<apartmentId>`). The customer sees availability for the selected room in context, on-site. Verified each button loads its correct room. The general "Book your stay" widget stays at the top of Stay for searching across all rooms and as the Book Now target.
 
