@@ -177,6 +177,8 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
 .booking{margin-top:2.5rem}
 #apartmentIframeAll{min-width:0}
 #apartmentIframeAll iframe{width:100%;min-height:120px;border:0;display:block}
+#book{scroll-margin-top:100px}
+.check__widget{background:var(--w);border-radius:16px;padding:1.25rem 1.5rem}
 /* Editorial split: image + text, alternating */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center}
 .split--rev .split__media{order:2}
@@ -343,7 +345,7 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
       <span class="hero__sub">Work</span>
     </div>
     <div class="hero__btns">
-      <a href="stay.html" class="hero__btn primary">Book a room</a>
+      <a href="#book" class="hero__btn primary">Book a room</a>
       <a href="events.html" class="hero__btn">Explore events</a>
     </div>
   </div>
@@ -618,39 +620,23 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
 
 <!-- CHECK AVAILABILITY -->
 <section class="check">
-  <div class="check__inner">
+  <div class="check__inner" id="book">
     <div class="check__content rv">
       <div class="sec-label" style="color:var(--be)">Reservations</div>
       <h2 class="check__h">Make a<br>reservation.</h2>
-      <p class="check__txt">Book a room directly for the best rate, reserve a pool day pass, or enquire about the work lounge. We will confirm within 24 hours.</p>
+      <p class="check__txt">Choose your dates and book a room instantly, at the best rate direct with us. Every stay includes the saltwater pool, the courtyard and everything the house offers.</p>
       <div class="check__phone">
         <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
         <a href="tel:+35797444085" style="color:rgba(245,243,238,0.6)">+357 97444085</a>
       </div>
     </div>
     <div class="rv">
-      <form class="check__form" onsubmit="return false">
-        <input type="text" class="check__input" placeholder="Your name">
-        <input type="email" class="check__input" placeholder="Your email">
-        <select class="check__select">
-          <option value="" disabled selected>Select space</option>
-          <option>Room, Shorty's (from €120)</option>
-          <option>Room, Duchess (from €130)</option>
-          <option>Room, Governors (from €160)</option>
-          <option>Room, The O Room (from €180)</option>
-          <option>Room, The Bungalow (from €200)</option>
-          <option>Pool Day Pass</option>
-          <option>Work Lounge, Hot Desk</option>
-          <option>Work Lounge, Dedicated Desk</option>
-          <option>Work Lounge, Meeting Room</option>
-          <option>Events / Private Hire</option>
-        </select>
-        <div class="check__row">
-          <input type="text" class="check__input check__date" placeholder="Check-in date">
-          <input type="text" class="check__input check__date" placeholder="Check-out date">
+      <div class="check__widget">
+        <div id="apartmentIframeAll">
+        <script type="text/javascript" src="https://login.smoobu.com/js/Settings/BookingToolIframe.js"></script>
+        <script>BookingToolIframe.initialize({"url": "https://login.smoobu.com/en/booking-tool/iframe/1201359", "baseUrl": "https://login.smoobu.com", "target": "#apartmentIframeAll"})</script>
         </div>
-        <button class="check__btn" type="submit">Check availability &nbsp;→</button>
-      </form>
+      </div>
     </div>
   </div>
 </section>
