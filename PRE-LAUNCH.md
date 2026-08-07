@@ -91,6 +91,7 @@ CSS/logo live in one place. See README → Build.
 - ☐ Canonical URLs
 - ☐ Open Graph / social share image + meta (for link previews)
 - ☐ Favicon
+- ☐ **Home page is at `/home.html`, root is the splash.** Point canonical, sitemap and Open Graph at `/home.html`. Decide whether this is the final structure for launch, or whether the home should sit at root for SEO (search engines will index the root as the splash as it stands).
 
 ---
 

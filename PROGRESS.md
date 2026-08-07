@@ -29,6 +29,9 @@
 
 ## Changelog
 
+### 2026-08-03 — Splash and home page split into separate URLs
+Per Andreas: the splash and the home page are now separate pages. `index.html` (root) is the splash gateway only (light, ~90KB, just the splash markup + a script); "Step inside" and the splash logo navigate to `home.html`. `home.html` is the full home page with no splash, shown immediately (`site on`). The nav **palm logo now points to `home.html`**, so clicking it lands on the home page, not the splash. Root URL still shows the splash. Built via `scratchpad/split-splash.cjs` (split the old combined index.html). Note for the SEO pass: the home page now lives at `/home.html`, not root.
+
 ### 2026-08-03 — Branded booking page for per-room (Andreas's idea)
 Instead of a new Smoobu tab, per-room booking now opens a branded on-site page. New `book.html` carries the M House nav, footer and styling, reads `?apartmentId=<id>`, embeds that room's Smoobu widget (full-page embed, the reliable pattern that works on the homepage and Stay), and shows the room name in the heading. No param falls back to the all-rooms widget. The five "Book this room" buttons now link to `book.html?apartmentId=<id>` on our site. Verified: `?apartmentId=2675529` renders "Book Governors Room" with the Governors widget, with our nav and footer. This supersedes the new-tab revert below.
 
