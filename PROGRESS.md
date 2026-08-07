@@ -29,6 +29,9 @@
 
 ## Changelog
 
+### 2026-08-03 — Branded booking page for per-room (Andreas's idea)
+Instead of a new Smoobu tab, per-room booking now opens a branded on-site page. New `book.html` carries the M House nav, footer and styling, reads `?apartmentId=<id>`, embeds that room's Smoobu widget (full-page embed, the reliable pattern that works on the homepage and Stay), and shows the room name in the heading. No param falls back to the all-rooms widget. The five "Book this room" buttons now link to `book.html?apartmentId=<id>` on our site. Verified: `?apartmentId=2675529` renders "Book Governors Room" with the Governors widget, with our nav and footer. This supersedes the new-tab revert below.
+
 ### 2026-08-03 — Per-room booking reverted to new-tab (inline did not work in the browser)
 The inline-reveal version did not render reliably in Andreas's browser, so reverted to the simple, reliable approach: each "Book this room" opens that room's Smoobu booking (`?apartmentId=<id>&lang=en`) in a new tab, in English. Removed the inline widget JS and CSS. Trade-off accepted: per-room booking leaves the site to Smoobu's page (styled to brand), while the homepage and Stay general widgets stay embedded on-site.
 
