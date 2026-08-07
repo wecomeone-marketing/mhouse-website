@@ -110,17 +110,31 @@
   }
 
   // ── PER-ROOM BOOKING (Stay) ──
-  // "Book this room" switches the embedded Smoobu widget to that room; href="#book" scrolls to it.
-  var roomBtns = document.querySelectorAll('.room-book');
-  if (roomBtns.length) {
-    roomBtns.forEach(function(btn){
-      btn.addEventListener('click', function(){
-        var apt = btn.getAttribute('data-apt');
-        var frame = document.querySelector('#apartmentIframeAll iframe');
-        if (apt && frame) { frame.src = 'https://booking.smoobu.com/9A1201359?apartmentId=' + apt + '&lang=en'; }
-      });
-    });
-  }
+  // "Book this room" reveals that room's own availability widget inline, right at the room.
+  // Lazy: the Smoobu widget is only loaded the first time the button is clicked.
+  document.querySelectorAll('.room-book').forEach(function(btn){
+    function toggle(){
+      var apt = btn.getAttribute('data-apt');
+      var holder = btn.nextElementSibling;
+      if (!apt || !holder || !holder.classList.contains('room-booking')) return;
+      if (holder.getAttribute('data-loaded')) { holder.hidden = !holder.hidden; return; }
+      var id = 'apartmentIframe' + apt;
+      var tgt = document.createElement('div');
+      tgt.id = id;
+      holder.appendChild(tgt);
+      if (typeof BookingToolIframe !== 'undefined') {
+        BookingToolIframe.initialize({
+          url: 'https://login.smoobu.com/en/booking-tool/iframe/1201359/' + apt,
+          baseUrl: 'https://login.smoobu.com',
+          target: '#' + id
+        });
+      }
+      holder.setAttribute('data-loaded', '1');
+      holder.hidden = false;
+    }
+    btn.addEventListener('click', toggle);
+    btn.addEventListener('keydown', function(e){ if (e.key === ' ' || e.key === 'Enter'){ e.preventDefault(); toggle(); } });
+  });
 
 })();
 

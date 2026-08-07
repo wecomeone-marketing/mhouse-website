@@ -176,7 +176,8 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
 /* Smoobu Booking Engine embed */
 .booking{max-width:1000px;margin:2.5rem auto 0;border-radius:14px;overflow:hidden}
 #apartmentIframeAll{min-width:0}
-#apartmentIframeAll iframe{width:100%;min-height:120px;border:0;display:block}
+#apartmentIframeAll iframe,.room-booking iframe{width:100%;min-height:120px;border:0;display:block}
+.room-booking{margin-top:1.5rem;max-width:1000px;background:var(--w);border-radius:14px;overflow:hidden}
 #book{scroll-margin-top:100px}
 .check__widget{background:var(--w);border-radius:14px;overflow:hidden;max-width:1000px;margin:0 auto}
 .check__inner{grid-template-columns:1fr;gap:2.5rem;align-items:start}
@@ -372,7 +373,8 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
         <h3 class="room__name">Shorty's Room</h3>
         <p class="room__meta">22 sqm · 2 guests · from €120 per night</p>
         <p class="room__desc">Our most intimate room, offering a comfortable and characterful stay with direct access to everything M House has to offer.</p>
-        <a href="#book" data-apt="2675539" class="btn-ol room-book" style="margin-top:1.5rem">Book this room &nbsp;&rarr;</a>
+        <a data-apt="2675539" class="btn-ol room-book" role="button" tabindex="0" style="margin-top:1.5rem;cursor:pointer">Book this room &nbsp;&rarr;</a>
+        <div class="room-booking" hidden></div>
       </div>
     </article>
 
@@ -396,7 +398,8 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
         <h3 class="room__name">Duchess Room</h3>
         <p class="room__meta">26 sqm · 2 guests · from €130 per night</p>
         <p class="room__desc">A bright and elegant room overlooking the courtyard and pool, designed for guests seeking both comfort and atmosphere.</p>
-        <a href="#book" data-apt="2675534" class="btn-ol room-book" style="margin-top:1.5rem">Book this room &nbsp;&rarr;</a>
+        <a data-apt="2675534" class="btn-ol room-book" role="button" tabindex="0" style="margin-top:1.5rem;cursor:pointer">Book this room &nbsp;&rarr;</a>
+        <div class="room-booking" hidden></div>
       </div>
     </article>
 
@@ -420,7 +423,8 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
         <h3 class="room__name">Governors Room</h3>
         <p class="room__meta">28 sqm · 2 guests · from €160 per night</p>
         <p class="room__desc">Featuring a private balcony and additional space, the Governors Room connects guests to both the property and the surrounding historic neighbourhood.</p>
-        <a href="#book" data-apt="2675529" class="btn-ol room-book" style="margin-top:1.5rem">Book this room &nbsp;&rarr;</a>
+        <a data-apt="2675529" class="btn-ol room-book" role="button" tabindex="0" style="margin-top:1.5rem;cursor:pointer">Book this room &nbsp;&rarr;</a>
+        <div class="room-booking" hidden></div>
       </div>
     </article>
 
@@ -444,7 +448,8 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
         <h3 class="room__name">The O Room</h3>
         <p class="room__meta">28 sqm · 2 guests · from €180 per night</p>
         <p class="room__desc">One of our signature rooms, featuring a large private terrace overlooking the courtyard and pool area.</p>
-        <a href="#book" data-apt="2675544" class="btn-ol room-book" style="margin-top:1.5rem">Book this room &nbsp;&rarr;</a>
+        <a data-apt="2675544" class="btn-ol room-book" role="button" tabindex="0" style="margin-top:1.5rem;cursor:pointer">Book this room &nbsp;&rarr;</a>
+        <div class="room-booking" hidden></div>
       </div>
     </article>
 
@@ -468,7 +473,8 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
         <h3 class="room__name">The Bungalow</h3>
         <p class="room__meta">22 sqm · 2 guests · from €200 per night</p>
         <p class="room__desc">A standalone house nestled within the courtyard, offering a unique stay in the heart of the M House atmosphere. While providing additional privacy, guests remain right in the middle of everything that makes M House special.</p>
-        <a href="#book" data-apt="2675524" class="btn-ol room-book" style="margin-top:1.5rem">Book this room &nbsp;&rarr;</a>
+        <a data-apt="2675524" class="btn-ol room-book" role="button" tabindex="0" style="margin-top:1.5rem;cursor:pointer">Book this room &nbsp;&rarr;</a>
+        <div class="room-booking" hidden></div>
       </div>
     </article>
   </div>
@@ -671,17 +677,31 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
   }
 
   // ── PER-ROOM BOOKING (Stay) ──
-  // "Book this room" switches the embedded Smoobu widget to that room; href="#book" scrolls to it.
-  var roomBtns = document.querySelectorAll('.room-book');
-  if (roomBtns.length) {
-    roomBtns.forEach(function(btn){
-      btn.addEventListener('click', function(){
-        var apt = btn.getAttribute('data-apt');
-        var frame = document.querySelector('#apartmentIframeAll iframe');
-        if (apt && frame) { frame.src = 'https://booking.smoobu.com/9A1201359?apartmentId=' + apt + '&lang=en'; }
-      });
-    });
-  }
+  // "Book this room" reveals that room's own availability widget inline, right at the room.
+  // Lazy: the Smoobu widget is only loaded the first time the button is clicked.
+  document.querySelectorAll('.room-book').forEach(function(btn){
+    function toggle(){
+      var apt = btn.getAttribute('data-apt');
+      var holder = btn.nextElementSibling;
+      if (!apt || !holder || !holder.classList.contains('room-booking')) return;
+      if (holder.getAttribute('data-loaded')) { holder.hidden = !holder.hidden; return; }
+      var id = 'apartmentIframe' + apt;
+      var tgt = document.createElement('div');
+      tgt.id = id;
+      holder.appendChild(tgt);
+      if (typeof BookingToolIframe !== 'undefined') {
+        BookingToolIframe.initialize({
+          url: 'https://login.smoobu.com/en/booking-tool/iframe/1201359/' + apt,
+          baseUrl: 'https://login.smoobu.com',
+          target: '#' + id
+        });
+      }
+      holder.setAttribute('data-loaded', '1');
+      holder.hidden = false;
+    }
+    btn.addEventListener('click', toggle);
+    btn.addEventListener('keydown', function(e){ if (e.key === ' ' || e.key === 'Enter'){ e.preventDefault(); toggle(); } });
+  });
 
 })();
 
