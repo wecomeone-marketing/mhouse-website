@@ -29,6 +29,9 @@
 
 ## Changelog
 
+### 2026-08-03 — Booking polish: consistent widgets, per-room stays on-site
+Two fixes from Andreas's review. (1) The Stay widget was full width and left-aligned; constrained it to 1000px and centred (rounded card) so it matches the homepage widget. (2) The "Book this room" buttons used to open a new Smoobu tab, inconsistent with the general search that completes on-site. Now they switch the embedded widget's iframe to that room (`?apartmentId=<id>&lang=en`) and scroll to it, so per-room booking finishes on our site. Verified the iframe swap renders and auto-resizes (jumped to ~1148px for the room's booking form). Earlier fix in the same review: homepage reservation card matched to the widget width and centred (was 112px too wide with an uneven right gap).
+
 ### 2026-08-03 — Homepage booking widget (booking now live site-wide)
 Option 2: replaced the placeholder "Check availability" form on the homepage with the real Smoobu booking widget (whole villa), in a white card on the dark reservation band, so guests can book from the landing page. Updated the copy to instant room booking, pointed the hero "Book a room" button at the widget (`#book` anchor with scroll-margin), and removed the old non-working enquiry form. Booking is now complete across the site: homepage widget, Stay widget plus per room "Book this room" buttons, and nav Book Now on every page. Remaining before launch: one real Stripe test booking, and confirm the homepage widget reads well in the two-column band (it sits ~460px wide there; easy switch to full width if preferred).
 
