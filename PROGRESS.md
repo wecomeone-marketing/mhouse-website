@@ -29,6 +29,9 @@
 
 ## Changelog
 
+### 2026-08-03 — Per-room booking redesigned to inline reveal
+The shared-widget swap (previous entry) tested badly: it scrolled away to the top widget and looked like it opened a random room. Redesigned so "Book this room" reveals **that room's own availability widget inline**, right in the room's section, lazy-loaded on first click via the Smoobu per-room embed (`/booking-tool/iframe/1201359/<apartmentId>`). The customer sees availability for the selected room in context, on-site. Verified each button loads its correct room. The general "Book your stay" widget stays at the top of Stay for searching across all rooms and as the Book Now target.
+
 ### 2026-08-03 — Booking polish: consistent widgets, per-room stays on-site
 Two fixes from Andreas's review. (1) The Stay widget was full width and left-aligned; constrained it to 1000px and centred (rounded card) so it matches the homepage widget. (2) The "Book this room" buttons used to open a new Smoobu tab, inconsistent with the general search that completes on-site. Now they switch the embedded widget's iframe to that room (`?apartmentId=<id>&lang=en`) and scroll to it, so per-room booking finishes on our site. Verified the iframe swap renders and auto-resizes (jumped to ~1148px for the room's booking form). Earlier fix in the same review: homepage reservation card matched to the widget width and centred (was 112px too wide with an uneven right gap).
 
