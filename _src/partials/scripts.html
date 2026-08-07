@@ -109,33 +109,6 @@
     rvEls.forEach(function(el){ el.classList.add('on'); });
   }
 
-  // ── PER-ROOM BOOKING (Stay) ──
-  // "Book this room" reveals that room's own availability widget inline, right at the room.
-  // Lazy: the Smoobu widget is only loaded the first time the button is clicked.
-  document.querySelectorAll('.room-book').forEach(function(btn){
-    function toggle(){
-      var apt = btn.getAttribute('data-apt');
-      var holder = btn.nextElementSibling;
-      if (!apt || !holder || !holder.classList.contains('room-booking')) return;
-      if (holder.getAttribute('data-loaded')) { holder.hidden = !holder.hidden; return; }
-      var id = 'apartmentIframe' + apt;
-      var tgt = document.createElement('div');
-      tgt.id = id;
-      holder.appendChild(tgt);
-      if (typeof BookingToolIframe !== 'undefined') {
-        BookingToolIframe.initialize({
-          url: 'https://login.smoobu.com/en/booking-tool/iframe/1201359/' + apt,
-          baseUrl: 'https://login.smoobu.com',
-          target: '#' + id
-        });
-      }
-      holder.setAttribute('data-loaded', '1');
-      holder.hidden = false;
-    }
-    btn.addEventListener('click', toggle);
-    btn.addEventListener('keydown', function(e){ if (e.key === ' ' || e.key === 'Enter'){ e.preventDefault(); toggle(); } });
-  });
-
 })();
 
   // ── HERO SLIDESHOW ──
