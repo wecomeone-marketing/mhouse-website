@@ -173,6 +173,10 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
 /* Temporary review photos: show the image, hide the placeholder caption */
 .page-hero__media.is-photo,.ph.is-photo{background-size:cover;background-position:center;background-repeat:no-repeat}
 .page-hero__media.is-photo::after,.ph.is-photo::after{content:none}
+/* Smoobu Booking Engine embed */
+.booking{margin-top:2.5rem}
+#apartmentIframeAll{min-width:0}
+#apartmentIframeAll iframe{width:100%;min-height:500px;border:0;display:block}
 /* Editorial split: image + text, alternating */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center}
 .split--rev .split__media{order:2}
@@ -271,7 +275,7 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
       <a href="events.html" class="nav__link">Events</a>
       <a href="wellness.html" class="nav__link">Wellness</a>
       <a href="contact.html" class="nav__link">Contact</a>
-      <a href="stay.html" class="nav__book">Book Now</a>
+      <a href="stay.html#book" class="nav__book">Book Now</a>
     </div>
   </div>
 </nav>
@@ -290,6 +294,7 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
       <a href="events.html" class="nav-item">Events <em>Private hire</em></a>
       <a href="wellness.html" class="nav-item">Wellness <em>Coming soon</em></a>
       <a href="contact.html" class="nav-item">Contact <em>Find us</em></a>
+      <a href="stay.html#book" class="nav-item">Book Now <em>Check dates</em></a>
     </nav>
     <div class="nav-bottom">
       <p class="nav-address">Stadiou 18, 6020 Larnaka, Cyprus</p>
@@ -321,6 +326,20 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
         <p class="sec-txt page-section__lead">Each of the five rooms is individually designed, and each one opens onto the same house: a Mediterranean courtyard, a saltwater pool and a daily aperitivo by the water. Come for a night or a season. You are never far from the middle of things.</p>
       </div>
       <div class="split__media"><div class="ph ph--tall is-photo" data-ph="The Bungalow in the courtyard" style="background-image:url('assets/ph/stay-2.jpg')"></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="page-section" id="book">
+  <div class="page-section__inner">
+    <div class="sec-label">Book your stay</div>
+    <h2 class="sec-h">Check dates<br><em>and reserve.</em></h2>
+    <p class="sec-txt page-section__lead">Choose your dates to see which rooms are free, and book instantly. Every room includes the saltwater pool, the courtyard and everything else the house offers.</p>
+    <div class="booking" style="margin-top:2.5rem">
+      <div id="apartmentIframeAll">
+      <script type="text/javascript" src="https://login.smoobu.com/js/Settings/BookingToolIframe.js"></script>
+      <script>BookingToolIframe.initialize({"url": "https://login.smoobu.com/en/booking-tool/iframe/1201359", "baseUrl": "https://login.smoobu.com", "target": "#apartmentIframeAll"})</script>
+      </div>
     </div>
   </div>
 </section>
