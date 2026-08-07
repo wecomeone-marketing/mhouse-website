@@ -1,0 +1,59 @@
+---
+title: M House, Book your stay. Reserve a room in Larnaka old town.
+desc: Book your room at M House, a boutique house in Larnaka old town, Cyprus. Check availability and reserve instantly, with the saltwater pool, courtyard and everything the house offers.
+---
+<div class="site on" id="site">
+{{NAV}}
+
+<header class="page-hero">
+  <div class="page-hero__media"></div>
+  <div class="page-hero__scrim"></div>
+  <div class="page-hero__inner">
+    <p class="page-hero__eyebrow">Book</p>
+    <h1 class="page-hero__title" id="bookTitle">Book your stay</h1>
+    <p class="page-hero__sub">Choose your dates and reserve instantly. Every stay includes the saltwater pool, the courtyard and everything the house offers.</p>
+  </div>
+</header>
+
+<section class="page-section">
+  <div class="page-section__inner">
+    <div class="booking" id="bookWidget"></div>
+    <p class="note" style="text-align:center;margin-left:auto;margin-right:auto">Looking for a different room? <a href="stay.html" style="color:var(--ol)">See all five rooms</a> or <a href="stay.html#book" style="color:var(--ol)">search across the whole house</a>.</p>
+  </div>
+</section>
+
+{{FOOTER}}
+</div>
+
+<script>
+(function(){
+  var ROOMS = {
+    '2675539':"Shorty's Room",
+    '2675534':'Duchess Room',
+    '2675529':'Governors Room',
+    '2675544':'The O Room',
+    '2675524':'The Bungalow'
+  };
+  var params = new URLSearchParams(window.location.search);
+  var apt = params.get('apartmentId') || params.get('room');
+  var url = 'https://login.smoobu.com/en/booking-tool/iframe/1201359';
+  if (apt && ROOMS[apt]) {
+    url += '/' + apt;
+    var t = document.getElementById('bookTitle');
+    if (t) t.textContent = 'Book ' + ROOMS[apt];
+  }
+  var host = document.getElementById('bookWidget');
+  var inner = document.createElement('div');
+  inner.id = 'apartmentIframeAll';
+  host.appendChild(inner);
+  var s = document.createElement('script');
+  s.src = 'https://login.smoobu.com/js/Settings/BookingToolIframe.js';
+  s.onload = function(){
+    if (typeof BookingToolIframe !== 'undefined') {
+      BookingToolIframe.initialize({ url: url, baseUrl: 'https://login.smoobu.com', target: '#apartmentIframeAll' });
+    }
+  };
+  document.body.appendChild(s);
+})();
+</script>
+{{SCRIPTS}}
