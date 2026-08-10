@@ -1,44 +1,50 @@
 # M House Website, Photography Shot List
 
-This is the full list of images the website needs, page by page, so you know exactly what to capture for each spot. Most images are placeholders right now and will be swapped for the real photography before launch.
+This is the full list of images the website needs, page by page, with a recommended size for each. Most images are placeholders right now and will be swapped for the real photography before launch.
 
-A few general notes first:
+**Please shoot everything at full camera resolution.** The sizes below are the smallest we can use to stay crisp. Bigger is always fine, we simply scale down. All sizes are in pixels, written as width x height.
 
-- **Orientation.** The large "hero" images at the top of each page, and the full width background images, should be **landscape** and high resolution (they stretch across the screen). Room gallery images are landscape too. The two "Our story" images are **portrait**.
-- **The same shot can cover several spots.** The pool, the courtyard and the rooms appear on more than one page, so one great photo can be reused in a few places. The real number of subjects to shoot is smaller than the number of spots below. There is a short summary at the end.
-- **Rooms.** Smoobu already holds some real room photos. If those are high quality we can reuse them. For the website we need five angles per room (listed below).
+**Sizes at a glance:**
+
+- **Hero and full width backgrounds:** 2400 x 1350, landscape. These stretch edge to edge across the screen.
+- **Room photos:** 1600 x 1200, landscape, and please leave a little space around the subject, because the same photo is shown landscape in the room galleries and tall (portrait) on the home page cards.
+- **Feature images (single photos inside a section):** 1400 x 1400, square or landscape, cropped to a roughly square frame.
+- **Our story portraits:** 1200 x 1600, portrait.
+
+**One note on orientation:** the large hero images and the full width backgrounds are landscape. The two "Our story" images are portrait. Room photos need to work both ways (see above).
+
+**Rooms:** Smoobu already holds some real room photos. If those are high quality we can reuse them. For the website we need five angles per room (listed below).
 
 ---
 
 ## Home page
 
-- **Splash screen (the intro image):** one full screen, atmospheric signature shot of M House at its best light (the courtyard or the pool at golden hour). This is the first thing a visitor sees.
-- **Hero at the top of the home page:** a rotating set of three to five wide signature shots. Suggestions: the courtyard, the saltwater pool, the house from the street, all in beautiful light.
-- **Our story (Named for Mette):** two portrait images for this section. For example a portrait of Mette and or the family, or two warm images that reflect the story. Please advise what feels right here.
-- **The spaces (three cards):** three images, one each for "Gather and Swim" (the pool and courtyard), "Stay" (a room), and "Work" (the lounge).
-- **Room preview cards:** one photo for each of the five rooms (Governors, Duchess, The O Room, Shorty's, The Bungalow).
-- **Aperitivo section:** one wide background image of the daily aperitivo, drinks and bites by the pool as the afternoon turns to evening.
-- **Guest reviews section:** one wide, calm background image of the house.
-- **Work lounge section:** one image of the work lounge.
-- **Text strip background (optional, low priority):** one soft, atmospheric image used very faintly behind a line of scrolling text.
+- **Splash screen (the intro image):** one full screen atmospheric signature shot of M House at its best light (the courtyard or the pool at golden hour). **2400 x 1350.**
+- **Hero at the top of the home page:** three to five wide signature shots that rotate (the courtyard, the saltwater pool, the house from the street, in beautiful light). **2400 x 1350 each.**
+- **Our story (Named for Mette):** two portrait images (a portrait of Mette and or the family, or two warm images that reflect the story, please advise). **1200 x 1600 each, portrait.**
+- **The spaces (three cards):** one image each for "Gather and Swim" (the pool and courtyard), "Stay" (a room), and "Work" (the lounge). **1200 x 1400 each.**
+- **Room preview cards:** one photo for each of the five rooms. **1200 x 1600 each, portrait** (a room photo cropped tall).
+- **Aperitivo section:** one wide background of the daily aperitivo, drinks and bites by the pool as the afternoon turns to evening. **2400 x 1350.**
+- **Guest reviews section:** one wide, calm background of the house. **2400 x 1350.**
+- **Work lounge section:** one image of the work lounge. **1400 x 1000.**
 
 ## Gather page
 
-- **Hero:** an afternoon in the courtyard.
-- One image of **the pool and cabanas**.
+- **Hero:** an afternoon in the courtyard. **2400 x 1350.**
+- **The pool and cabanas.** **1400 x 1400.**
 
 ## Swim page
 
-- **Hero:** the saltwater pool.
-- One image of **the saltwater pool**.
-- One image of **the cabanas by the water**.
+- **Hero:** the saltwater pool. **2400 x 1350.**
+- **The saltwater pool.** **1400 x 1400.**
+- **The cabanas by the water.** **1400 x 1400.**
 
 ## Stay page
 
-- **Hero:** The O Room terrace.
-- One image of **The Bungalow in the courtyard** (intro).
+- **Hero:** The O Room terrace. **2400 x 1350.**
+- **The Bungalow in the courtyard (intro).** **1400 x 1400.**
 
-Then a five image gallery for each room. The five angles per room:
+Then a five image gallery for each room. **Each gallery image 1600 x 1200, landscape.** The five angles per room:
 
 - **Shorty's Room:** the room, the bed, the bathroom, a nice detail, the view looking out.
 - **Duchess Room:** the room, the bed, the courtyard view, the bathroom, a nice detail.
@@ -48,27 +54,27 @@ Then a five image gallery for each room. The five angles per room:
 
 ## Work page
 
-- **Hero:** the work lounge.
-- One image of **desks in the lounge**.
-- One image of **a private office**.
+- **Hero:** the work lounge. **2400 x 1350.**
+- **Desks in the lounge.** **1400 x 1400.**
+- **A private office.** **1400 x 1400.**
 
 ## Events page
 
-- **Hero:** the courtyard set for an event.
-- One image of **the courtyard set for dinner**.
-- One image of **dinner under the stars** (evening, warm lighting).
+- **Hero:** the courtyard set for an event. **2400 x 1350.**
+- **The courtyard set for dinner.** **1400 x 1400.**
+- **Dinner under the stars (evening, warm lighting).** **1400 x 1400.**
 
 ## Wellness page
 
-- **Hero:** the pool at first light.
-- One image of **the pool, early morning**.
+- **Hero:** the pool at first light. **2400 x 1350.**
+- **The pool, early morning.** **1400 x 1400.**
 
 ## Contact page
 
-- **Hero:** the entrance on Stadiou (the street entrance).
-- One image of **the house from Stadiou** (the exterior).
+- **Hero:** the entrance on Stadiou (the street entrance). **2400 x 1350.**
+- **The house from Stadiou (the exterior).** **1400 x 1400.**
 
-*(The per room booking page and the splash both work from what we already have, so they need nothing extra.)*
+*(The per room booking page and the splash logo work from what we already have, so they need nothing extra.)*
 
 ---
 
@@ -85,4 +91,4 @@ If it helps the photographer, here is the smaller list of actual subjects behind
 7. **An event or dinner setup** in the courtyard, ideally one in the evening.
 8. **Our story images** for the home page (a portrait of Mette and or the family, or images that reflect the story), portrait orientation.
 
-Great light matters more than anything, early morning and late afternoon are ideal for the outdoor shots. High resolution please, so the large hero images stay crisp on big screens.
+Great light matters more than anything, early morning and late afternoon are ideal for the outdoor shots. High resolution throughout, so the large hero images stay crisp on big screens.
