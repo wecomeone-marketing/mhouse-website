@@ -115,7 +115,7 @@ CSS/logo live in one place. See README → Build.
 - ☑ WhatsApp number received (+357 97 444085) for the Swim day passes and gatherings buttons; general enquiries confirmed as hello@mhouse.cy
 - ☐ Room photography (5 rooms)
 - ☐ Events / courtyard photography
-- ☐ Social media handles for footer links
+- ☑ Social media handles received and wired to the footer (Instagram and Facebook, @mhouselarnaka)
 - ☐ Real guest reviews to replace the placeholder testimonials
 
 ---

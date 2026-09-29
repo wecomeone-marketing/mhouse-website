@@ -29,6 +29,9 @@
 
 ## Changelog
 
+### 2026-09-29 — Footer social links live
+Owner sent the real accounts; wired the footer Instagram and Facebook icons to https://www.instagram.com/mhouselarnaka/ and https://www.facebook.com/mhouselarnaka (open in a new tab). Separately, the owner (Carina) sent OfficeRnD checkout links for the workspace and pool products, so OfficeRnD is now confirmed as the workspace and pool platform; wiring those is pending a client answer on private offices (no link sent) and a couple of our own build decisions (dynamic booking date, pool moves from WhatsApp to OfficeRnD, parking placement).
+
 ### 2026-08-03 — Splash and home page split into separate URLs
 Per Andreas: the splash and the home page are now separate pages. `index.html` (root) is the splash gateway only (light, ~90KB, just the splash markup + a script); "Step inside" and the splash logo navigate to `home.html`. `home.html` is the full home page with no splash, shown immediately (`site on`). The nav **palm logo now points to `home.html`**, so clicking it lands on the home page, not the splash. Root URL still shows the splash. Built via `scratchpad/split-splash.cjs` (split the old combined index.html). Note for the SEO pass: the home page now lives at `/home.html`, not root.
 
