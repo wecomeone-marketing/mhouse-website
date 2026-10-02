@@ -29,6 +29,9 @@
 
 ## Changelog
 
+### 2026-10-02 — Client decisions: Wellness hidden, private offices stay enquiry
+The owner confirmed the two open points. **Private offices** stay as an email enquiry (all taken for the next year, so no OfficeRnD link); the Work page keeps its enquiry button, no change needed. **Wellness and Recovery** is hidden from the top menu, the footer and the site at the client’s request (they have a plan but it is not a priority now, and will tell us when to show it). The page source is parked in `_src/hidden/wellness.html` so it is easy to restore, and the wellness placeholder photos remain in `assets/ph/`. Nav now reads Gather, Swim, Stay, Work, Events, Contact. Separately, OfficeRnD is confirmed as the workspace and pool platform (Carina sent the checkout links); wiring those into Work and Swim is queued.
+
 ### 2026-09-29 — Footer social links live
 Owner sent the real accounts; wired the footer Instagram and Facebook icons to https://www.instagram.com/mhouselarnaka/ and https://www.facebook.com/mhouselarnaka (open in a new tab). Separately, the owner (Carina) sent OfficeRnD checkout links for the workspace and pool products, so OfficeRnD is now confirmed as the workspace and pool platform; wiring those is pending a client answer on private offices (no link sent) and a couple of our own build decisions (dynamic booking date, pool moves from WhatsApp to OfficeRnD, parking placement).
 
