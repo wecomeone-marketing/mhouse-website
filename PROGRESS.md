@@ -29,6 +29,9 @@
 
 ## Changelog
 
+### 2026-10-02 — OfficeRnD booking wired into Work, Swim and Contact
+Wired the OfficeRnD checkout links Carina sent. **Work**: a Book button on each option (Hot Desk day and monthly, Lounge Access, Dedicated Desk, Meeting Room); private offices stay as the email enquiry. **Swim**: the pool moved from WhatsApp to OfficeRnD (Book a day pass and Monthly pass). **Contact**: the pool quick-link books a day pass, and the parking line links to the OfficeRnD parking menu. All buttons open in a new tab and carry the booking date set **dynamically to the current day** (a small script in `scripts.html` rewrites the baked date via `a.officernd` links), so the day pass and meeting room links default to today. Verified live: the date rewrites to today across Work, Swim and Contact, and the parking link (no date) is left clean.
+
 ### 2026-10-02 — Client decisions: Wellness hidden, private offices stay enquiry
 The owner confirmed the two open points. **Private offices** stay as an email enquiry (all taken for the next year, so no OfficeRnD link); the Work page keeps its enquiry button, no change needed. **Wellness and Recovery** is hidden from the top menu, the footer and the site at the client’s request (they have a plan but it is not a priority now, and will tell us when to show it). The page source is parked in `_src/hidden/wellness.html` so it is easy to restore, and the wellness placeholder photos remain in `assets/ph/`. Nav now reads Gather, Swim, Stay, Work, Events, Contact. Separately, OfficeRnD is confirmed as the workspace and pool platform (Carina sent the checkout links); wiring those into Work and Swim is queued.
 
