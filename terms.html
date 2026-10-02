@@ -193,7 +193,7 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
 }
 /* ── DETAIL COMPONENTS (rooms, pricing, info rows) ── */
 .offer-grid--3{grid-template-columns:repeat(3,1fr)}
-.offer__price{display:block;margin-top:0.75rem;font-family:var(--fd);font-size:1.5rem;color:var(--tx)}
+.offer__price{display:block;margin-top:0.75rem;font-family:var(--fd);font-size:1.5rem;color:var(--tx)}.offer__book{display:inline-block;margin-top:1rem;font-family:var(--fb);font-size:0.5625rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--ol);transition:color 0.2s}.offer__book:hover{color:var(--dk)}.offer__book + .offer__book{margin-left:1.5rem}
 .amenities{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem 2rem;margin-top:2rem;list-style:none}
 .amenities li{font-family:var(--fb);font-weight:300;font-size:0.9375rem;color:var(--mu);padding-left:1.25rem;position:relative}
 .amenities li::before{content:"";position:absolute;left:0;top:0.62em;width:5px;height:5px;border-radius:50%;background:var(--ol)}
@@ -1058,6 +1058,14 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
     if(prev) prev.addEventListener("click", function(){ go(-1); });
     if(next) next.addEventListener("click", function(){ go(1); });
   });
+})();
+
+(function(){
+  var links = document.querySelectorAll('a.officernd');
+  if(!links.length) return;
+  var d = new Date();
+  var today = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+  links.forEach(function(a){ var h = a.getAttribute('href'); if(h) a.setAttribute('href', h.replace(/\d{4}-\d{2}-\d{2}/g, today)); });
 })();
 </script>
 

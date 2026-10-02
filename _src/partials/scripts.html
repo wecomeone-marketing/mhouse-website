@@ -160,4 +160,12 @@
     if(next) next.addEventListener("click", function(){ go(1); });
   });
 })();
+
+(function(){
+  var links = document.querySelectorAll('a.officernd');
+  if(!links.length) return;
+  var d = new Date();
+  var today = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+  links.forEach(function(a){ var h = a.getAttribute('href'); if(h) a.setAttribute('href', h.replace(/\d{4}-\d{2}-\d{2}/g, today)); });
+})();
 </script>

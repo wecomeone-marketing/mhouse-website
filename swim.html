@@ -193,7 +193,7 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
 }
 /* ── DETAIL COMPONENTS (rooms, pricing, info rows) ── */
 .offer-grid--3{grid-template-columns:repeat(3,1fr)}
-.offer__price{display:block;margin-top:0.75rem;font-family:var(--fd);font-size:1.5rem;color:var(--tx)}
+.offer__price{display:block;margin-top:0.75rem;font-family:var(--fd);font-size:1.5rem;color:var(--tx)}.offer__book{display:inline-block;margin-top:1rem;font-family:var(--fb);font-size:0.5625rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--ol);transition:color 0.2s}.offer__book:hover{color:var(--dk)}.offer__book + .offer__book{margin-left:1.5rem}
 .amenities{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem 2rem;margin-top:2rem;list-style:none}
 .amenities li{font-family:var(--fb);font-weight:300;font-size:0.9375rem;color:var(--mu);padding-left:1.25rem;position:relative}
 .amenities li::before{content:"";position:absolute;left:0;top:0.62em;width:5px;height:5px;border-radius:50%;background:var(--ol)}
@@ -347,10 +347,10 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
     </div>
     <div class="info-grid">
       <div><div class="info__k">Aperitivo</div><div class="info__v">Every day, 17:00 to 19:00</div></div>
-      <div><div class="info__k">Reservations</div><div class="info__v">Day passes by WhatsApp, +357 97 444085</div></div>
+      <div><div class="info__k">Reservations</div><div class="info__v">Book your day pass or a monthly pass online</div></div>
       <div><div class="info__k">Also included with</div><div class="info__v">Any room, and every gathering</div></div>
     </div>
-    <p class="note">Day pass rates and availability vary by season. Message us on WhatsApp and we will confirm the day, the rate and your place by the water. Pool use is subject to the posted pool rules, and the minimum age at M House is 15.</p>
+    <p class="note">Choose a day pass or a monthly pass and book online in a moment. Pool use is subject to the posted pool rules, and the minimum age at M House is 15.</p>
   </div>
 </section>
 
@@ -363,8 +363,9 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
 <section class="page-cta">
   <div class="page-cta__inner">
     <h2 class="page-cta__h">Reserve a day by the water.</h2>
-    <p class="page-cta__sub">Tell us your date and how many are coming, and we will save your place.</p>
-    <a href="https://wa.me/35797444085?text=Hi%20M%20House%2C%20I%20would%20like%20to%20book%20a%20pool%20day%20pass." target="_blank" rel="noopener" class="btn-ol btn-ol--light">Reserve on WhatsApp &nbsp;&rarr;</a>
+    <p class="page-cta__sub">Book a day pass, or a monthly pass if the pool becomes your habit.</p>
+    <a href="https://e-commerce.officernd.com/m-house/plans/6aa645c932737132d1c8002a?type=P_L&office=686775588dff00b206e2ca40&language=en-us&utm_source=direct&utm_medium=direct&startDate=2026-09-29T00%3A00%3A00.000Z" target="_blank" rel="noopener" class="btn-ol btn-ol--light officernd">Book a day pass &nbsp;&rarr;</a>
+    <a href="https://e-commerce.officernd.com/m-house/plans/6aa13817276695ee76ff6e80?type=P_L&office=686775588dff00b206e2ca40&language=en-us&utm_source=direct&utm_medium=direct&startDate=2026-09-29T00%3A00%3A00.000Z" target="_blank" rel="noopener" class="btn-ol btn-ol--light officernd" style="margin-left:1rem">Monthly pass &nbsp;&rarr;</a>
   </div>
 </section>
 
@@ -583,6 +584,14 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
     if(prev) prev.addEventListener("click", function(){ go(-1); });
     if(next) next.addEventListener("click", function(){ go(1); });
   });
+})();
+
+(function(){
+  var links = document.querySelectorAll('a.officernd');
+  if(!links.length) return;
+  var d = new Date();
+  var today = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+  links.forEach(function(a){ var h = a.getAttribute('href'); if(h) a.setAttribute('href', h.replace(/\d{4}-\d{2}-\d{2}/g, today)); });
 })();
 </script>
 

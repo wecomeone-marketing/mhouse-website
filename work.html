@@ -193,7 +193,7 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
 }
 /* ── DETAIL COMPONENTS (rooms, pricing, info rows) ── */
 .offer-grid--3{grid-template-columns:repeat(3,1fr)}
-.offer__price{display:block;margin-top:0.75rem;font-family:var(--fd);font-size:1.5rem;color:var(--tx)}
+.offer__price{display:block;margin-top:0.75rem;font-family:var(--fd);font-size:1.5rem;color:var(--tx)}.offer__book{display:inline-block;margin-top:1rem;font-family:var(--fb);font-size:0.5625rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--ol);transition:color 0.2s}.offer__book:hover{color:var(--dk)}.offer__book + .offer__book{margin-left:1.5rem}
 .amenities{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem 2rem;margin-top:2rem;list-style:none}
 .amenities li{font-family:var(--fb);font-weight:300;font-size:0.9375rem;color:var(--mu);padding-left:1.25rem;position:relative}
 .amenities li::before{content:"";position:absolute;left:0;top:0.62em;width:5px;height:5px;border-radius:50%;background:var(--ol)}
@@ -340,10 +340,10 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
   <div class="page-section__inner">
     <div class="sec-label">Ways to work here</div>
     <div class="offer-grid">
-      <div class="offer"><h3>Hot desk</h3><p>A seat in the lounge whenever you need one.</p><span class="offer__price">from €25 per day</span></div>
-      <div class="offer"><h3>Lounge membership</h3><p>The lounge whenever you need it, month to month.</p><span class="offer__price">€288 per month</span></div>
-      <div class="offer"><h3>Dedicated desk</h3><p>Your own desk, kept as you left it.</p><span class="offer__price">from €328 per month</span></div>
-      <div class="offer"><h3>Meeting rooms</h3><p>A private room for calls, sessions and workshops.</p><span class="offer__price">from €18 per hour</span></div>
+      <div class="offer"><h3>Hot desk</h3><p>A seat in the lounge whenever you need one.</p><span class="offer__price">from €25 per day</span><a href="https://e-commerce.officernd.com/m-house/resources/6aa678fe32737132d1c8d88e?periodStart=2026-09-29T00%3A00%3A00.000Z&periodEnd=2026-09-29T23%3A59%3A59.999Z&type=hotdesk&office=686775588dff00b206e2ca40&language=en-us&utm_source=direct&utm_medium=direct" target="_blank" rel="noopener" class="offer__book officernd">Day pass &nbsp;&rarr;</a><a href="https://e-commerce.officernd.com/m-house/plans/6aa137ba276695ee76ff6898?type=flexible_area&office=686775588dff00b206e2ca40&language=en-us&utm_source=direct&utm_medium=direct&startDate=2026-09-29T00%3A00%3A00.000Z" target="_blank" rel="noopener" class="offer__book officernd">Monthly &nbsp;&rarr;</a></div>
+      <div class="offer"><h3>Lounge membership</h3><p>The lounge whenever you need it, month to month.</p><span class="offer__price">€288 per month</span><a href="https://e-commerce.officernd.com/m-house/plans/6aa137df276695ee76ff6b0a?type=flexible_area&office=686775588dff00b206e2ca40&language=en-us&utm_source=direct&utm_medium=direct&startDate=2026-09-29T00%3A00%3A00.000Z" target="_blank" rel="noopener" class="offer__book officernd">Book &nbsp;&rarr;</a></div>
+      <div class="offer"><h3>Dedicated desk</h3><p>Your own desk, kept as you left it.</p><span class="offer__price">from €328 per month</span><a href="https://e-commerce.officernd.com/m-house/plans/6aa1378f276695ee76ff66c6?type=desk&office=686775588dff00b206e2ca40&language=en-us&utm_source=direct&utm_medium=direct&startDate=2026-09-29T00%3A00%3A00.000Z" target="_blank" rel="noopener" class="offer__book officernd">Book &nbsp;&rarr;</a></div>
+      <div class="offer"><h3>Meeting rooms</h3><p>A private room for calls, sessions and workshops.</p><span class="offer__price">from €18 per hour</span><a href="https://e-commerce.officernd.com/m-house/resources/6a9e7796276695ee76ec5742?periodStart=2026-09-29T08%3A00%3A00.000Z&periodEnd=2026-09-29T09%3A00%3A00.000Z&type=meeting_room&office=686775588dff00b206e2ca40&language=en-us&utm_source=direct&utm_medium=direct" target="_blank" rel="noopener" class="offer__book officernd">Book &nbsp;&rarr;</a></div>
     </div>
     <div class="info-grid">
       <div><div class="info__k">Opening hours</div><div class="info__v">08:00 to 22:00</div></div>
@@ -590,6 +590,14 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
     if(prev) prev.addEventListener("click", function(){ go(-1); });
     if(next) next.addEventListener("click", function(){ go(1); });
   });
+})();
+
+(function(){
+  var links = document.querySelectorAll('a.officernd');
+  if(!links.length) return;
+  var d = new Date();
+  var today = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+  links.forEach(function(a){ var h = a.getAttribute('href'); if(h) a.setAttribute('href', h.replace(/\d{4}-\d{2}-\d{2}/g, today)); });
 })();
 </script>
 
