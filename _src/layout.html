@@ -10,6 +10,45 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{TITLE}}</title>
 <meta name="description" content="{{DESC}}">
+<link rel="canonical" href="{{CANONICAL}}">
+<meta name="theme-color" content="#3D3530">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+<!-- Open Graph / social. og:image (1200x630) is added with the final photography, see PRE-LAUNCH.md -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="M House">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="{{TITLE}}">
+<meta property="og:description" content="{{DESC}}">
+<meta property="og:url" content="{{CANONICAL}}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{TITLE}}">
+<meta name="twitter:description" content="{{DESC}}">
+
+<!-- Local business structured data. image + geo are added at launch, see PRE-LAUNCH.md -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "name": "M House",
+  "description": "A boutique social destination in Larnaka old town, Cyprus: a Mediterranean courtyard, a saltwater pool, five rooms, a work lounge and a place where people naturally come together.",
+  "url": "https://mhouse.cy",
+  "telephone": "+35797444085",
+  "email": "hello@mhouse.cy",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Stadiou 18",
+    "addressLocality": "Larnaka",
+    "postalCode": "6020",
+    "addressCountry": "CY"
+  },
+  "sameAs": [
+    "https://www.instagram.com/mhouselarnaka/",
+    "https://www.facebook.com/mhouselarnaka"
+  ],
+  "priceRange": "€€"
+}
+</script>
 {{STYLES}}
 </head>
 <body>

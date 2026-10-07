@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="M House">
+  <rect width="64" height="64" rx="13" fill="#3D3530"/>
+  <text x="32" y="45" text-anchor="middle" fill="#F5F3EE"
+        font-family="Georgia, 'Times New Roman', serif" font-size="40" font-weight="500">M</text>
+</svg>

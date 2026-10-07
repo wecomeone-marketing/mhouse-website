@@ -1,4 +1,15 @@
-# REVIEW BUILD — block all crawlers so the staging site is not indexed.
-# Remove this block (or replace with an Allow + sitemap) before production launch on mhouse.cy.
+# REVIEW BUILD. This site is live at a staging address for client review, so every
+# crawler is blocked to keep it out of search results. Do NOT lift this until the
+# production launch on mhouse.cy.
+#
+# AT LAUNCH, replace everything below with:
+#   User-agent: *
+#   Allow: /
+#   Disallow: /book.html
+#   Disallow: /wellness.html
+#   Sitemap: https://mhouse.cy/sitemap.xml
+#
+# (book.html and wellness.html are parked; the sitemap already lists only the real pages.)
+
 User-agent: *
 Disallow: /
