@@ -204,7 +204,7 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
 .page-hero__scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(44,31,20,0.48),rgba(44,31,20,0.72))}
 .page-hero__inner{position:relative;z-index:1}
 /* Image placeholder block */
-.ph{position:relative;display:flex;align-items:flex-end;justify-content:flex-start;background:linear-gradient(135deg,var(--g1),var(--g2));border-radius:14px;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(61,53,48,0.05);min-height:280px}
+.ph{position:relative;display:flex;align-items:flex-end;justify-content:flex-start;background:linear-gradient(135deg,var(--g1),var(--g2));border-radius:14px;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(61,53,48,0.05);min-height:280px;max-width:100%}
 .ph::after{content:attr(data-ph);margin:0 0 1rem 1.25rem;font-family:var(--fb);font-size:0.5625rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--ta)}
 .ph--tall{min-height:480px}
 .ph--wide{min-height:0;aspect-ratio:16/6}
@@ -228,6 +228,7 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
   .split--rev .split__media{order:0}
   .ph{min-height:240px}
   .ph--tall{min-height:320px}
+  .ph--wide{min-height:0}
 }
 /* ── DETAIL COMPONENTS (rooms, pricing, info rows) ── */
 .offer-grid--3{grid-template-columns:repeat(3,1fr)}
