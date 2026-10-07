@@ -29,6 +29,9 @@
 
 ## Changelog
 
+### 2026-10-07 — Client tweaks: newsletter, Gather&Swim link, per-room buttons, bottom booking widget
+Four requested changes. (1) Removed the **newsletter signup** from the footer, site-wide (dead CSS left behind, harmless). (2) Homepage "More than a hotel" **Gather & Swim Explore** link now points to the **Swim** page (was Events). (3) Removed the five **"Book this room"** buttons from the Stay rooms; the client does not need the individual room pages for now, so `book.html` is now unlinked (left in place, easy to re-wire). (4) Added the Smoobu booking widget again at the **bottom of the Stay page**, right before the footer, as a bare iframe with its own id (`#apartmentIframeBottom`) and init, no section heading. Verified live: both Stay widgets render, buttons gone, newsletter gone, link fixed.
+
 ### 2026-10-02 — OfficeRnD booking wired into Work, Swim and Contact
 Wired the OfficeRnD checkout links Carina sent. **Work**: a Book button on each option (Hot Desk day and monthly, Lounge Access, Dedicated Desk, Meeting Room); private offices stay as the email enquiry. **Swim**: the pool moved from WhatsApp to OfficeRnD (Book a day pass and Monthly pass). **Contact**: the pool quick-link books a day pass, and the parking line links to the OfficeRnD parking menu. All buttons open in a new tab and carry the booking date set **dynamically to the current day** (a small script in `scripts.html` rewrites the baked date via `a.officernd` links), so the day pass and meeting room links default to today. Verified live: the date rewrites to today across Work, Swim and Contact, and the parking link (no date) is left clean.
 
