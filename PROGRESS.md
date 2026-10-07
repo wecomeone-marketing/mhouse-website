@@ -29,6 +29,9 @@
 
 ## Changelog
 
+### 2026-10-07 — CTA audit: fixed dead mailto buttons
+Audited every CTA site-wide. Four buttons were bare mailto links that do nothing on a machine with no mail app. Fixed: Stay "Check availability" scrolls to the booking widget (#book); Work "Enquire about the lounge" and Events "Enquire about your event" go to the Contact page; Contact "Email us" became "Message us on WhatsApp". Left open for a decision: the Events builder "Request a Proposal" (composes a prefilled proposal email with the selected package, so a mailto is intentional there). Open question: whether stay@ and events@ mailboxes exist (only hello@mhouse.cy is confirmed). Email addresses shown as plain text on Contact and the legal pages are fine (readable and copyable).
+
 ### 2026-10-07 — Parked book.html (individual room pages)
 The client does not want the individual room pages crawled. Parked `book.html` fully: source moved to `_src/hidden/book.html`, built file removed, so `/book.html` and `/book.html?apartmentId=...` now return 404 (verified live). Nothing links to it. Easy to restore. The only pages that will be crawlable at launch are the real pages in the sitemap; this one is simply gone.
 
