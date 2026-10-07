@@ -29,6 +29,9 @@
 
 ## Changelog
 
+### 2026-10-07 — Parked book.html (individual room pages)
+The client does not want the individual room pages crawled. Parked `book.html` fully: source moved to `_src/hidden/book.html`, built file removed, so `/book.html` and `/book.html?apartmentId=...` now return 404 (verified live). Nothing links to it. Easy to restore. The only pages that will be crawlable at launch are the real pages in the sitemap; this one is simply gone.
+
 ### 2026-10-07 — Client tweaks: newsletter, Gather&Swim link, per-room buttons, bottom booking widget
 Four requested changes. (1) Removed the **newsletter signup** from the footer, site-wide (dead CSS left behind, harmless). (2) Homepage "More than a hotel" **Gather & Swim Explore** link now points to the **Swim** page (was Events). (3) Removed the five **"Book this room"** buttons from the Stay rooms; the client does not need the individual room pages for now, so `book.html` is now unlinked (left in place, easy to re-wire). (4) Added the Smoobu booking widget again at the **bottom of the Stay page**, right before the footer, as a bare iframe with its own id (`#apartmentIframeBottom`) and init, no section heading. Verified live: both Stay widgets render, buttons gone, newsletter gone, link fixed.
 
