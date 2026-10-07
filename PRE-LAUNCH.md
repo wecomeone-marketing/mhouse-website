@@ -94,7 +94,7 @@ CSS/logo live in one place. See README → Build.
 - ☐ **Open Graph / social share image** — design the 1200x630 card from a final hero, add as `og:image` + schema `image`. Waits for photography.
 - ☐ **Lift the `robots.txt` crawl block** — still blocking all crawlers (review build). The file now carries the exact production replacement (allow + disallow parked pages + `Sitemap:` line) as a comment; paste it at launch.
 - ☐ Google Search Console setup + verification (submit `sitemap.xml` after launch).
-- ⚑ **Home at `/home.html`, root `/` is the splash gate.** Handled for now by canonicalising `/` → `/home.html` and listing only `/home.html` in the sitemap. **Decision still open for launch:** keep the splash, or serve the home content at root (ideal for SEO, since `/` gets the most inbound links and currently resolves to a near-empty splash). This is a UX/brand call for Andreas, not a blocker.
+- ☑ **Home at `/home.html`, root `/` is the splash gate. DECIDED 2026-10-07: keep the splash.** Andreas chose to keep the splash gate rather than move home content to root. Handled by canonicalising `/` → `/home.html` and listing only `/home.html` in the sitemap, so search engines index the home content and not the near-empty splash. No further action.
 
 ---
 
