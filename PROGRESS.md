@@ -29,6 +29,9 @@
 
 ## Changelog
 
+### 2026-10-07 — Events builder converted to WhatsApp
+The "Request a Proposal" builder now opens WhatsApp (general number +357 97 444085) in a new tab with the chosen package and add-ons prefilled, instead of a mailto that needed a mail app. The composing JS still updates live as the guest selects; it just builds a wa.me text link now. Verified: selecting a package and an add-on prefills the WhatsApp message. Note: events enquiries now route to the general WhatsApp number rather than events@; the contact form backend can move this back to email at launch if wanted. Still open: whether stay@ and events@ mailboxes exist (the footer still displays them).
+
 ### 2026-10-07 — CTA audit: fixed dead mailto buttons
 Audited every CTA site-wide. Four buttons were bare mailto links that do nothing on a machine with no mail app. Fixed: Stay "Check availability" scrolls to the booking widget (#book); Work "Enquire about the lounge" and Events "Enquire about your event" go to the Contact page; Contact "Email us" became "Message us on WhatsApp". Left open for a decision: the Events builder "Request a Proposal" (composes a prefilled proposal email with the selected package, so a mailto is intentional there). Open question: whether stay@ and events@ mailboxes exist (only hello@mhouse.cy is confirmed). Email addresses shown as plain text on Contact and the legal pages are fine (readable and copyable).
 
