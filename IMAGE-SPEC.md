@@ -19,7 +19,7 @@ One row per image slot on the site, with the exact size to export. Prepared 2026
 
 • The **3 room cards on the home page** (Shorty's, Duchess, The Bungalow) can reuse the best "the room" shot from each room's gallery on the Stay page. No need to shoot them twice.
 • The **home hero slideshow** can reuse your strongest hero shots from the section pages (pool, courtyard, a room, the lounge).
-• If 5 shots per room on Stay is more than you want to prepare, the galleries work fine with 3 to 4 each; tell me the count and I will adjust the page.
+• Stay room galleries are set to **2 shots each** (the room and the bed). Tell me if you want a different number and I will adjust the page.
 
 ---
 
@@ -58,7 +58,9 @@ One row per image slot on the site, with the exact size to export. Prepared 2026
 | 12 | The Bungalow | Room card | 760 × 1010 |
 | 13 | M House Work Lounge | Work image | 1040 × 780 |
 
-## STAY (27 images)
+## STAY (12 images)
+
+Room galleries trimmed to 2 shots each (2026-10-09), the room and the bed (the Bungalow keeps the courtyard and the room).
 
 | # | Caption / subject | Slot | Export size |
 |---|---|---|---|
@@ -66,29 +68,14 @@ One row per image slot on the site, with the exact size to export. Prepared 2026
 | 2 | The Bungalow in the courtyard | Split image (intro) | 1040 × 970 |
 | 3 | Shorty's Room, the room | Gallery slide | 1040 × 890 |
 | 4 | Shorty's Room, the bed | Gallery slide | 1040 × 890 |
-| 5 | Shorty's Room, bathroom | Gallery slide | 1040 × 890 |
-| 6 | Shorty's Room, detail | Gallery slide | 1040 × 890 |
-| 7 | Shorty's Room, looking out | Gallery slide | 1040 × 890 |
-| 8 | Duchess Room, the room | Gallery slide | 1040 × 890 |
-| 9 | Duchess Room, the bed | Gallery slide | 1040 × 890 |
-| 10 | Duchess Room, courtyard view | Gallery slide | 1040 × 890 |
-| 11 | Duchess Room, bathroom | Gallery slide | 1040 × 890 |
-| 12 | Duchess Room, detail | Gallery slide | 1040 × 890 |
-| 13 | Governors Room, the room | Gallery slide | 1040 × 890 |
-| 14 | Governors Room, the bed | Gallery slide | 1040 × 890 |
-| 15 | Governors Room, private balcony | Gallery slide | 1040 × 890 |
-| 16 | Governors Room, bathroom | Gallery slide | 1040 × 890 |
-| 17 | Governors Room, detail | Gallery slide | 1040 × 890 |
-| 18 | The O Room, the room | Gallery slide | 1040 × 890 |
-| 19 | The O Room, the bed | Gallery slide | 1040 × 890 |
-| 20 | The O Room, private terrace | Gallery slide | 1040 × 890 |
-| 21 | The O Room, bathroom | Gallery slide | 1040 × 890 |
-| 22 | The O Room, detail | Gallery slide | 1040 × 890 |
-| 23 | The Bungalow, in the courtyard | Gallery slide | 1040 × 890 |
-| 24 | The Bungalow, the room | Gallery slide | 1040 × 890 |
-| 25 | The Bungalow, the bed | Gallery slide | 1040 × 890 |
-| 26 | The Bungalow, bathroom | Gallery slide | 1040 × 890 |
-| 27 | The Bungalow, detail | Gallery slide | 1040 × 890 |
+| 5 | Duchess Room, the room | Gallery slide | 1040 × 890 |
+| 6 | Duchess Room, the bed | Gallery slide | 1040 × 890 |
+| 7 | Governors Room, the room | Gallery slide | 1040 × 890 |
+| 8 | Governors Room, the bed | Gallery slide | 1040 × 890 |
+| 9 | The O Room, the room | Gallery slide | 1040 × 890 |
+| 10 | The O Room, the bed | Gallery slide | 1040 × 890 |
+| 11 | The Bungalow, in the courtyard | Gallery slide | 1040 × 890 |
+| 12 | The Bungalow, the room | Gallery slide | 1040 × 890 |
 
 ## SWIM (3 images)
 
@@ -135,12 +122,12 @@ One row per image slot on the site, with the exact size to export. Prepared 2026
 | Page | Images |
 |---|---|
 | Home | 13 |
-| Stay | 27 |
+| Stay | 12 |
 | Swim | 3 |
 | Work | 3 |
 | Events | 3 |
 | Gather | 2 |
 | Contact | 2 |
-| **Total** | **53** |
+| **Total** | **38** |
 
-Stay's 25 room-gallery shots are the bulk. With the reuse notes above (home room cards reuse Stay shots; home hero reuses section heroes) and trimming galleries to 3 to 4 shots each, the real number to shoot is closer to ~30 to 35 distinct images.
+Galleries are now 2 shots per room (10 total on Stay). With the reuse notes above (home room cards reuse Stay shots; home hero reuses section heroes), the real number of distinct images to shoot is closer to ~25 to 30.

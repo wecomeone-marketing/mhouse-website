@@ -30,6 +30,9 @@
 
 ## Changelog
 
+### 2026-10-09 — Trimmed Stay room galleries to 2 shots each
+Per Andreas, cut each of the 5 room galleries on Stay from 5 slides to 2 (kept "the room" and "the bed"; the Bungalow keeps "in the courtyard" and "the room"). Removed 15 `gallery__slide` divs in `_src/pages/stay.html`. The gallery JS activates at `slides.length >= 2`, so the dots and prev/next arrows still work; verified all 5 galleries render 2 slides, 2 dots, working arrows. Updated `IMAGE-SPEC.md`: Stay now 12 images (was 27), site total 38 (was 53). This drops the photography count significantly.
+
 ### 2026-10-09 — Image spec for photography handoff
 Created `IMAGE-SPEC.md`: every image slot on the site (53 total), per page, with the exact export size (2× the measured rendered size for retina). Measured each slot's real rendered dimensions at desktop (1440px) and mobile (375px). Key facts captured: the splash is a gradient (no photo), the two home About images are desktop-only, all fixed-aspect content images are largest on desktop (so desktop governs), and the heroes are full-bleed (must work wide and tall, subject centred). Stay's 25 room-gallery shots are the bulk; the doc flags reuse (home room cards can reuse Stay shots, home hero can reuse section heroes) and the option to trim galleries to 3 to 4 shots each, bringing the real shoot count to ~30 to 35. This is the brief for Andreas/Carina to prepare and upload the final photography, after which the image swap + image SEO (alt text, og:image, filenames, compression) runs as one pass.
 
