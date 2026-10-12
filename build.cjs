@@ -5,11 +5,11 @@ const ROOT = __dirname.replace(/\\/g, '/');
 const read = p => fs.readFileSync(ROOT + '/' + p, 'utf8');
 
 const SITE = 'https://mhouse.cy';
-// index.html is the splash gate; its canonical points at the real home content.
-const canonicalFor = file => file === 'index.html' ? SITE + '/home.html' : SITE + '/' + file;
+// index.html is the home page, served at the site root.
+const canonicalFor = file => file === 'index.html' ? SITE + '/' : SITE + '/' + file;
 // Pages kept out of the sitemap, and per-page priority (default 0.8).
-const SITEMAP_EXCLUDE = new Set(['index.html']);
-const SITEMAP_PRIORITY = { 'home.html': '1.0', 'contact.html': '0.7', 'privacy.html': '0.3', 'terms.html': '0.3' };
+const SITEMAP_EXCLUDE = new Set();
+const SITEMAP_PRIORITY = { 'index.html': '1.0', 'contact.html': '0.7', 'privacy.html': '0.3', 'terms.html': '0.3' };
 
 const layout = read('_src/layout.html');
 const partials = {
