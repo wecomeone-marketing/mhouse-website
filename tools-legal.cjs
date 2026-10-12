@@ -1,7 +1,7 @@
 // Convert the legal source text (_src/legal/*.txt) into built page sources
 // (_src/pages/privacy.html, terms.html). Re-run after editing the .txt, then `node build.cjs`.
 const fs = require('fs');
-const ROOT = 'C:/Dev/mhouse-website/';
+const ROOT = __dirname.replace(/\\/g, '/') + '/';
 
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 function inline(s) {

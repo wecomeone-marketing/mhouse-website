@@ -5,7 +5,7 @@ Bespoke multipage website for **M House**, a boutique social destination in Larn
 - **Client:** Onkel Properties Ltd (trading as M House) — Christian Angell Isaksen
 - **Agency:** Wecomeone Marketing And Comms
 - **Production domain:** [mhouse.cy](https://mhouse.cy) (Cloudflare DNS, owned by client) — not live yet
-- **Review URL:** GitHub Pages (subdomain TBD, e.g. `mhouse.wecomeone.me`)
+- **Review URL:** [mhouse.wecomeone.me](https://mhouse.wecomeone.me) (GitHub Pages; all crawlers blocked until launch)
 - **Repo:** `wecomeone-marketing/mhouse-website`
 
 ## Stack
@@ -20,16 +20,18 @@ static HTML at the repo root. See **[Build](#build)** below.
 
 | File | Purpose | Status |
 |------|---------|--------|
-| `index.html` | Homepage | ✅ Complete, approved (built from `_src/`) |
-| `events.html` | Events and private hire (was `gather.html`; old URL redirects) | ✅ Built |
-| `gather.html` | Gather: Yaya's Corner, yoga, aperitivo (was `gatherings.html`, redirects) | ✅ Built |
+| `index.html` | Homepage, served at the site root `/` (splash folded in as a dismissible intro) | ✅ Built, approved |
+| `gather.html` | Gather: the everyday, aperitivo, gatherings | ✅ Built |
 | `swim.html` | Pool day passes | ✅ Built |
-| `stay.html` | Five rooms | ✅ Built (Smoobu widget still to embed) |
+| `stay.html` | Five rooms, Smoobu booking widget embedded (`#book`) | ✅ Built |
 | `work.html` | Work lounge | ✅ Built |
+| `events.html` | Events and private hire | ✅ Built |
 | `contact.html` | Contact and general info | ✅ Built (enquiry form pending backend) |
-| `wellness.html` | Wellness & Recovery | ✅ Built (placeholder, awaiting client copy) |
-| `privacy.html` | Privacy Policy | ✅ Built (from `_src/legal/privacy.txt`) |
-| `terms.html` | Terms of Use | ✅ Built (from `_src/legal/terms.txt`) |
+| `privacy.html` | Privacy Policy (built from `_src/legal/privacy.txt`) | ✅ Built |
+| `terms.html` | Terms of Use (built from `_src/legal/terms.txt`) | ✅ Built |
+| `home.html` | Redirect stub to `/` (old home URL, noindex) | ✅ Built |
+| `wellness.html` | Wellness & Recovery | ⏸ Parked (source in `_src/hidden/`, not built, awaiting client copy) |
+| `book.html` | Per-room booking page | ⏸ Parked (source in `_src/hidden/`, not built) |
 
 ## Build
 
@@ -42,7 +44,7 @@ _src/
     styles.html       # shared CSS (~29KB; page-specific bg images kept out)
     nav.html          # nav + hamburger + mobile overlay (incl. palm logo)
     footer.html       # footer
-    scripts.html      # shared JS (splash handler guarded so sub-pages work)
+    scripts.html      # shared JS (hero slideshow, room galleries, OfficeRnD date rewrite)
   pages/
     gather.html       # front-matter (title/desc) + body with {{NAV}}/{{FOOTER}}/{{SCRIPTS}}
 ```
