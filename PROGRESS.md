@@ -30,6 +30,9 @@
 
 ## Changelog
 
+### 2026-10-14 — Launch hosting decided: GitHub Pages (no server)
+Went through the launch checklist. Key finding: the site has **no on-site forms** (every booking/enquiry routes to Smoobu, OfficeRnD, WhatsApp or email), so it is fully static and needs no server. Andreas chose **GitHub Pages** over the earlier Scala VPS / Node-app plan. Revised `PRE-LAUNCH.md` §7 to the GitHub Pages go-live steps (lift robots, CNAME → mhouse.cy, Cloudflare DNS with the four GitHub Pages A records grey-cloud, Pages custom domain + Enforce HTTPS, geo in schema, verify, Search Console), marked the contact-form backend as **not needed**, and refreshed stale items (images done, Stripe connected via Smoobu, maps = pinned link, hero Book a room → Stay). **Remaining launch blockers:** fabricated testimonials must be replaced with real reviews or removed; one real Stripe test booking before the Lovable cutover; confirm stay@/events@ mailboxes (or point to hello@). Open decisions: testimonials, mailboxes, analytics (GA4/Pixel), favicon-from-logo.
+
 ### 2026-10-14 — Home CTA tweaks, maps fix, 3 image updates
 Client changes ahead of launch. Home hero: added a third CTA, **Work lounge** (→ `work.html`), next to Book a room and Explore events; **Book a room** now leads to the dedicated Stay page (`stay.html`) instead of the on-home `#book` widget. Work-lounge section: the **Book a workspace** CTA was restyled from a text link (`.work__cta`) to a `btn-ol` capsule to match the All gatherings button; removed the now-orphaned `.work__cta` CSS. Contact: the **Open in Google Maps** link now points at the pinned location (`https://maps.app.goo.gl/cfKZP2kmA4cHcBPF7`) instead of a name/address search. Images: replaced `home-about-courtyard.webp`, `home-hero-2.webp` and `swim-pool.webp` with new versions from Andreas (same slots, same dimensions, drop-in).
 

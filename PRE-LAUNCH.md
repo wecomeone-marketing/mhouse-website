@@ -17,25 +17,9 @@ When replacing an image:
 - After a swap, **re-run the audit** (`scratchpad`-style: extract data URIs, confirm every image is still referenced) to make sure no old/unused image data remains anywhere.
 - Keep new images optimised — the page is currently ~3.1 MB, ~98% of which is inline images.
 
-**Placeholders to replace** (from the project brief):
-
-- ☐ About section — 2 portrait images
-- ☐ Spaces grid — pool courtyard, rooms
-- ☐ Room cards — all 5 rooms (Governors and O Room still missing entirely)
-- ☐ Testimonials background
-- ☐ Aperitivo background
-- ☐ Work lounge — currently an AI-generated placeholder
-- ☐ Hero carousel + splash — confirm final selects
-
-**Photography awaited from client:** room photography (all 5 rooms), events / courtyard photography.
-
-**Sub-page image placeholders — now filled with TEMPORARY stock (2026-07-29):** every
-sub-page hero (`.page-hero__media`) and image slot (`.ph`) now carries a fitting
-free-licence Unsplash photo, added for the client review via the `.is-photo` class + an
-inline `background-image` (files in `assets/ph/`). The original shot intent is still in
-each `data-ph` caption (the shot list). **To go live:** drop the real photo in at the
-matching `assets/ph/<page>-<n>.jpg` filename, or remove `is-photo` to fall back to the
-captioned gradient.
+☑ **All placeholders replaced with final photography (2026-10-14).** The 38 site images are
+real WebP in `assets/img/`; the home images are file references (no longer base64). The only
+placeholder images left anywhere are the two on the parked Wellness page.
 
 ---
 
@@ -69,14 +53,14 @@ CSS/logo live in one place. See README → Build.
 
 ## 4. Integrations
 
-- ◐ **Smoobu** booking widget (room bookings). **Stay page done and live:** the whole-villa Booking Engine (All Accommodations) is embedded as the "Book your stay" section on `stay.html` (`#book`); nav **Book Now** points to it (desktop and mobile); the per-room **"Book this room"** buttons were **removed 2026-10-07 at the client's request** (individual room pages not needed for now; `book.html` is **parked**: source in `_src/hidden/book.html`, no built file, so the URL 404s and cannot be crawled; easy to restore later). A second copy of the booking widget was briefly added at the bottom of the Stay page (client request), then **removed 2026-10-07**: two Smoobu Booking Tool iframes on one page render with the **same iframe id** (`booking-tool-iFrame-allApartments`), which breaks iframe-resizer, so neither auto-sized (the bottom collapsed to 16px, the top stopped growing and clipped the datepicker on mobile). The widget cannot be embedded twice on one page. The existing "Stay with us / Check availability" CTA before the footer already scrolls visitors to the `#book` widget, so bottom-of-page booking access is covered. Booking Engine Enabled, EUR, Stripe connected (Option A). Widget **styled to brand** via Smoobu Custom CSS (olive Search button, confirmed live) and **auto-resizes** on search (confirmed). Iframe min-height 120px. Note: date prefill via URL is not supported, so a search form cannot pass dates into the widget. **Homepage done too:** the placeholder "Check availability" form is replaced with the real Smoobu widget (Option 2, white card on the dark band), and the hero "Book a room" button points at it (`#book`). Booking is now live across the site. **Still to do:** one real test booking through Stripe before launch, and Andreas to confirm the homepage widget reads well in the two-column band (easy switch to full width if not).
-- ☐ **Stripe** (account + keys from client)
-- ☐ **Contact form + reservation form backend** — **decided:** production runs a small Node/Express server on Scala (see §7) exposing a `/api/contact` (and reservation-enquiry) endpoint that calls **Resend server-side**. The Resend key stays a **server env var**, never in this public repo. Both the homepage "Check availability" form and the contact-page form (currently `onsubmit="return false"`) route through it. Add per-IP rate limiting + a captcha (e.g. Cloudflare Turnstile) for spam protection. **Dependency:** to send *from* `@mhouse.cy`, Resend needs its domain verified via DNS records on `mhouse.cy` (Cloudflare) — needs DNS access, otherwise send from an agency-controlled domain.
+- ◐ **Smoobu** booking widget (room bookings). **Stay page done and live:** the whole-villa Booking Engine (All Accommodations) is embedded as the "Book your stay" section on `stay.html` (`#book`); nav **Book Now** points to it (desktop and mobile); the per-room **"Book this room"** buttons were **removed 2026-10-07 at the client's request** (individual room pages not needed for now; `book.html` is **parked**: source in `_src/hidden/book.html`, no built file, so the URL 404s and cannot be crawled; easy to restore later). A second copy of the booking widget was briefly added at the bottom of the Stay page (client request), then **removed 2026-10-07**: two Smoobu Booking Tool iframes on one page render with the **same iframe id** (`booking-tool-iFrame-allApartments`), which breaks iframe-resizer, so neither auto-sized (the bottom collapsed to 16px, the top stopped growing and clipped the datepicker on mobile). The widget cannot be embedded twice on one page. The existing "Stay with us / Check availability" CTA before the footer already scrolls visitors to the `#book` widget, so bottom-of-page booking access is covered. Booking Engine Enabled, EUR, Stripe connected (Option A). Widget **styled to brand** via Smoobu Custom CSS (olive Search button, confirmed live) and **auto-resizes** on search (confirmed). Iframe min-height 120px. Note: date prefill via URL is not supported, so a search form cannot pass dates into the widget. **Homepage done too:** the placeholder "Check availability" form is replaced with the real Smoobu widget (Option 2, white card on the dark band), and the hero "Book a room" button now leads to the dedicated Stay page. Booking is now live across the site. **Still to do:** one real test booking through Stripe before launch, and Andreas to confirm the homepage widget reads well in the two-column band (easy switch to full width if not).
+- ☑ **Stripe** — connected inside Smoobu (bookings pay through it). Reconfirm during the launch test booking.
+- ☑ **Contact / reservation backend — not needed.** The site has **no on-site forms**: every booking and enquiry routes to Smoobu (rooms), OfficeRnD (work + pool), WhatsApp (gatherings), or email (hello@mhouse.cy). So no server, no Resend integration and no `/api` endpoint is required, which is why hosting is now plain static GitHub Pages (see §7). If an on-site contact form is wanted later, that one feature would need a small backend.
 - ☑ **Workspace and pool booking via OfficeRnD (done, live 2026-10-02).** Work has a Book button on each option (Hot Desk day and monthly, Lounge Access, Dedicated Desk, Meeting Room); Swim has Pool Day Pass and Monthly Pass; Contact has the pool quick-link and the parking menu. All open OfficeRnD in a new tab, and a small script rewrites the baked booking date to the current day. Private offices stay as the email enquiry (all taken for the next year). The phone room is a subscriber add on, not listed.
 - ☑ **Call to action buttons across the site (done).** Rooms book via the Smoobu widget (homepage, Stay top and bottom, and the Book Now button). Work lounge and the pool book via **OfficeRnD** (date set to today); private offices stay on the enquiry button. The **gatherings** on Gather stay on **WhatsApp**. Events keeps "Request a Proposal"; general enquiries go to **hello@mhouse.cy**. Parking books via OfficeRnD from the Contact page.
 - ☐ Google Analytics 4
 - ☐ Meta Pixel
-- ☐ Google Maps embed (contact page)
+- ☑ Google Maps (contact page) — the "Open in Google Maps" link points at the pinned location (`https://maps.app.goo.gl/cfKZP2kmA4cHcBPF7`). A visual embed could be added later if wanted.
 
 ---
 
@@ -125,19 +109,20 @@ CSS/logo live in one place. See README → Build.
 
 ## 7. Production launch / hosting
 
-- **Hosting: Scala Hosting (decided).** Managed VPS with SPanel + NodeJS Manager / PM2.
-  The production site runs as a **small Node/Express app** (serves the static pages +
-  the `/api/contact` endpoint from §4), not pure-static files. Same pattern as the
-  agency's Travio app.
-- ☐ Restructure repo for the Node app: add `package.json` + `server.js` (Express serving
-  the built site and the API), keep the Resend key in a server `.env` (gitignored).
-- ☐ Deploy on Scala: NodeJS Manager → point at `server.js`, set env vars, start (PM2).
-- ☐ Point `mhouse.cy` DNS (Cloudflare) at the Scala VPS IP. SPanel handles nginx +
-  Let's Encrypt SSL.
-- ☐ Lift the `robots.txt` crawl block (see §5).
+- **Hosting: GitHub Pages (decided 2026-10-14).** The site is **fully static** (no on-site forms; all bookings and enquiries route to Smoobu / OfficeRnD / WhatsApp / email), so no server, Node app or VPS is needed. The agency repo `wecomeone-marketing/mhouse-website` already serves the review build on GitHub Pages at `mhouse.wecomeone.me`; production is the same setup pointed at `mhouse.cy`.
+
+**Go-live steps (in order):**
+
+- ☐ Lift the crawl block: replace `robots.txt` with the production version (allow all, disallow `/book.html` and `/wellness.html`, add `Sitemap: https://mhouse.cy/sitemap.xml`). Commit + push.
+- ☐ Point the domain: change the `CNAME` file from `mhouse.wecomeone.me` to `mhouse.cy`. Commit + push.
+- ☐ Cloudflare DNS for `mhouse.cy`: add the four GitHub Pages apex A records (185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153) and a `www` CNAME to the github.io host, all **DNS only (grey cloud)** so GitHub can issue the Let's Encrypt certificate.
+- ☐ Repo → Settings → Pages: set the custom domain to `mhouse.cy`, then enable **Enforce HTTPS** once the certificate provisions (a few minutes to an hour).
+- ☐ Add the business `geo` (lat/long for Stadiou 18) to the schema in `_src/layout.html`.
+- ☐ Verify: `https://mhouse.cy/` loads over HTTPS, robots allows crawling, `sitemap.xml` resolves.
+- ☐ Google Search Console: add `mhouse.cy`, verify by DNS TXT, submit the sitemap.
 - ☐ Cross-browser + mobile QA pass.
-- ☐ **Booking cutover.** Christian's interim Lovable operations and booking site is switched off when this new site goes live. Confirm the Smoobu booking flow on the new site is fully working and tested (one real test booking through Stripe) **before** Lovable is turned off, so there is never a window where guests cannot book. Day to day operations move to Smoobu's own dashboard (Smoobu is a full PMS); reproducing any Lovable operational feature would be new scope.
-- ☐ Final proof — confirm no placeholder copy or images remain anywhere.
+- ☐ **Booking cutover.** Confirm the Smoobu flow works end to end (one real Stripe test booking) **before** Christian turns off the interim Lovable site, so guests can always book. Day to day operations then live in Smoobu's own dashboard (a full PMS).
+- ☐ Final proof — confirm no placeholder copy, images or fabricated reviews remain anywhere.
 
 ---
 
