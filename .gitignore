@@ -12,3 +12,7 @@ desktop.ini
 
 # Node (only if a toolchain is ever introduced — none currently)
 node_modules/
+
+# Staging folder for raw image uploads before they are optimised into assets/.
+# Kept out of the repo so originals do not bloat it or get served publicly.
+Website Images/
