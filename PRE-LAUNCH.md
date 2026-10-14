@@ -103,7 +103,7 @@ CSS/logo live in one place. See README → Build.
 - ☐ Room photography (5 rooms)
 - ☐ Events / courtyard photography
 - ☑ Social media handles received and wired to the footer (Instagram and Facebook, @mhouselarnaka)
-- ☑ Real guest reviews in (2026-10-14): three real reviews (Eylem, Silvio, Matt) replace the fabricated testimonials; invented dates dropped. Two name the property "The Colonial" (verbatim); Andreas to confirm keep vs change to "M House".
+- ☑ Real guest reviews in (2026-10-14): three real reviews (Eylem, Silvio, Matt) replace the fabricated testimonials; invented dates dropped. Silvio's and Matt's "The Colonial" references were changed to "M House" per Andreas.
 
 ---
 
