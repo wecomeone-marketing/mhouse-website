@@ -30,6 +30,9 @@
 
 ## Changelog
 
+### 2026-10-14 — Home CTA tweaks, maps fix, 3 image updates
+Client changes ahead of launch. Home hero: added a third CTA, **Work lounge** (→ `work.html`), next to Book a room and Explore events; **Book a room** now leads to the dedicated Stay page (`stay.html`) instead of the on-home `#book` widget. Work-lounge section: the **Book a workspace** CTA was restyled from a text link (`.work__cta`) to a `btn-ol` capsule to match the All gatherings button; removed the now-orphaned `.work__cta` CSS. Contact: the **Open in Google Maps** link now points at the pinned location (`https://maps.app.goo.gl/cfKZP2kmA4cHcBPF7`) instead of a name/address search. Images: replaced `home-about-courtyard.webp`, `home-hero-2.webp` and `swim-pool.webp` with new versions from Andreas (same slots, same dimensions, drop-in).
+
 ### 2026-10-14 — Splash photo
 Andreas chose a poolside cabanas shot for the splash intro. Added `assets/img/splash.webp` (2000x1250) as the `.splash__bg` image (inline on `index.html`), and changed `.splash__ov` from a flat 50% overlay to a centred radial vignette (`rgba(44,31,20,0.60)` at centre to `0.42` at the edges) so the white logo and tagline read cleanly over the bright wall while the cabanas stay airy. Verified desktop and mobile (the portrait crop frames the logo, table and pool nicely). The splash still dismisses once per session as before.
 
