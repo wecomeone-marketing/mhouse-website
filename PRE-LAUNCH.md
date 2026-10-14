@@ -1,7 +1,6 @@
 # M House Website — Pre-Launch Scope of Work
 
-**Status:** Homepage **approved by client** (2026-07-16). Review build live at
-<https://mhouse.wecomeone.me/> (crawlers blocked — review build). Production target: **mhouse.cy**.
+**Status: LIVE at <https://mhouse.cy/>** (launched 2026-10-14, GitHub Pages, SSL active). Remaining: enable Enforce HTTPS in the repo Pages settings, submit the sitemap to Search Console, decommission the old Lovable site.
 
 Legend: ☐ not started · ◐ in progress · ☑ done
 
@@ -113,12 +112,12 @@ CSS/logo live in one place. See README → Build.
 
 **Go-live steps (in order):**
 
-- ☐ Lift the crawl block: replace `robots.txt` with the production version (allow all, disallow `/book.html` and `/wellness.html`, add `Sitemap: https://mhouse.cy/sitemap.xml`). Commit + push.
-- ☐ Point the domain: change the `CNAME` file from `mhouse.wecomeone.me` to `mhouse.cy`. Commit + push.
-- ☐ Cloudflare DNS for `mhouse.cy`: add the four GitHub Pages apex A records (185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153) and a `www` CNAME to the github.io host, all **DNS only (grey cloud)** so GitHub can issue the Let's Encrypt certificate.
-- ☐ Repo → Settings → Pages: set the custom domain to `mhouse.cy`, then enable **Enforce HTTPS** once the certificate provisions (a few minutes to an hour).
-- ☐ Add the business `geo` (lat/long for Stadiou 18) to the schema in `_src/layout.html`.
-- ☐ Verify: `https://mhouse.cy/` loads over HTTPS, robots allows crawling, `sitemap.xml` resolves.
+- ☑ Lift the crawl block: replace `robots.txt` with the production version (allow all, disallow `/book.html` and `/wellness.html`, add `Sitemap: https://mhouse.cy/sitemap.xml`). Commit + push.
+- ☑ Point the domain: change the `CNAME` file from `mhouse.wecomeone.me` to `mhouse.cy`. Commit + push.
+- ☑ Cloudflare DNS for `mhouse.cy`: add the four GitHub Pages apex A records (185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153) and a `www` CNAME to the github.io host, all **DNS only (grey cloud)** so GitHub can issue the Let's Encrypt certificate.
+- ◐ Repo → Settings → Pages: custom domain set to `mhouse.cy` (via the CNAME file) and SSL cert issued. **Still to do:** tick **Enforce HTTPS**.
+- ☑ Add the business `geo` (lat/long for Stadiou 18) to the schema in `_src/layout.html`.
+- ☑ Verify: `https://mhouse.cy/` loads over HTTPS, robots allows crawling, `sitemap.xml` resolves.
 - ☐ Google Search Console: add `mhouse.cy`, verify by DNS TXT, submit the sitemap.
 - ☐ Cross-browser + mobile QA pass.
 - ☐ **Booking cutover.** Confirm the Smoobu flow works end to end (one real Stripe test booking) **before** Christian turns off the interim Lovable site, so guests can always book. Day to day operations then live in Smoobu's own dashboard (a full PMS).

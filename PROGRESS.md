@@ -30,6 +30,9 @@
 
 ## Changelog
 
+### 2026-10-14 — LAUNCHED at mhouse.cy
+Went live. Andreas repointed Cloudflare DNS for mhouse.cy to GitHub Pages (four apex A records 185.199.108-111.153, `www` CNAME to `wecomeone-marketing.github.io`, all DNS only); verified resolution. Then the repo side: `CNAME` changed to `mhouse.cy` and `robots.txt` swapped to the production version (allow all, disallow the parked pages, Sitemap line). GitHub issued the SSL cert in about 20 seconds. Verified live on https://mhouse.cy: home, canonical `https://mhouse.cy/`, og:image, splash photo, robots allowing, sitemap 200, subpages 200, parked `book.html` 404, schema geo present. The old review URL `mhouse.wecomeone.me` now 404s (GitHub serves only the one custom domain). This is also the booking cutover: mhouse.cy now serves the new site (Smoobu bookings), so the interim Lovable site can be switched off. **Still to do:** tick Enforce HTTPS in the repo Pages settings; submit the sitemap in Google Search Console (a `google-site-verification` TXT already exists on the domain); optional favicon-from-logo and analytics; Christian's Smoobu room polish.
+
 ### 2026-10-14 — Real testimonials in; launch blockers cleared
 Replaced the three fabricated home testimonials with three real guest reviews (Eylem, Silvio, Matt), kept verbatim, with the invented dates removed (none were supplied). Two reviews refer to the property as "The Colonial" (its listing name); flagged for Andreas to keep verbatim or change to "M House". Verified the slider renders all three cleanly (equal 370px height, no clipping, 3 dots, arrows). Andreas also confirmed **Stripe is OK** and the **stay@/events@ mailboxes exist**, so all three launch blockers (fake reviews, Stripe, mailboxes) are cleared. Launch now gates only on the go-live technical steps (robots, CNAME/DNS, geo, Search Console) and optional extras (analytics, favicon from the logo).
 
