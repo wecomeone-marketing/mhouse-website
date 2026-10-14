@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <!--
-  M House. Some or all images are placeholders to be replaced before launch. When
-  replacing an image, remove EVERY old copy (base64-inlined, sometimes more than once).
+  M House. Photography lives in assets/img/ (referenced by file, not inlined).
   Pages are built from _src/ via build.cjs (npm run build). See PRE-LAUNCH.md.
 -->
 <html lang="en">
@@ -14,18 +13,23 @@
 <meta name="theme-color" content="#3D3530">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 
-<!-- Open Graph / social. og:image (1200x630) is added with the final photography, see PRE-LAUNCH.md -->
+<!-- Open Graph / social -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="M House">
 <meta property="og:locale" content="en_GB">
 <meta property="og:title" content="M House, Contact. Stadiou 18, Larnaka old town, Cyprus.">
 <meta property="og:description" content="Find M House at Stadiou 18, 6020 Larnaka, Cyprus. Contact us for rooms, pool day passes, events and general enquiries. Phone and WhatsApp +357 97444085.">
 <meta property="og:url" content="https://mhouse.cy/contact.html">
+<meta property="og:image" content="https://mhouse.cy/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="M House, Larnaka old town">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="M House, Contact. Stadiou 18, Larnaka old town, Cyprus.">
 <meta name="twitter:description" content="Find M House at Stadiou 18, 6020 Larnaka, Cyprus. Contact us for rooms, pool day passes, events and general enquiries. Phone and WhatsApp +357 97444085.">
+<meta name="twitter:image" content="https://mhouse.cy/assets/img/og-image.jpg">
 
-<!-- Local business structured data. image + geo are added at launch, see PRE-LAUNCH.md -->
+<!-- Local business structured data. geo is added at launch, see PRE-LAUNCH.md -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -33,6 +37,7 @@
   "name": "M House",
   "description": "A boutique social destination in Larnaka old town, Cyprus: a Mediterranean courtyard, a saltwater pool, five rooms, a work lounge and a place where people naturally come together.",
   "url": "https://mhouse.cy",
+  "image": "https://mhouse.cy/assets/img/og-image.jpg",
   "telephone": "+35797444085",
   "email": "hello@mhouse.cy",
   "address": {
@@ -353,7 +358,7 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
 
 
 <header class="page-hero">
-  <div class="page-hero__media is-photo" data-ph="Hero: the entrance on Stadiou" style="background-image:url('assets/ph/contact-1.jpg')"></div>
+  <div class="page-hero__media is-photo" data-ph="Hero: the entrance on Stadiou" style="background-image:url('assets/img/contact-hero.webp')"></div>
   <div class="page-hero__scrim"></div>
   <div class="page-hero__inner">
     <p class="page-hero__eyebrow">Contact</p>
@@ -422,7 +427,7 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
 
 <section class="page-section">
   <div class="page-section__inner">
-    <div class="ph ph--wide is-photo" data-ph="The house from Stadiou" style="background-image:url('assets/ph/contact-2.jpg')"></div>
+    <div class="ph ph--wide is-photo" data-ph="The house from Stadiou" style="background-image:url('assets/img/contact-house.webp')"></div>
   </div>
 </section>
 

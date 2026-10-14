@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <!--
-  M House. Some or all images are placeholders to be replaced before launch. When
-  replacing an image, remove EVERY old copy (base64-inlined, sometimes more than once).
+  M House. Photography lives in assets/img/ (referenced by file, not inlined).
   Pages are built from _src/ via build.cjs (npm run build). See PRE-LAUNCH.md.
 -->
 <html lang="en">
@@ -14,18 +13,23 @@
 <meta name="theme-color" content="#3D3530">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 
-<!-- Open Graph / social. og:image (1200x630) is added with the final photography, see PRE-LAUNCH.md -->
+<!-- Open Graph / social -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="M House">
 <meta property="og:locale" content="en_GB">
 <meta property="og:title" content="M House, Events. Private and corporate events in Larnaka old town.">
 <meta property="og:description" content="A distinctive venue in the heart of Larnaka old town for private and corporate events. A Mediterranean courtyard, saltwater pool and lounges. Contact us to tailor a proposal.">
 <meta property="og:url" content="https://mhouse.cy/events.html">
+<meta property="og:image" content="https://mhouse.cy/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="M House, Larnaka old town">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="M House, Events. Private and corporate events in Larnaka old town.">
 <meta name="twitter:description" content="A distinctive venue in the heart of Larnaka old town for private and corporate events. A Mediterranean courtyard, saltwater pool and lounges. Contact us to tailor a proposal.">
+<meta name="twitter:image" content="https://mhouse.cy/assets/img/og-image.jpg">
 
-<!-- Local business structured data. image + geo are added at launch, see PRE-LAUNCH.md -->
+<!-- Local business structured data. geo is added at launch, see PRE-LAUNCH.md -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -33,6 +37,7 @@
   "name": "M House",
   "description": "A boutique social destination in Larnaka old town, Cyprus: a Mediterranean courtyard, a saltwater pool, five rooms, a work lounge and a place where people naturally come together.",
   "url": "https://mhouse.cy",
+  "image": "https://mhouse.cy/assets/img/og-image.jpg",
   "telephone": "+35797444085",
   "email": "hello@mhouse.cy",
   "address": {
@@ -386,7 +391,7 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
 
 
 <header class="page-hero">
-  <div class="page-hero__media is-photo" data-ph="Hero: the courtyard set for an event" style="background-image:url('assets/ph/events-1.jpg')"></div>
+  <div class="page-hero__media is-photo" data-ph="Hero: the courtyard set for an event" style="background-image:url('assets/img/events-hero.webp')"></div>
   <div class="page-hero__scrim"></div>
   <div class="page-hero__inner">
     <p class="page-hero__eyebrow">Events</p>
@@ -403,7 +408,7 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
         <h2 class="sec-h">The house,<br><em>entirely yours.</em></h2>
         <p class="sec-txt page-section__lead">A Mediterranean courtyard, a saltwater pool and warm lounges, hosted with genuine care. Take over the whole house for an evening or a day, for up to around 150 guests. Relaxed, intimate and unmistakably M House, whatever the occasion.</p>
       </div>
-      <div class="split__media"><div class="ph ph--tall is-photo" data-ph="The courtyard set for dinner" style="background-image:url('assets/ph/events-2.jpg')"></div></div>
+      <div class="split__media"><div class="ph ph--tall is-photo" data-ph="The courtyard set for dinner" style="background-image:url('assets/img/events-dinner.webp')"></div></div>
     </div>
   </div>
 </section>
@@ -453,7 +458,7 @@ input.check__input[type=date]::-webkit-date-and-time-value{text-align:left}input
         <h2 class="sec-h">Eat and drink<br><em>beautifully.</em></h2>
         <p class="sec-txt page-section__lead">From canapés and grazing to a full seated dinner, we offer a wide range of food and catering solutions, tailored to each event. Tell us the mood and the menu, and we will take care of the rest.</p>
       </div>
-      <div class="split__media"><div class="ph ph--tall is-photo" data-ph="Dinner under the stars" style="background-image:url('assets/ph/events-3.jpg')"></div></div>
+      <div class="split__media"><div class="ph ph--tall is-photo" data-ph="Dinner under the stars" style="background-image:url('assets/img/events-stars.webp')"></div></div>
     </div>
   </div>
 </section>
