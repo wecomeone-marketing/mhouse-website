@@ -30,6 +30,9 @@
 
 ## Changelog
 
+### 2026-10-14 — Splash photo
+Andreas chose a poolside cabanas shot for the splash intro. Added `assets/img/splash.webp` (2000x1250) as the `.splash__bg` image (inline on `index.html`), and changed `.splash__ov` from a flat 50% overlay to a centred radial vignette (`rgba(44,31,20,0.60)` at centre to `0.42` at the edges) so the white logo and tagline read cleanly over the bright wall while the cabanas stay airy. Verified desktop and mobile (the portrait crop frames the logo, table and pool nicely). The splash still dismisses once per session as before.
+
 ### 2026-10-14 — Real photography swapped in + image SEO
 Andreas delivered all 38 final images (WebP, named exactly to the IMAGE-SPEC Picture column, dimensions meeting or exceeding spec). Wired them all in: copied to `assets/img/`, repointed the 25 page background images from `assets/ph/*.jpg` to `assets/img/*.webp`, and converted the 13 home images from base64 to file references (4 hero slides by order, 9 `<img>` by alt). `index.html` dropped from ~2384KB to ~243KB (only the four brand logos remain base64). Pruned the 26 now-orphaned `assets/ph` placeholders; `assets/ph` is down to the two parked Wellness images. Image SEO in the same pass: generated a 1200x630 JPG social card (`assets/img/og-image.jpg`, center-cropped from the hero) and wired `og:image` + `twitter:image` + schema `image` into the layout. Home `<img>` photos keep their alt text; the page hero/section photos are CSS backgrounds (no alt by design). Verified: all 38 images + og-image serve, 0 broken refs, 0 unused, the home hero renders the real photo, lazy `<img>` load on scroll. Raw uploads stay in the gitignored `Website Images/` staging folder. See `PRE-LAUNCH.md` §1 and §5.
 

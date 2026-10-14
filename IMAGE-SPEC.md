@@ -12,7 +12,7 @@ One row per image slot on the site, with the exact size to export. Prepared 2026
 
 ## Things that do NOT need a photo
 
-• **Splash / entry screen** (`index.html`): branded gradient with the logo. No photo.
+• **Splash / entry screen** (`index.html`): poolside cabanas photo (`assets/img/splash.webp`) behind the logo, with a vignette overlay (added 2026-10-14).
 • **Logo** (nav, footer, splash): already set, licensed separately. Not photography.
 
 ## Reuse opportunities (to cut the count)
