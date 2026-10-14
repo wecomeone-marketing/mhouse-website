@@ -30,6 +30,9 @@
 
 ## Changelog
 
+### 2026-10-14 — Real testimonials in; launch blockers cleared
+Replaced the three fabricated home testimonials with three real guest reviews (Eylem, Silvio, Matt), kept verbatim, with the invented dates removed (none were supplied). Two reviews refer to the property as "The Colonial" (its listing name); flagged for Andreas to keep verbatim or change to "M House". Verified the slider renders all three cleanly (equal 370px height, no clipping, 3 dots, arrows). Andreas also confirmed **Stripe is OK** and the **stay@/events@ mailboxes exist**, so all three launch blockers (fake reviews, Stripe, mailboxes) are cleared. Launch now gates only on the go-live technical steps (robots, CNAME/DNS, geo, Search Console) and optional extras (analytics, favicon from the logo).
+
 ### 2026-10-14 — Launch hosting decided: GitHub Pages (no server)
 Went through the launch checklist. Key finding: the site has **no on-site forms** (every booking/enquiry routes to Smoobu, OfficeRnD, WhatsApp or email), so it is fully static and needs no server. Andreas chose **GitHub Pages** over the earlier Scala VPS / Node-app plan. Revised `PRE-LAUNCH.md` §7 to the GitHub Pages go-live steps (lift robots, CNAME → mhouse.cy, Cloudflare DNS with the four GitHub Pages A records grey-cloud, Pages custom domain + Enforce HTTPS, geo in schema, verify, Search Console), marked the contact-form backend as **not needed**, and refreshed stale items (images done, Stripe connected via Smoobu, maps = pinned link, hero Book a room → Stay). **Remaining launch blockers:** fabricated testimonials must be replaced with real reviews or removed; one real Stripe test booking before the Lovable cutover; confirm stay@/events@ mailboxes (or point to hello@). Open decisions: testimonials, mailboxes, analytics (GA4/Pixel), favicon-from-logo.
 
